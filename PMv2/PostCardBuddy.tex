@@ -5,31 +5,70 @@
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{footnote}
+
+\makesavenoteenv{tabular}
+
 \title{PostCardBuddy}
 \author{Team C}
-\begin{document}
-\maketitle
-\newpage
-\tableofcontents
 
-% App
-% Vykort - framsida bild baksida bild eller text, ska känna igen mörk text på ljus bakgrund
-% System generera ett vykort som kan skrivas ut som sådant
-% Skapa vykort av en tagen bild eller välja av standardbilder
-% Kunna skicka till flera mottagare
-% Mottagare från kontaktlista/manuellt
-% Favoriter
-% Exempeltexter
-% Skicka digitalt via e-mail
-% Storlek och kvalitet/format
-% Beställningsbekräftelse
-% Bilder och textförslag utifrån GPS
-% Kunna spara egna bilder i appen
-% Appen tar betalt för fysiska vykort som skickas
-% Enkel bildredigering 
-% Tillgång till kameran innifrån appen
-% Tillgång till bilder från appen
-% Leverantör av vykort skriver ut och levererar, enligt kontrakt 
+\begin{document}
+\begin{titlepage}
+\newgeometry{left=2cm,top=1cm,right=2cm}
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+
+
+\begin{flushright}
+Month DD, 2015 v1.03\\[3cm]
+\end{flushright}
+
+
+\centering
+\textsc{\LARGE Team C}\\[0.5cm]
+
+\HRule \\[0.4cm]
+{ \huge \bfseries PostCardBuddy}\\[0.3cm]
+{\Large \bfseries Project Mission}\\[0.4cm] % Title of your document
+\HRule \\[1.5cm]
+
+\vfill
+\begin{flushleft}
+%Authors, write on separate lines
+\textit{Authors of this document:}\\
+Emma Albertz\\
+Caroline Brandberg\\
+Linnéa Claesson\\
+Billy Johansson\\
+Johan Ju\\
+Jacob Mejvik\\
+Carl Rynegardh
+\end{flushleft}
+
+\end{titlepage}
+\pagenumbering{gobble}
+
+
+
+%\begin{center}
+%\textit{\large Version History}
+%
+%    \begin{tabular}{ | l | l | l | p{5cm} |}
+%    \hline
+%    \textbf{Version} & \textbf{Date} & \textbf{Responsible} & \textbf{Description} \\ \hline
+%    1.0 & 2015-10-14 & EA, LC & Baseline\\ \hline
+%    \end{tabular}
+%\end{center}
+
+
+
+\setcounter{tocdepth}{2}
+\tableofcontents
+\newpage
+\pagenumbering{arabic}
+
+
+
 
 %--------------------------------------------------------------------------%
 %--------------------- Background------------------------------------------%
@@ -38,21 +77,108 @@
 % Background and other information from PMv1
 % What is the project about?
 
+In today's society there are constantly more and more things to consider, which causes a lot of stress for many people. Even when you are on vacation to recover, there are issues you can encounter which cause stress. With PostCardBuddy we aim to reduce your stress level when on vacation by introducing a simple and convenient way to let the people back home know you are thinking of them. 
+
 
 \section{Main Goals and System Context}
 % Vad ska appen kunna göra/funktionalitet och vart/hur ska den användas?
+The goal of this project is to create a digital personal assistant, a mobile application, to create personal postcards that can be sent to anyone, from relatives to bosses. The postcards can be sent either digitally by email or as a physical copy. 
+
+This application aims to reduce stress for people on vacation and its functionality should also include the following:
+
+\begin{itemize}
+\item Create postcard consisting of a front and back
+\begin{description}
+\item[Front] Image, one or multiple
+\item[Back] Greeting to and address of recipient
+\end{description}
+\item Take a picture with the camera (within the application) or use an existing one, either from the phones gallery or applications gallery
+\item Edit images
+\item Write a greeting in the application or take a photograph of handwritten text for the back
+\item Auto-generated greetings
+\item Image and greetings suggestions based on current GPS location
+\item Possibility to save images, greetings and postcards so they can be re-used easily
+\item Access recipients from phone's contact list or enter manually
+\item Multiple recipients
+\item Favourites, both contacts frequently used and marked manually by user
+\item Options for choosing size and quality of physical postcard to be sent
+\item Confirmation of order
+\item Payment within application
+\end{itemize}
+
 
 \section{Participants and Stakeholders}
 % What will the customer team spend their time on? Elicitation?
 % Leverantör, kunden, mobilanvändare
+Team A is the key customer for this project. They will be used for the elicitation process, specifically for requirements concerning functionality and quality of the product.
+
+The end user of this application will be vacationing mobile users. They will be used to evaluate prototypes of the product, to make sure it is easy to use and has the desired functionality.
+
+Another stakeholder is the supplier of the physical postcards, who will print out and deliver them to the recipients. Therefore, they will be used for the requirements concerning the delivery of the postcards. These requirements will include, among others, the required format of the postcards to be printed and price.
 
 \section{Activities and Deliverables}
 % Description of planned activities and deliverables with deadlines (see Course program) 
+
+In table~\ref{table:deliv} the deliverables and their respective deadlines are shown for each phase of the project. 
+
+Table~\ref{table:meet} displays other activities planned during this project. The weekly group meetings will be held on Mondays at 13.15. The intention of these meetings is to give an overview of the progress of the project and what is to be done in the upcoming week. All group members have exercises scheduled on Tuesdays at 15.15, which will be an additional opportunity for the group to work on the project. 
+
+The meetings with the supervisor will be used to report status, discuss challenges/questions and plans for the project. The group should meet up prior to each supervisor meeting to assess what needs to be brought up to make the meeting as efficient as possible. 
+
+A presentation of the project is scheduled for the last week.
+
+
+
+\begin{table}[h!]
+\centering
+\caption{Deliverables and deadlines of each phase of the project.}
+\label{table:deliv}
+\begin{tabular}{|l|l|l|} \hline
+\textbf{Phase} & \textbf{Deliverables} & \textbf{Deadline}\\ \hline
+Definition & Project Mission v1 & Week 1: Friday 09:00\\ \hline
+Planning & Project Mission v2 & Week 3: Monday 09:00\\ \hline
+Iteration 1 & Release R1 & Week 4: Monday 09:00\\ \hline
+Iteration 2 & Release R2 & Week 6: Monday 09:00\\ \hline
+& Validation Checklist & Week 6: Monday 09:00\\ \hline
+& Validation Report & Week 6: Friday 09:00\\ \hline
+Iteration 3 & Conference Presentation & Week 6: Sunday 15:00\\ \hline
+& Release R3 & Week 7: Sunday 23:59\\ \hline
+& Course Evaluation & Feb 2, Monday 09:00\\ \hline
+\end{tabular}\\
+\end{table}
+
+\begin{table}[h!]
+\centering
+\caption{Planned activities.}
+\label{table:meet}
+\begin{tabular}{|l|c|c|c|c|c|c|c|} \hline
+&Week 1 & Week 2 & Week 3 & Week 4 & Week 5 & Week 6 & Week 7\\ \hline
+Group meeting & X &X&X&X&X&X&X\\ \hline
+Supervisor meeting &&X&&X&&X&\\ \hline
+Exercise & X &X&X&X&X&X&X\\ \hline
+Presentation &&&&&&&X\\ \hline 
+\end{tabular}\\
+\end{table}
+
 
 \section{Time Schedule}
 % Diagram showing the planned time per week and participant
 
 \section{Project Team Members}
 % Responsibilities of project members
+Linnéa Claesson (P3RM) eko11lcl@student.lu.se
+
+Jacob Mejvik (TDEVM) jur05jme@student.lu.se
+
+Caroline Brandberg (SCCVM) elt12cbr@student.lu.se
+
+Johan Ju (QRM) elt12jju@student.lu.se
+
+Emma Albertz (EPM) ine11eal@student.lu.se
+
+Billy Johansson (DRM) ama10bjo@student.lu.se
+
+Carl Rynegardh (EPM) elt12cry@student.lu.se
 
 \end{document}
+

@@ -7,6 +7,9 @@
 \usepackage{graphicx}
 \usepackage{geometry}
 \usepackage{footnote}
+\usepackage{pdfpages}
+\usepackage[toc,page]{appendix}
+\usepackage{placeins}
 
 \makesavenoteenv{tabular}
 
@@ -20,7 +23,7 @@
 
 
 \begin{flushright}
-November 12, 2015 v1.06\\[3cm]
+November 15, 2015 v2.0\\[3cm]
 \end{flushright}
 
 
@@ -110,7 +113,7 @@ This application aims to reduce stress for people on vacation and its functional
 \section{Participants and Stakeholders}
 % What will the customer team spend their time on? Elicitation?
 % Leverantör, kunden, mobilanvändare
-Figure~\ref{fig:stake} shows...
+Figure~\ref{fig:stake} shows the context of the application with two of the stakeholders.
 
 The end user of this application will be vacationing mobile users. A chosen group will be used to evaluate prototypes of the product, to make sure it is easy to use and has the desired functionality. They might also be asked to take a survey to answer further questions.
 
@@ -125,7 +128,7 @@ Additional potential stakeholders are advertisers, travel companies and mobile m
 \begin{figure}[h!]
 \centering
 \includegraphics[width=0.7\textwidth]{im.jpg}
-\caption{Something about image}
+\caption{Context of application.}
 \label{fig:stake}
 \end{figure}
 
@@ -175,6 +178,8 @@ Presentation &&&&&&&X\\ \hline
 
 \section{Time Schedule}
 % Diagram showing the planned time per week and participant
+See appendix for Gantt and Weekly schedule of this project.
+
 
 \section{Project Team Members}
 % Responsibilities of project members
@@ -206,6 +211,36 @@ DRM & Billy Johansson & ama10bjo@student.lu.se\\ \hline
 
 \end{tabular}\\
 \end{table}
+\FloatBarrier
 
+\newpage
+\begin{appendices}
+\section{Time Schedule}
+
+\subsection{Gantt Schedule}
+\begin{figure}[h!]
+\centering
+\includegraphics[width=1.1\textwidth]{Gantt.pdf}
+\end{figure}
+\FloatBarrier
+
+\subsection{Weekly Schedule}
+\begin{figure}[h!]
+\centering
+\includegraphics[width=1.1\textwidth, trim=0mm 0mm 0mm 0mm, clip]{Veckoschema.pdf}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[page=2, width=1.1\textwidth, trim=0mm 0mm 0mm 0mm, clip]{Veckoschema.pdf}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[page=3, width=1.1\textwidth, trim=0mm 140mm 0mm 0mm, clip]{Veckoschema.pdf}
+\end{figure}
+
+
+\end{appendices}
 \end{document}
 

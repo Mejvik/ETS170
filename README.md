@@ -1,4 +1,12 @@
 # PostCardBuddy
 ## Team C
 
-Här ska vi skriva in information om de olika releaserna!
+### Release 1
+
+**Software Requirements v1.00**
+
+sr.pdf
+
+**Project Experiences v1.00**
+
+pe.pdf

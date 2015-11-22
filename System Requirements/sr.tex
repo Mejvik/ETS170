@@ -25,7 +25,7 @@
 
 
 \begin{flushright}
-November 21, 2015 v0.08\\[3cm]
+November 22, 2015 v1.00\\[3cm]
 \end{flushright}
 
 
@@ -88,7 +88,7 @@ Carl Rynegardh
 \section{System Requirements}
 
 \subsection{Goal}
-The product aims to increase the amount of postcards sent and will achieve this through the following goals:
+The product aims to increase the amount of postcards sent and shall achieve this through the following goals:
 \begin{itemize}
 \item Simplify the process of sending postcards
 \item Enable user to send personalized postcards
@@ -104,16 +104,16 @@ The product aims to increase the amount of postcards sent and will achieve this 
 \end{description}
 \subsubsection{Interfaces}
 \begin {description}
-\item [Req 1.2.2.1] The interface connecting PostcardBuddy and the printed postcards is an of the shelf printer.
+\item [Req 1.2.2.1] The interface connecting PostCardBuddy and the printed postcards is an off-the-shelf printer.
 \item [Req 1.2.2.2] The system sends image files to a printer. 
-\item [Req 1.2.2.3] 
+%\item [Req 1.2.2.3] 
 \end{description}
 \subsection{Product}
 \begin{description}
-\item [Req 1.3.1.1 Success notification]The user should be notified when an order is sent from a device.
-\item [Req 1.3.1.2 Fail notification] The user should be notified when an order fails to be sent from a device.
+\item [Req 1.3.1.1 Success notification] The user shall be notified when an order is sent from a device.
+\item [Req 1.3.1.2 Fail notification] The user shall be notified when an order fails to be sent from a device.
 
-\item [Req 1.3.1.3 No internet] If the user places an order on a device that is not connected to the internet, the order should be stored and sent the next time the device receives internet connection. 
+\item [Req 1.3.1.3 No internet] If the user places an order on a device that is not connected to the internet, the order shall be stored and sent the next time the device receives internet connection. 
 
 \end{description}
 
@@ -121,12 +121,13 @@ The product aims to increase the amount of postcards sent and will achieve this 
 \subsection{Design}
 % Är dethär tillräckligt specifikt? Vill man ha en exempel bild och ett krav som säger att vykortet ska följa formtet?
 \begin {description}
-\item[Req 1.4.1.1 Front page] The front of the postcard should be a single field containing an image.
-\item [Req 1.4.1.2 Text field] The back of the postcard should contain a text field.
-\item [Req 1.4.1.3 Address field] The back of the postcard should contain an address field.
-\item [Req 1.4.1.4 Postage field] The back of the postcard should contain a postage field. 
-\item [Req 1.4.1.5 Postage print] The postage should be printed in the top right corner on the back of the postcard. 
+\item[Req 1.4.1.1 Front page] The front of the postcard shall be a field containing an image.
+\item [Req 1.4.1.2 Text field] The back of the postcard shall contain a text field.
+\item [Req 1.4.1.3 Address field] The back of the postcard shall contain an address field.
+\item [Req 1.4.1.4 Postage field] The back of the postcard shall contain a postage field. 
+\item [Req 1.4.1.5 Postage print] The postage shall be printed in the top right corner on the back of the postcard. 
 \end{description}
+
 \subsection{Data Requirements}
 %det finns väldigt olika sätt att sätta upp data requirements på, så jag väntar med att göra det för specifikt innan vi har fått kommentarer.
 \begin {description}
@@ -143,11 +144,11 @@ The product aims to increase the amount of postcards sent and will achieve this 
 
 
 
-\subsection{Function Requirements}
+\subsection{Functional Requirements}
 \begin {description}
 \item [Req 1.6.1.1 Image from gallery] Feature for choosing pictures from the phone gallery for the front of the postcard.
 \item [Req 1.6.1.2 Picture from camera] Feature for taking a picture through the camera and use as image for the front of the postcard.
-\item [Req 1.6.1.3 Image and GPS position] Feature for choosing images depending on the users GPS position.
+\item [Req 1.6.1.3 Image and GPS position] Feature for choosing images depending on the user's GPS position.
 \item [Req 1.6.1.4 Image editing] Feature for simple editing of images.
 \item [Req 1.6.1.5 Image saving] Feature for saving images.
 \item [Req 1.6.1.6 Greetings] Feature for writing greetings in the app.
@@ -169,7 +170,7 @@ The product aims to increase the amount of postcards sent and will achieve this 
 \item [Req 1.6.3.3 Phonebook recipients] Feature for choosing recipients through the phonebook.
 \item [Req 1.6.3.4 Multiple recipients] A postcard can have multiple recipients.
 \item [Req 1.6.3.5 Favourite recipients] Feature for saving favourite recipients.
-\item [Req 1.6.3.6 Frequent recipients] Freguent recipients should be shown as favourite recipients.
+\item [Req 1.6.3.6 Frequent recipients] Frequently used recipients shall be shown as favourite recipients.
 \item [Req 1.6.3.7 History] Feature for seeing the history of sent postcards.
 \item [Req 1.6.3.8 Social media] Feature for sharing postcards on social media.
 \end {description}
@@ -178,7 +179,7 @@ The product aims to increase the amount of postcards sent and will achieve this 
 \input{qr.tex}
 \subsubsection{Usability}
 \begin{description}
-\item [Req 1.7.5.1 User friendly] 9 out of 10 users should be able to use the system after a five minute instruction.
+\item [Req 1.7.5.1 User friendly] 9 out of 10 users shall be able to use the system after a five minute instruction.
 \end{description}
 
 
@@ -202,7 +203,7 @@ Figure~\ref{fig:context} shows the context diagram. This diagram shows the inter
 \begin{figure}[h!]
 \centering
 \includegraphics[width=0.7\textwidth]{ContextDiagram2.pdf}
-\caption{Context diagram}
+\caption{Context diagram of product.}
 \label{fig:context}
 \end{figure}
 

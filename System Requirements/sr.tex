@@ -23,7 +23,7 @@
 
 
 \begin{flushright}
-November 25, 2015 v1.02\\[3cm]
+November 26, 2015 v1.03\\[3cm]
 \end{flushright}
 
 
@@ -165,22 +165,35 @@ The product aims to increase the amount of postcards sent and shall achieve this
 
 \subsection{Functional Requirements}
 \subsubsection{Images} 
+\newcounter{images}
+\stepcounter{images}
 \begin {description}
-\item [Req \thesubsubsection .1 Image from gallery]It shall be possible to choose pictures from the phone gallery for the front of the postcard.
-\item [Req \thesubsubsection .2 Picture from camera] It shall be possible to take a picture through the camera and use as image for the front of the postcard.
-\item [Req \thesubsubsection .3 Image and GPS position] It shall be possible to choose images depending on the user's GPS position.
-\item [Req \thesubsubsection .4 Image editing] The system shall have a function for editing of images.
-\item [Req \thesubsubsection .5 Image saving] It shall be possible to save images.
+\item [Req \thesubsubsection {.\theimages} Image from gallery]It shall be possible to choose pictures from the phone gallery for the front of the postcard.
+\stepcounter{images}
+\item [Req \thesubsubsection {.\theimages} Picture from camera] It shall be possible to take a picture through the camera and use as image for the front of the postcard.
+\stepcounter{images}
+\item [Req \thesubsubsection {.\theimages} Image and GPS position] It shall be possible to choose images depending on the user's GPS position.
+\stepcounter{images}
+\item [Req \thesubsubsection {.\theimages} Image editing] The system shall have a function for editing of images.
+\stepcounter{images}
+\item [Req \thesubsubsection {.\theimages} Image saving] It shall be possible to save images.
 \end{description}
 \subsubsection{Greetings}
+\newcounter{greetings}
+\stepcounter{greetings}
 \begin{description}
-\item [Req \thesubsubsection .1 Greetings] It shall be possible to write greetings in the app.
-\item [Req \thesubsubsection .2 Pictures of handwritten greetings] It shall be possible to choose a picture of a hand-written greeting.
-\item [Req \thesubsubsection .3 Auto-generated greetings] It shall be possible to choose a template greeting.
-\item [Req \thesubsubsection .4 GPS based greetings] The system shall be able to generate greetings based on GPS position. 
-\item [Req \thesubsubsection .5 Handwritten greetings on screen] It shall be possible to write a handwritten greetings directly on the screen.
+\item [Req \thesubsubsection {.\thegreetings} Greetings] It shall be possible to write greetings in the app.
+\stepcounter{greetings}
+\item [Req \thesubsubsection {.\thegreetings} Pictures of handwritten greetings] It shall be possible to choose a picture of a hand-written greeting.
+\stepcounter{greetings}
+\item [Req \thesubsubsection {.\thegreetings} Auto-generated greetings] It shall be possible to choose a template greeting.
+\stepcounter{greetings}
+\item [Req \thesubsubsection {.\thegreetings} GPS based greetings] The system shall be able to generate greetings based on GPS position.
+\stepcounter{greetings} 
+\item [Req \thesubsubsection {.\thegreetings} Handwritten greetings on screen] It shall be possible to write a handwritten greetings directly on the screen.
+\stepcounter{greetings}
 %Ovanstående krav onödingt?
-\item [Req \thesubsubsection .6 Saving greetings] It shall be possible to save a greeting.
+\item [Req \thesubsubsection {.\thegreetings} Saving greetings] It shall be possible to save a greeting.
 \end{description}
 
 \subsubsection{Recipients}
@@ -213,13 +226,10 @@ The product aims to increase the amount of postcards sent and shall achieve this
 \item [Req \thesubsubsection {.\thepostcards} Postcard size] It shall be possible to choose the size of the physical postcard.
 \stepcounter{postcards}
 \item [Req \thesubsubsection {.\thepostcards} Quality of physical postcard] It shall be possible to choose the print quality of physical postcards. 
-\end{description}
+\stepcounter{postcards}
+\item [Req \thesubsubsection {.\thepostcards} History] It shall be possible to display the history of sent postcards.
 
-\begin{description}
-\item [Req 1.6.2.8 Payment] Feature for payment within application.
-
-\item [Req \thesubsubsection .1 Confirmation of order] The system shall provide a conformation when an order has been placed.
-\item [Req 1.6.3.7 History] Feature for seeing the history of sent postcards.
+%Ska nedanstående krav vara med?
 \item [Req 1.6.3.8 Social media] Feature for sharing postcards on social media.
 \end {description}
 

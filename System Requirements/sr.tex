@@ -127,7 +127,7 @@ The product aims to increase the amount of postcards sent and shall achieve this
 \subsection{Design}
 % Är dethär tillräckligt specifikt? Vill man ha en exempel bild och ett krav som säger att vykortet ska följa formtet?
 \begin {description}
-\item[Req 1.4.1.1 Front page] The front of the postcard shall be a field containing an image.
+\item [Req 1.4.1.1 Front page] The front of the postcard shall be a field containing an image.
 \item [Req 1.4.1.2 Text field] The back of the postcard shall contain a text field.
 \item [Req 1.4.1.3 Address field] The back of the postcard shall contain an address field.
 \item [Req 1.4.1.4 Postage field] The back of the postcard shall contain a postage field. 
@@ -142,15 +142,14 @@ The product aims to increase the amount of postcards sent and shall achieve this
 %ref bug?
 \item[Req 2.4.1.5 Start Screen] The application shall start with a screen where its possible to choose front and back image/text figure \ref{fig:p1} upper left.
 \item[Req 2.4.1.6 Get image] The application shall let the user choose the image source from a menu \ref{fig:p1} upper right.
-\item[Req 2.4.1.7 Edit image] The application shall give the user a basic image editor to customize the image \ref{fig:p1} lower left.
+\item[Req 2.4.1.7 Edit image]The application shall give the user a basic image editor to customize the image \ref{fig:p1} lower left.
 \item[Req 2.4.1.8 Recipiant adress] The application shall have an adress input screen with an address-book/contacts (not in image) \ref{fig:p1} lower right.
 
 \end{description}
 
 \subsection{Data Requirements}
-%det finns väldigt olika sätt att sätta upp data requirements på, så jag väntar med att göra det för specifikt innan vi har fått kommentarer.
+%TODO: Beskrivning till E/R, data dictionary och virtual window när man skapar vykort.
 \begin {description}
-
 \item[Req 1.5.1.1 Data model] The system shall handle the data presented in the data model in figure \ref{fig:datamodel}.
 \end{description}
 
@@ -160,6 +159,187 @@ The product aims to increase the amount of postcards sent and shall achieve this
 \caption{Data model}
 \label{fig:datamodel}
 \end{figure}
+
+% Template:
+% Class: Name
+% Description what it is exactly, what it does and what it interacts with
+
+% Examples:
+% What is this typically? Special cases.
+
+% Attributes:
+% List attributes and what type of data it is
+
+\subsubsection{Data dictionary}
+
+\begin{description}
+\item[Class:] \textbf{Name} \hfill \\
+Description what it is exactly, what it does and what it interacts with
+
+\item[Examples:] \hfill
+\begin{enumerate}
+\item What is this typically?
+\item Special cases.
+\end{enumerate}
+
+\item[Attributes:] \hfill
+\begin{enumerate}
+\item List attributes and 
+\item What type of data it is
+\end{enumerate}
+\end{description}
+
+\hrulefill
+
+%Do we really support both Android and iOS?
+\begin{description}
+\item[Class:] \textbf{Device} \hfill \\
+The device is the actual physical mobile device on which the application is running.
+
+\item[Examples:] \hfill
+\begin{enumerate}
+\item An android device running the application.
+\item An iOS device running the application
+\end{enumerate}
+
+\item[Attributes:] \hfill
+\begin{enumerate}
+\item \textbf{Camera:} Image \hfill \\A compressed image fetched from the devices physical camera.
+\item \textbf{GPS:} String[Latitude,longitude] \hfill \\The information about current coordinates from the GPS in the device. The string is given on the format shown and the latitude and longitudes are signed floats with seven decimal places.
+\end{enumerate}
+\end{description}
+
+\hrulefill
+
+%Maybe we need to divide virtual and physical in separate attributes. Maybe we need data about what platform to share to?
+\begin{description}
+\item[Class:] \textbf{Sender} \hfill \\
+This class represents the person sending the post card. It can be the same person as the one using the device but it doesn't have to.
+
+\item[Examples:] \hfill
+\begin{enumerate}
+\item The device owner.
+\item A person using the application to send a post card.
+\end{enumerate}
+
+\item[Attributes:] \hfill
+\begin{enumerate}
+\item \textbf{Name:} String \hfill \\The name of the sender. 
+\item \textbf{Adress} (Virtual|Physical): String \hfill \\This attribute is always a string. If it's a virtual adress it's a user name, otherwise it's a physical street adress. 
+\end{enumerate}
+\end{description}
+
+\hrulefill
+
+\begin{description}
+\item[Class:] \textbf{Receiver} \hfill \\
+This class represents the person receiving the post card. This class is identical to \textit{Sender} in terms of attribute structure. The sender and receiver could be the same person.
+
+\item[Examples:] \hfill
+\begin{enumerate}
+\item The person receiving the post card.
+\item The same person as the one sending a post card.
+\end{enumerate}
+\end{description}
+
+\hrulefill
+
+%Is stamp image required?
+\begin{description}
+\item[Class:] \textbf{PostCard} \hfill \\
+This class represents the the post card sent from the \textit{Sender} to \textit{Receiver}. It encapsulates all the information necessary to send a post card in either virtual or physical form. An instance of this object, owning a \textit{Sender} and a \textit{Receiver} needs to exist to be able to send a Post Card. 
+
+\item[Examples:] \hfill
+\begin{enumerate}
+\item A post card with two images, a message and a stamp.
+\item A post card with no images, no message and a stamp.
+\item A virtual post card with images, a message and no stamp.
+\end{enumerate}
+
+\item[Attributes:] \hfill
+\begin{enumerate}
+\item \textbf{Front image:} Image [optional] \hfill \\A compressed image that will be used as the front image of the \textit{PostCard}. 
+\item \textbf{Back image:} Image [optional] \hfill \\A compressed image that will be used as the back image of the \textit{PostCard}.
+\item \textbf{Message:} String [optional] \hfill \\The message on the \textit{PostCard}.
+\item \textbf{Stamp image:} Image \hfill \\The image supplied by \textit{Shipper} to properly send the post card.
+\end{enumerate}
+\end{description}
+
+\hrulefill
+
+%Maybe we need IDs or names to identify the supplier?
+\begin{description}
+\item[Class:] \textbf{Suppliers} \hfill \\
+This class collects the data from an \textit{Image supplier}, a \textit{Shipper} and a \textit{Printer}. 
+
+\item[Examples:] \hfill
+\begin{enumerate}
+\item A collection of suppliers relevant to printing and sending a specific \textit{PostCard}.
+\item Only a printing and shipping cost.
+\end{enumerate}
+
+\item[Attributes:] \hfill
+\begin{enumerate}
+\item \textbf{Total cost:} Float \hfill \\The combined cost of \textit{Image supplier/Photo cost}, a \textit{Shipper/Shipping cost} and a \textit{Printer/Printing cost}. The value is rounded up to two decimal places.
+\end{enumerate}
+\end{description}
+
+\hrulefill
+
+\begin{description}
+\item[Class:] \textbf{Image supplier:} \hfill \\
+This class represents a supplier of images. If a user chooses a stock photo as (for example) a \textit{PostCard/Front image} there is a cost with using the photo that needs to be added to the total cost.
+
+\item[Examples:] \hfill
+\begin{enumerate}
+\item An image supplier with a photo and a cost.
+\item An image supplier with a free photo.
+\end{enumerate}
+
+\item[Attributes:] \hfill
+\begin{enumerate}
+\item \textbf{Photo cost:} Float \hfill \\The cost of a stock photo. The value is rounded up to two decimal places.
+\item \textbf{Stock photo:} Image \hfill \\The actual image that will be bought.
+\end{enumerate}
+\end{description}
+
+\hrulefill
+
+\begin{description}
+\item[Class:] \textbf{Shipper:} \hfill \\
+This class represents a shipper. The shipper is the company that will transport the post card. 
+
+\item[Examples:] \hfill
+\begin{enumerate}
+\item A representation of what is required to send a post card with Posten.
+\item A representation of what is required to send a post card with DHL.
+\end{enumerate}
+
+\item[Attributes:] \hfill
+\begin{enumerate}
+\item \textbf{Shipping cost:} Float \hfill \\The cost of shipping. The value is rounded up to two decimal places.
+\item \textbf{Stock photo:} Image \hfill \\This is the image used on the post card to indicate that shipping was payed for.
+\end{enumerate}
+\end{description}
+
+\hrulefill
+
+%Unclear who or what the printer actually is.
+\begin{description}
+\item[Class:] \textbf{Printer:} \hfill \\
+This class represents a printer. The printer is repsponsible for printing the physical post card. 
+
+\item[Examples:] \hfill
+\begin{enumerate}
+\item A company contracted to print a post card.
+\item The company supplying the application.
+\end{enumerate}
+
+\item[Attributes:] \hfill
+\begin{enumerate}
+\item \textbf{Printing cost:} Float \hfill \\The cost of printing. The value is rounded up to two decimal places.
+\end{enumerate}
+\end{description}
 
 
 

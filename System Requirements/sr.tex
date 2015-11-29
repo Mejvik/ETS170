@@ -12,6 +12,7 @@
 \usepackage{amssymb}
 \usepackage{graphicx}
 \usepackage{geometry}
+\usepackage{enumitem}
 
 \title{PostCardBuddy}
 \author{Team C}
@@ -115,8 +116,62 @@ The product aims to increase the amount of postcards sent and shall achieve this
 \subsection{Domain}
 
 \subsubsection{Tasks}
+\begin {description}
+\item[Work area:]  Vacation
+\newline
+Communicating with friends and family. Usually from a remote location with unreliable internet access. Typically sunny and overall poor working environment. Simplicity is key to capturing important moments. \newline
+Users: Good technical knowledge, used to little manual work. 
+
+\item [Req 1.2.1.1] The system shall support tasks 1.1 and 1.2.
+\item [Task 1.1] Send a postcard.
+\begin {description}
+\item \textbf{Purpose:} Take a picture. Edit the picture. Add a message. Add recipients. Send postcard.
+\item \textbf{Precondition:} PostcardBuddy is running.
+
+\item \textbf{Sub-tasks:}
+\begin{enumerate}
+\item Use the camera in the device to take a picture.
+\item Allow basic editing of pictures.
+\item Save pictures to the library.
+\item Add recipients from address book. 
+\item Save finished postcard.
+\item Preview postcard.
+\item Send postcard to printer.
+\end{enumerate}
+\item \textbf{Variants:}
+\begin{itemize}[label={}]
+
+\item[1a] The user selects a picture from the personal library.
+\item[1b] The user selects a picture from PostCardBuddys library. 
+\item[2a] Include editing of library pictures.
+\item[4a] Manually add address.
+\item[4b] Copy address from webbrowser.
+\end{itemize}
+\end{description}
+\item [Task 1.2] History
+
+\begin {description}
+\item \textbf{Purpose:} View sent cards. View recipients. View cost.
+\item \textbf{Precondition:} PostcardBuddy is running. 
+
+\item \textbf{Sub-tasks:}
+\begin{enumerate}
+\item List sent postcards. 
+\item Search sent postcards.
+\item Summary of cost.  
+
+\end{enumerate}
+\item \textbf{Variants:}
+\begin{itemize}[label={}]
+
+\item[1a] No postcards sent. 
+\item[2a] No postcards found for given search criteria. 
+
+\end{itemize}
+\end{description}
 
 
+\end{description}
 
 \subsubsection{Supported systems}
 \begin {description}

@@ -24,7 +24,7 @@
 
 
 \begin{flushright}
-November 28, 2015 v1.04\\[3cm]
+November 29, 2015 v1.05\\[3cm]
 \end{flushright}
 
 
@@ -115,6 +115,57 @@ The product aims to increase the amount of postcards sent and shall achieve this
 
 \subsection{Domain}
 
+\subsubsection{Context Diagrams}
+Figure~\ref{fig:context} shows the context diagram. This diagram shows the interface that the application PostCardBuddy will interact with and the stakeholders who will interact with the application.
+
+There are two stakeholders that will interact with the application; the mobile user and the supplier of images. The mobile user is the one that will use the application for creating its personalized postcard. For the front of the postcard the user shall be able to select an image from the applications standard library. These images will be delivered from supplier, which are shown as \textit{Supplier of images} in the context diagram. 
+
+The application needs various of functionality. Some of these functionalities will be used from the users mobile phone. The camera available from the users mobile phone will be used to enable the user to take a picture. The GPS location of the user shall also be provided from the phone. The GPS location will be used to select which pictures will be presented first from the standard library. The contacts available in the users phone will also be used to select recipients. These three permissions shall be confirmed by the user. The user shall also be able to send a digital postcard, via email. 
+
+The user shall also be able to send a physical postcard. This will cost money, which will be taken care of by a payment service. When the payment is done there will be a franking of the postcard. Thereafter the postcard will be sent to a printer. The printer will be placed so that a supplier, shown as \textit{Supplier} in Figure~\ref{fig:context}, easily can pic up the card and deliver it to the postal service. The last stage in this chain is the stage where the postal service deliver the physical post card to the desired recipient. 
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.7\textwidth]{ContextDiagram3.pdf}
+\caption{Context diagram of product.}
+\label{fig:context}
+\end{figure}
+
+\subsubsection{Stakeholders}
+Some of the stakeholders for PostCardBuddy are presented in Table~\ref{table:stakeholder}. For each stakeholder there is a number to visualize how much prioritization each stakeholder have. The scale is from 1-5 where 1 represent a high priority and 5 a low priority.
+
+
+\begin{table}[h!]
+\centering
+\label{table:deliv}
+\begin{tabular}{|l|l|} \hline
+\textbf{Stakeholder} & \textbf{Priority} \\
+\hline
+Mobile user & 1\\
+\hline
+Supplier & 2\\
+\hline
+Postal service & 2\\
+\hline
+Payment service & 4\\
+\hline
+The existing application \textit{Riktiga Vykort} & 4\\
+\hline
+Developers & 3\\
+\hline
+\end{tabular}\\
+\caption{Stakeholder prioritization}
+\label{table:stakeholder}
+\end{table}
+
+\begin{description}
+\item[Mobile user] was given the highest priority. Without this group everything else is useless. 
+\item[Supplier] will act as the key customer, and thereby given a high priority. 
+\item[Postal service] was given a high priority because it is a possibility to cut some parts in the chain of delivering a physical postcard. That means that the postal service is considered a possible buyer of the application. 
+\item[Payment service] was given a low priority. The payment service will be used only to provide the application with a pay-functionality, and therefor its low priority.
+\item[The existing application \textit{Riktiga Vykort}]  is a competitor to the application. 
+\item[Developers]  decide wether a functionality is reasonable or not.
+\end{description}
 \subsubsection{Tasks}
 \begin {description}
 \item[Work area:]  Vacation
@@ -526,15 +577,6 @@ This class represents a printer. The printer is repsponsible for printing the ph
 % 5A) combine specification techniques in an explicitly motivated trade off between qualities and costs, where a high degree of specification completeness is achieved for a carefully selected subset of requirements.
 % 5C) go beyond initial stakeholders and given frames, while challenging the domain boundaries and eliciting creative ideas and deep domain knowledge in real-world contexts.
 \section{Specification Techniques}
-\subsection{Context Diagrams}
-Figure~\ref{fig:context} shows the context diagram. This diagram shows the interface that the application PostCardBuddy will interact with and the stakeholders who will interact with the application.
-
-\begin{figure}[h!]
-\centering
-\includegraphics[width=0.7\textwidth]{ContextDiagram2.pdf}
-\caption{Context diagram of product.}
-\label{fig:context}
-\end{figure}
 
 \subsection{Features}
 \subsection{Virtual Windows}

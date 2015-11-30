@@ -593,7 +593,50 @@ This class represents a printer. The printer is repsponsible for printing the ph
 
 \subsection{Quality Requirements}
 
-\input{qr.tex}
+%\input{qr.tex}
+\newcommand{\tsss}{\thesubsubsection}
+\subsubsection{Quality grid}
+\begin{table}[]
+	\centering
+	\caption{Quality grid}
+	\label{my-label}
+	\begin{tabular}{|l|l|l|l|l|l|}
+		\hline
+		\textbf{\begin{tabular}[c]{@{}l@{}}Quality factors -\\ PostCardBuddy\end{tabular}} & \textbf{Critical} & \textbf{Important} & \textbf{As usual} & \textbf{Unimportant} & \textbf{Ignore} \\ \hline
+		\textbf{Operation}                                                                 &                   &                    &                   &                      &                 \\ \hline
+		Integrity/Security                                                                 &                   &                    & 1                 &                      &                 \\ \hline
+		Reliability/availability                                                           &                   & 2                  &                   &                      &                 \\ \hline
+		Usability                                                                          & 3                 &                    &                   &                      &                 \\ \hline
+		Internet connection demand                                                         & 4                 &                    &                   &                      &                 \\ \hline
+		Efficiency                                                                         &                   &                    & x                 &                      &                 \\ \hline
+		\textbf{Miscellaneous}                                                             &                   &                    &                   &                      &                 \\ \hline
+		Installability                                                                     &                   & 5                  &                   &                      &                 \\ \hline
+		Interoperability                                                                   &                   & 6                  &                   &                      &                 \\ \hline
+	\end{tabular}
+\end{table}
+\subsubsection{Performance}
+\begin{description}
+	\item[Req \tsss.1 Memory usage] The application shall adjust its memory usage depending on the device.
+	\item[Req \tsss.2 Speed] The user interface shall be considered smooth on devices faster than Nexus 5 / iPhone 5 for 8 out of 10 users. 
+	\item[Req \tsss.3 Picture quality] The camera shall be able to take a picture in the highest hardware supported resolution. 
+	\item[Req \tsss.4 Autofocus] The camera shall have a autofocus that is comparable to the Android / iOS stock camera. 
+\end{description}
+\subsubsection{Availability}
+\subsubsection{Security}
+\begin{description}
+	\item[Req \tsss.1 Store cards] The photos shall be stored encrypted
+	%om vi kör med backend server
+	\item[Req \tsss.2 Sending card] The photos shall be sent encrypted to back-end.
+\end{description}
+\subsubsection{Maintainability/Portability}
+\begin{description}
+	\item[Req \tsss.1 Language] The application shall be developed in non native language e.g. Java for Android. 
+	\item[Req \tsss.2 Device support] The application shall work on devices with newer operating systems than Android 4.1 / iOS 7.0.1
+\end{description}
+\subsubsection{Usability}
+\begin{description}
+	\item [Req \tsss.1 User friendly] 9 out of 10 users shall be able to use the system after a five minute instruction.
+\end{description}
 
 
 

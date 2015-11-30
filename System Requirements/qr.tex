@@ -1,4 +1,23 @@
 \newcommand{\tsss}{\thesubsubsection}
+\subsubsection{Quality grid}
+\begin{table}[]
+\centering
+\caption{Quality grid}
+\label{my-label}
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+\textbf{\begin{tabular}[c]{@{}l@{}}Quality factors -\\ PostCardBuddy\end{tabular}} & \textbf{Critical} & \textbf{Important} & \textbf{As usual} & \textbf{Unimportant} & \textbf{Ignore} \\ \hline
+\textbf{Operation}                                                                 &                   &                    &                   &                      &                 \\ \hline
+Integrity/Security                                                                 &                   &                    & 1                 &                      &                 \\ \hline
+Reliability/availability                                                           &                   & 2                  &                   &                      &                 \\ \hline
+Usability                                                                          & 3                 &                    &                   &                      &                 \\ \hline
+Internet connection demand                                                         & 4                 &                    &                   &                      &                 \\ \hline
+Efficiency                                                                         &                   &                    & x                 &                      &                 \\ \hline
+\textbf{Miscellaneous}                                                             &                   &                    &                   &                      &                 \\ \hline
+Installability                                                                     &                   & 5                  &                   &                      &                 \\ \hline
+Interoperability                                                                   &                   & 6                  &                   &                      &                 \\ \hline
+\end{tabular}
+\end{table}
 \subsubsection{Performance}
 \begin{description}
 	\item[Req \tsss.1 Memory usage] The application shall adjust its memory usage depending on the device.

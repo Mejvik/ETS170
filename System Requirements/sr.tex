@@ -24,7 +24,7 @@
 
 
 \begin{flushright}
-December 1, 2015 v1.09\\[3cm]
+December 1, 2015 v1.10\\[3cm]
 \end{flushright}
 
 
@@ -74,7 +74,7 @@ Carl Rynegardh
 %---------------------- Introduction -------------------------------%
 %-------------------------------------------------------------------%
 \section{Introduction}
-This document is written within the context of the course Requirements Engineering at Lund Institute of Technology, which the authors are currently enrolled in. They have been provided with a project mission from another group, specifying a product they want to see developed. The intention of this document is to specify the requirements of this product, namely PostCardBuddy.
+This document is written within the context of the course Requirements Engineering at Lund Institute of Technology, which the authors are currently enrolled in. They have been provided with a project mission from another group, specifying a product they want to see developed. This group has also acted as the key customer. The intention of this document is to specify the requirements of this product, namely PostCardBuddy.
 
 
 %-------------------------------------------------------------------%
@@ -82,7 +82,7 @@ This document is written within the context of the course Requirements Engineeri
 %-------------------------------------------------------------------%
 % Extend background from PMv2
 \section{Background}
-Why does nobody send postcards? Everybody likes receiving them, but the process is tedious and takes too much effort effort. This is what PostCardBuddy hopes to change. PostCardBuddy is a mobile application that will simplify the process, whether you want to be creative and design your own postcards or make it easy for yourself and use a template postcard based on your location and send it to everyone in your contact list. 
+Everybody likes receiving postcards, but the process of sending them is tedious and takes too much effort. This is what PostCardBuddy hopes to change. PostCardBuddy is a mobile application that will simplify the process, whether you want to be creative and design your own postcards or make it easy for yourself and use a template postcard based on your location and send it to everyone in your contact list. 
 
 The application is perfect for every occasion you want to send a postcard. Grandma's birthday is coming up? Send a postcard of you and your cousins! Christmas is around the corner? Send everyone in your contact list a postcard of your cats! Away on vacation? Why not send a ready-made postcard that shows off the amazing beach to everyone in the office? Nobody needs to know it rained all week. 
 
@@ -104,29 +104,25 @@ PostCardBuddy is the perfect tool when you want to let someone know you are thin
 \section{Definitions and terms}
 \begin{description}
 \item[Device] Mobile device on which it is possible to download an use applications.
-
-\item[Mobile user] Person who owns a mobile phone. 
+\item[Standard library] Library of pre-existing images in application.
+\item[Phone gallery] User's existing image gallery on phone.
+\item[Mobile user] Person who owns a smart phone. 
 \item[Payment solution] A feature that makes it possible to charge the costumer in the application. 
 \item[Payment service] A company who provides a payment solution for applications. 
 \item[Personalized postcards] Postcards were the design is chosen by the person who sends the postcard. 
 \item[Product]The application described in this Requirement Specification.
 \item[Postal service] A company that delivers mail to private citizens.
 \item[Recipient]The person which a postcard is addressed to.
-\item[Supplier] The company who delivers the postcards from the printer to the postal service. In this project the key customer.
-
+\item[Printer of postcards] The company who delivers the postcards from the printer to the postal service. In this project the key customer.
+\item[Supplier of images] The companies or persons who supply the application with images for the standard library.
 \item[System] The application described in this Requirement Specification.
- 
-
 \end{description}
 
 \section{System Requirements}
 
-
-
 \subsection{Goal}
-The product aims to increase the amount of postcards sent and shall achieve this through the following goals:
+The product aims to establish the key customer in the postcard sending market and shall achieve this through the following goals:
 
-% Ge målkraven nummer?
 \begin{itemize}
 \item Simplify the process of sending postcards
 \item Enable user to send personalized postcards
@@ -134,15 +130,16 @@ The product aims to increase the amount of postcards sent and shall achieve this
 \end{itemize}
 
 \subsection{Domain}
+Write short text about contents of this section.
 
 \subsubsection{Context Diagrams}
-Figure~\ref{fig:context} shows the context diagram. This diagram shows the interface that the application PostCardBuddy will interact with and the stakeholders who will interact with the application.
+The context diagram of the product can be found in figure~\ref{fig:context}. This diagram shows the interface that the application PostCardBuddy will interact with and the stakeholders who will interact with the application.
 
-There are two stakeholders that will interact with the application; the mobile user and the supplier of images. The mobile user is the one that will use the application for creating its personalized postcard. For the front of the postcard the user shall be able to select an image from the applications standard library. These images will be delivered from supplier, which are shown as \textit{Supplier of images} in the context diagram. 
+There are two stakeholders that will interact directly with the application; the mobile user and the supplier of images. The mobile user is the one that will use the application for creating its personalized postcard. For the front of the postcard the user shall be able to select an image from the applications standard library. These images will be delivered from supplier, which are shown as \textit{Supplier of images} in the context diagram. 
 
 The application needs various of functionality. Some of these functionalities will be used from the users mobile phone. The camera available from the users mobile phone will be used to enable the user to take a picture. The GPS location of the user shall also be provided from the phone. The GPS location will be used to select which pictures will be presented first from the standard library. The contacts available in the users phone will also be used to select recipients. These three permissions shall be confirmed by the user. The user shall also be able to send a digital postcard, via email. 
 
-The user shall also be able to send a physical postcard. This will cost money, which will be taken care of by a payment service. When the payment is done there will be a franking of the postcard. Thereafter the postcard will be sent to a printer. The printer will be placed so that a supplier, shown as \textit{Supplier} in Figure~\ref{fig:context}, easily can pic up the card and deliver it to the postal service. The last stage in this chain is the stage where the postal service deliver the physical post card to the desired recipient. 
+The user shall also be able to send a physical postcard. This will cost money, which will be taken care of by a payment service. When the payment is done there will be a franking of the postcard. Thereafter the postcard will be sent to a printer. The printer will be placed so that a supplier, shown as \textit{Printer of postcards} in figure~\ref{fig:context}, easily can pic up the card and deliver it to the postal service. The last stage in this chain is the stage where the postal service deliver the physical post card to the desired recipient. 
 
 \begin{figure}[h!]
 \centering
@@ -163,7 +160,7 @@ Some of the stakeholders for PostCardBuddy are presented in Table~\ref{table:sta
 \hline
 Mobile user & 1\\
 \hline
-Supplier & 2\\
+Printer of images & 2\\
 \hline
 Postal service & 2\\
 \hline
@@ -179,19 +176,20 @@ Developers & 3\\
 \end{table}
 
 \begin{description}
-\item[Mobile user] was given the highest priority. Without this group everything else is useless. 
-\item[Supplier] will act as the key customer, and thereby given a high priority. 
-\item[Postal service] was given a high priority because it is a possibility to cut some parts in the chain of delivering a physical postcard. That means that the postal service is considered a possible buyer of the application. 
-\item[Payment service] was given a low priority. The payment service will be used only to provide the application with a pay-functionality, and therefor its low priority.
+\item[Mobile user] was given the highest priority since they will be the ultimate users of the product and without them there will be no market.
+\item[Printer of postcards] will act as the key customer, since they placed the order of the product, and thereby given a high priority. 
+\item[Postal service] was given a high priority because they are considered a possible buyer of the application. 
+\item[Payment service] was given a low priority. The payment service will be used only to provide the application with a pay-functionality, and therefore its low priority.
 \item[The existing application \textit{Riktiga Vykort}]  is a competitor to the application. 
-\item[Developers]  decide wether a functionality is reasonable or not.
+\item[Developers]  decide whether a functionality is reasonable or not.
 \end{description}
+
 \subsubsection{Tasks}
 \begin {description}
 \item[Work area:]  Vacation
 \newline
 Communicating with friends and family. Usually from a remote location with unreliable internet access. Typically sunny and overall poor working environment. Simplicity is key to capturing important moments. \newline
-Users: Good technical knowledge, used to little manual work. 
+Users: Average smart phone user, used to little manual work. 
 
 \item [Req 1.2.1.1] The system shall support tasks 1.1 and 1.2.
 \item [Task 1.1] Send a postcard.
@@ -203,20 +201,19 @@ Users: Good technical knowledge, used to little manual work.
 \begin{enumerate}
 \item Use the camera in the device to take a picture.
 \item Allow basic editing of pictures.
-\item Save pictures to the library.
+\item Save pictures.
 \item Add recipients from address book. 
 \item Save finished postcard.
 \item Preview postcard.
 \item Send postcard to printer.
 \end{enumerate}
+
 \item \textbf{Variants:}
 \begin{itemize}[label={}]
-
-\item[1a] The user selects a picture from the personal library.
-\item[1b] The user selects a picture from PostCardBuddys library. 
+\item[1a] The user selects a picture from the personal gallery.
+\item[1b] The user selects a picture from PostCardBuddy's standard library. 
 \item[2a] Include editing of library pictures.
 \item[4a] Manually add address.
-\item[4b] Copy address from webbrowser.
 \end{itemize}
 \end{description}
 \item [Task 1.2] History
@@ -244,24 +241,7 @@ Users: Good technical knowledge, used to little manual work.
 
 \end{description}
 
-\subsubsection{Supported systems}
-\begin {description}
-\item [Req 1.2.1.1] The system shall support iOS.
-\begin{itemize}
-\item Supports tasks x, y and z
-\item Prio s
-\end{itemize}
-\item [Req 1.2.1.2] The system shall support Android.
-\begin{itemize}
-\item Supports tasks x, y and z
-\item Prio s
-\end{itemize}
-\item [Req 1.2.1.3] The system shall support a mobile payment solution. 
-\begin{itemize}
-\item Supports tasks x, y and z
-\item Prio s
-\end{itemize}
-\end{description}
+
 
 \subsubsection{Interfaces}
 \begin {description}
@@ -270,6 +250,8 @@ Users: Good technical knowledge, used to little manual work.
 \end{description}
 
 \subsection{Product}
+Short text describing this section.
+
 \begin{description}
 \item [Req 1.3.1.1 Success notification] The user shall be notified when an order is sent from a device.
 \item [Req 1.3.1.2 Fail notification] The user shall be notified when an order fails to be sent from a device.
@@ -280,6 +262,7 @@ Users: Good technical knowledge, used to little manual work.
 
 
 \subsection{Design}
+Short text describing this section.
 % Är dethär tillräckligt specifikt? Vill man ha en exempel bild och ett krav som säger att vykortet ska följa formtet?
 \begin {description}
 \item [Req 1.4.1.1 Front page] The front of the postcard shall be a field containing an image.
@@ -303,6 +286,8 @@ Users: Good technical knowledge, used to little manual work.
 \end{description}
 
 \subsection{Data Requirements}
+Short text describing this section.
+
 %TODO: Beskrivning till E/R, data dictionary och virtual window när man skapar vykort.
 \begin {description}
 \item[Req 1.5.1.1 Data model] The system shall handle the data presented in the data model in figure \ref{fig:datamodel}.
@@ -317,24 +302,24 @@ Users: Good technical knowledge, used to little manual work.
 
 \subsubsection{Data dictionary}
 
-\begin{description}
-\item[Class:] \textbf{Name} \hfill \\
-Description what it is exactly, what it does and what it interacts with
-
-\item[Examples:] \hfill
-\begin{enumerate}
-\item What is this typically?
-\item Special cases.
-\end{enumerate}
-
-\item[Attributes:] \hfill
-\begin{enumerate}
-\item List attributes and 
-\item What type of data it is
-\end{enumerate}
-\end{description}
-
-\hrulefill
+%\begin{description}
+%\item[Class:] \textbf{Name} \hfill \\
+%Description what it is exactly, what it does and what it interacts with
+%
+%\item[Examples:] \hfill
+%\begin{enumerate}
+%\item What is this typically?
+%\item Special cases.
+%\end{enumerate}
+%
+%\item[Attributes:] \hfill
+%\begin{enumerate}
+%\item List attributes and 
+%\item What type of data it is
+%\end{enumerate}
+%\end{description}
+%
+%\hrulefill
 
 %Do we really support both Android and iOS?
 \begin{description}
@@ -472,7 +457,7 @@ This class represents a shipper. The shipper is the company that will transport 
 %Unclear who or what the printer actually is.
 \begin{description}
 \item[Class:] \textbf{Printer:} \hfill \\
-This class represents a printer. The printer is repsponsible for printing the physical post card. 
+This class represents a printer. The printer is responsible for printing the physical post card. 
 
 \item[Examples:] \hfill
 \begin{enumerate}
@@ -530,9 +515,9 @@ This class represents a printer. The printer is repsponsible for printing the ph
 \stepcounter{images}
 \item [Req \thesubsubsection {.\theimages} Picture from camera] It shall be possible to take a picture through the camera and use as image for the front of the postcard.
 \stepcounter{images}
-\item [Req \thesubsubsection {.\theimages} Image from PostCardBuddy's gallery] It shall be possible to choose pictures from an existing PostCardBuddy gallery.
+\item [Req \thesubsubsection {.\theimages} Image from standard library] It shall be possible to choose pictures from a standard library.
 \stepcounter{images}
-\item [Req \thesubsubsection {.\theimages} Image and GPS position] It shall be possible to choose images depending on the user's GPS position.
+\item [Req \thesubsubsection {.\theimages} Image and GPS position] Images from the standard library shall be presented based on the user's GPS position.
 \stepcounter{images}
 \item [Req \thesubsubsection {.\theimages} Image editing] The system shall have a function for editing of images.
 \stepcounter{images}
@@ -580,10 +565,18 @@ This class represents a printer. The printer is repsponsible for printing the ph
 \stepcounter{postcards}
 \item [Req \thesubsubsection {.\thepostcards} Reuse postcards] It shall be possible to reuse saved postcards.
 \stepcounter{postcards}
+
+\item [Req \thesubsubsection {.\thepostcards} Preview postcards] It shall be possible to preview postcards before sending it.
+\stepcounter{postcards}
+
 \item [Req \thesubsubsection {.\thepostcards} Digital postcard] It shall be possible to send digital postcards.
 \stepcounter{postcards}
 \item [Req \thesubsubsection {.\thepostcards} Physical postcards] It shall be possible to send physical postcards.
 \stepcounter{postcards}
+
+\item [Req \thesubsubsection {.\thepostcards} Payment] It shall be possible to pay for sending physical postcards.
+\stepcounter{postcards}
+
 \item [Req \thesubsubsection {.\thepostcards} Postcard size] It shall be possible to choose the size of the physical postcard.
 \stepcounter{postcards}
 \item [Req \thesubsubsection {.\thepostcards} Quality of physical postcard] It shall be possible to choose the print quality of physical postcards. 
@@ -599,7 +592,7 @@ This class represents a printer. The printer is repsponsible for printing the ph
 %\input{qr.tex}
 \newcommand{\tsss}{\thesubsubsection}
 \subsubsection{Quality grid}
-\begin{table}[]
+\begin{table}[h!]
 	\centering
 	\caption{Quality grid}
 	\label{my-label}
@@ -617,6 +610,13 @@ This class represents a printer. The printer is repsponsible for printing the ph
 		Interoperability                                                                   &                   & 6                  &                   &                      &                 \\ \hline
 	\end{tabular}
 \end{table}
+
+\begin{enumerate}
+\item Text about item 1
+\item 2
+\item 3 etc.
+\end{enumerate}
+
 \subsubsection{Performance}
 \begin{description}
 	\item[Req \tsss.1 Memory usage] The application shall adjust its memory usage depending on the device.
@@ -625,6 +625,12 @@ This class represents a printer. The printer is repsponsible for printing the ph
 	\item[Req \tsss.4 Autofocus] The camera shall have a autofocus that is comparable to the Android / iOS stock camera. 
 \end{description}
 \subsubsection{Availability}
+\subsubsection{Supported systems}
+\begin {description}
+\item [Req 1.2.1.1] The system shall support iOS.
+\item [Req 1.2.1.2] The system shall support Android.
+\item [Req 1.2.1.3] The system shall support a mobile payment solution. 
+\end{description}
 \subsubsection{Security}
 \begin{description}
 	\item[Req \tsss.1 Store cards] The photos shall be stored encrypted

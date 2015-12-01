@@ -13,6 +13,7 @@
 \usepackage{graphicx}
 \usepackage{geometry}
 \usepackage{enumitem}
+\newcommand{\tsss}{\thesubsubsection}
 
 \title{PostCardBuddy}
 \author{Team C}
@@ -270,17 +271,33 @@ Short text describing this section.
 \item [Req 1.4.1.5 Postage print] The postage shall be printed in the top right corner on the back of the postcard. 
 
 \begin{figure}
-	\centering
-	\includegraphics[width=0.7\textwidth]{prototype.png}
-	\caption{The prototype}
-	\label{fig:p1}
+	\begin{minipage}{0.35\textwidth}
+		\includegraphics[width=\linewidth]{Prototype_img/p1.png}
+		\caption{Start}
+		\label{fig:p1}
+	\end{minipage}
+	\begin{minipage}{0.35\textwidth}
+		\includegraphics[width=\linewidth]{Prototype_img/p2.png}
+		\caption{Chosee image source}
+		\label{fig:p2}
+	\end{minipage}
+	\begin{minipage}{0.35\textwidth}
+		\includegraphics[width=\linewidth]{Prototype_img/p3.png}
+		\caption{Image editor}
+		\label{fig:p3}
+	\end{minipage}
+	\begin{minipage}{0.35\textwidth}
+		\includegraphics[width=\linewidth]{Prototype_img/p4.png}
+		\caption{Recipiant information}
+		\label{fig:p4}
+	\end{minipage}
 \end{figure}
-%ref bug?
-\item[Req 2.4.1.5 Start Screen] The application shall start with a screen where its possible to choose front and back image/text figure \ref{fig:p1} upper left.
-\item[Req 2.4.1.6 Get image] The application shall let the user choose the image source from a menu \ref{fig:p1} upper right.
-\item[Req 2.4.1.7 Edit image]The application shall give the user a basic image editor to customize the image \ref{fig:p1} lower left.
-\item[Req 2.4.1.8 Recipiant address] The application shall have an address input screen with an address-book/contacts (not in image) \ref{fig:p1} lower right.
 
+%ref bug?
+\item[Req \tsss.6 Start Screen] The application shall start with a screen where its possible to choose front and back image/text figure \ref{fig:p1}.
+\item[Req \tsss.7 Get image] The application shall let the user choose the image source from a menu figure \ref{fig:p2}.
+\item[Req \tsss.8 Edit image]The application shall give the user a basic image editor to customize the image figure \ref{fig:p3}.
+\item[Req \tsss.9 Recipiant address] The application shall have an address input screen with an address-book/contacts (not in image) figure \ref{fig:p4}.
 \end{description}
 
 \subsection{Data Requirements}
@@ -589,8 +606,6 @@ This class represents a printer. The printer is responsible for printing the phy
 
 
 
-%\input{qr.tex}
-\newcommand{\tsss}{\thesubsubsection}
 \subsubsection{Quality grid}
 Text about quality grid, reference table~\ref{tab:qg}
 
@@ -634,22 +649,14 @@ Text about quper diagram, reference figure~\ref{fig:quper}.
 \subsubsection{Performance}
 \begin{description}
 	\item[Req \tsss.1 Memory usage] The application shall adjust its memory usage depending on the device.
-	\item[Req \tsss.2 Speed] The user interface shall be considered smooth on devices faster than Nexus 5 / iPhone 5 for 8 out of 10 users. 
+	\item[Req \tsss.2 Speed] The user interface shall respond within 200ms after a finished user interaction if there should be an response. This is only applied on devices faster than Nexus 5 / iPhone 5 running original firmware without any other user installed applications on the phone.
 	\item[Req \tsss.3 Picture quality] The camera shall be able to take a picture in the highest hardware supported resolution. 
 	\item[Req \tsss.4 Autofocus] The camera shall have a autofocus that is comparable to the Android / iOS stock camera. 
 \end{description}
 \subsubsection{Availability}
-\subsubsection{Supported systems}
-\begin {description}
-\item [Req 1.2.1.1] The system shall support iOS.
-\item [Req 1.2.1.2] The system shall support Android.
-\item [Req 1.2.1.3] The system shall support a mobile payment solution. 
-\end{description}
 \subsubsection{Security}
 \begin{description}
 	\item[Req \tsss.1 Store cards] The photos shall be stored encrypted
-	%om vi kör med backend server
-	\item[Req \tsss.2 Sending card] The photos shall be sent encrypted to back-end.
 \end{description}
 \subsubsection{Maintainability/Portability}
 \begin{description}
@@ -660,7 +667,6 @@ Text about quper diagram, reference figure~\ref{fig:quper}.
 \begin{description}
 	\item [Req \tsss.1 User friendly] 9 out of 10 users shall be able to use the system after a five minute instruction.
 \end{description}
-
 
 
 

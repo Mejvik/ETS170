@@ -362,8 +362,8 @@ This class represents the person sending the post card. It can be the same perso
 \hrulefill
 
 \begin{description}
-\item[Class:] \textbf{Receiver} \hfill \\
-This class represents the person receiving the post card. This class is identical to \textit{Sender} in terms of attribute structure. The sender and receiver could be the same person.
+\item[Class:] \textbf{Recipient} \hfill \\
+This class represents the person receiving the post card. This class is identical to \textit{Sender} in terms of attribute structure. The sender and recipient could be the same person.
 
 \item[Examples:] \hfill
 \begin{enumerate}
@@ -377,7 +377,7 @@ This class represents the person receiving the post card. This class is identica
 %Is stamp image required?
 \begin{description}
 \item[Class:] \textbf{PostCard} \hfill \\
-This class represents the the post card sent from the \textit{Sender} to \textit{Receiver}. It encapsulates all the information necessary to send a post card in either virtual or physical form. An instance of this object, owning a \textit{Sender} and a \textit{Receiver} needs to exist to be able to send a Post Card. 
+This class represents the the post card sent from the \textit{Sender} to \textit{Recipient}. It encapsulates all the information necessary to send a post card in either virtual or physical form. An instance of this object, owning a \textit{Sender} and a \textit{Recipient} needs to exist to be able to send a Post Card. 
 
 \item[Examples:] \hfill
 \begin{enumerate}
@@ -391,7 +391,7 @@ This class represents the the post card sent from the \textit{Sender} to \textit
 \item \textbf{Front image:} Image [optional] \hfill \\A compressed image that will be used as the front image of the \textit{PostCard}. 
 \item \textbf{Back image:} Image [optional] \hfill \\A compressed image that will be used as the back image of the \textit{PostCard}.
 \item \textbf{Message:} String [optional] \hfill \\The message on the \textit{PostCard}.
-\item \textbf{Stamp image:} Image \hfill \\The image supplied by \textit{Shipper} to properly send the post card.
+\item \textbf{Stamp image:} Image \hfill \\The image supplied by \textit{Postal service} to properly send the post card.
 \end{enumerate}
 \end{description}
 
@@ -400,7 +400,7 @@ This class represents the the post card sent from the \textit{Sender} to \textit
 %Maybe we need IDs or names to identify the supplier?
 \begin{description}
 \item[Class:] \textbf{Suppliers} \hfill \\
-This class collects the data from an \textit{Image supplier}, a \textit{Shipper} and a \textit{Printer}. 
+This class collects the data from an \textit{Supplier of images}, a \textit{Postal service} and a \textit{Printer of postcards}. 
 
 \item[Examples:] \hfill
 \begin{enumerate}
@@ -410,20 +410,20 @@ This class collects the data from an \textit{Image supplier}, a \textit{Shipper}
 
 \item[Attributes:] \hfill
 \begin{enumerate}
-\item \textbf{Total cost:} Float \hfill \\The combined cost of \textit{Image supplier/Photo cost}, a \textit{Shipper/Shipping cost} and a \textit{Printer/Printing cost}. The value is rounded up to two decimal places.
+\item \textbf{Total cost:} Float \hfill \\The combined cost of \textit{Supplier of images/Photo cost}, a \textit{Postal service/Shipping cost} and a \textit{Printer of postcards/Printing cost}. The value is rounded up to two decimal places.
 \end{enumerate}
 \end{description}
 
 \hrulefill
 
 \begin{description}
-\item[Class:] \textbf{Image supplier:} \hfill \\
+\item[Class:] \textbf{Supplier of images:} \hfill \\
 This class represents a supplier of images. If a user chooses a stock photo as (for example) a \textit{PostCard/Front image} there is a cost with using the photo that needs to be added to the total cost.
 
 \item[Examples:] \hfill
 \begin{enumerate}
-\item An image supplier with a photo and a cost.
-\item An image supplier with a free photo.
+\item A supplier of images with a photo and a cost.
+\item A supplier of images with a free photo.
 \end{enumerate}
 
 \item[Attributes:] \hfill
@@ -436,8 +436,8 @@ This class represents a supplier of images. If a user chooses a stock photo as (
 \hrulefill
 
 \begin{description}
-\item[Class:] \textbf{Shipper:} \hfill \\
-This class represents a shipper. The shipper is the company that will transport the post card. 
+\item[Class:] \textbf{Postal service:} \hfill \\
+This class represents a postal service. The postal service is the company that will transport the post card. 
 
 \item[Examples:] \hfill
 \begin{enumerate}
@@ -456,7 +456,7 @@ This class represents a shipper. The shipper is the company that will transport 
 
 %Unclear who or what the printer actually is.
 \begin{description}
-\item[Class:] \textbf{Printer:} \hfill \\
+\item[Class:] \textbf{Printer of postcards:} \hfill \\
 This class represents a printer. The printer is responsible for printing the physical post card. 
 
 \item[Examples:] \hfill
@@ -478,7 +478,7 @@ This class represents a printer. The printer is responsible for printing the phy
 
 \item[Req 1.5.1.3 Sender] The input data to the \textit{Sender} class described in the Data dictionary shall include the items specified in the virtual window in figure \ref{fig:virtualwindows_sender}.
 
-\item[Req 1.5.1.3 Sender] The input data to the \textit{Receiver} class described in the Data dictionary shall include the items specified in the virtual window in figure \ref{fig:virtualwindows_receiver}.
+\item[Req 1.5.1.4 Recipient] The input data to the \textit{Recipient} class described in the Data dictionary shall include the items specified in the virtual window in figure \ref{fig:virtualwindows_recipient}.
 
 \end{description}
 \hfill
@@ -498,9 +498,9 @@ This class represents a printer. The printer is responsible for printing the phy
 \end{minipage}\hfill
 ~
 \begin{minipage}{0.3\textwidth}
-\includegraphics[width=\linewidth]{Data_figures/virtualwindows_receiver.pdf}
-\caption{Virtual window Receiver}
-\label{fig:virtualwindows_receiver}
+\includegraphics[width=\linewidth]{Data_figures/virtualwindows_recipient.pdf}
+\caption{Virtual window Recipient}
+\label{fig:virtualwindows_recipient}
 \end{minipage}
 
 \end{figure}

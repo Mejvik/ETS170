@@ -613,7 +613,7 @@ This class represents a printer. The printer is responsible for printing the phy
 
 
 \subsubsection{Quality grid}
-Text about quality grid, reference table~\ref{tab:qg}
+This quality grid highlights quality factors for certain identified elements. Elements not in the grid can be seen as having status "As usual". Numbers in the quality grid are references to the numbers below the grid. The "x" does not have a reference.  reference table~\ref{tab:qg}
 
 \begin{table}[h!]
 	\centering
@@ -635,19 +635,23 @@ Text about quality grid, reference table~\ref{tab:qg}
 \end{table}
 
 \begin{enumerate}
-\item Text about item 1
-\item 2
-\item 3 etc.
+\item PostCardBuddy has a integrated payment solution for sending physical postcards. Integrity/Security shall be as usual for an app that contains an integrated payment solution.
+\item Many users may use PostCardBuddy when they are traveling. Therefore it is important the app will work in a wide geographical area while still being reliable. Users sending digital, or physical, postcards not coming through will not be pleased.
+\item The standard user might just send a few postcards a year. Because of this it is critical that the app is easy to use. Users should not need to go through unnecessary menu. It should be quick and easy to create a postcard and press "send".
+\item Internet connection when traveling is often a problem. It is therefore critical that PostCardBuddy has a low internet demand. Many users may just use PostCardBuddy while traveling.
+\item Users may install PostCardBuddy while traveling. Internet connection might be weak and users will probably want to do sightseeing, requiring them to leave internet zones.
+\item PostCardBuddy saves files to the smartphone and uses features as the smartphones camera, and gallery. This should be smooth.
 \end{enumerate}
 
 \subsubsection{QUPER}
-Text about quper diagram, reference figure~\ref{fig:quper}.
+A quper diagram takes into consideration quality and performace. This specific quper diagram measures time to get access to a specific image, from the image library, reference figure~\ref{fig:quper}.
 
 
 \begin{figure}[h!]
 \centering
 \includegraphics[width=0.7\textwidth]{QUPER_v1.jpg}
-\caption{Text about the image here.}
+\caption{Time measured from requesting access to a specific image in the image library to it being loaded in to creating a postcard, with an internet speed of 30Mbps.\newline
+(1) For larger sized images. (2) For smaller sized images. (3) The mean of how long it takes. }
 \label{fig:quper}
 \end{figure}
 

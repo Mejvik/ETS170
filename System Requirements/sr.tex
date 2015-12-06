@@ -13,10 +13,20 @@
 \usepackage{graphicx}
 \usepackage{geometry}
 \usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{placeins}
 \newcommand{\tsss}{\thesubsubsection}
 
 \title{PostCardBuddy}
 \author{Team C}
+
+\setcounter{secnumdepth}{4}
+
+\titleformat{\paragraph}
+{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+\titlespacing*{\paragraph}
+{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
 
 \begin{document}
 \begin{titlepage}
@@ -83,11 +93,13 @@ This document is written within the context of the course Requirements Engineeri
 %-------------------------------------------------------------------%
 % Extend background from PMv2
 \section{Background}
-Everybody likes receiving postcards, but the process of sending them is tedious and takes too much effort. This is what PostCardBuddy hopes to change. PostCardBuddy is a mobile application that will simplify the process, whether you want to be creative and design your own postcards or make it easy for yourself and use a template postcard based on your location and send it to everyone in your contact list. 
+The process of sending postcards is time consuming and somewhat tedious. The product described in this document aims to solve this problem by providing an easy and efficent way to send personalized postcards directly from a mobile phone. Simply take a photo, choose a picture from the phones gallery or use a template picture. The template pictures can be found in the applications standard gallery and are based on the location of the user. To complete the postcard add a greeting and recipients. When the user presses the send button in the application the postcard is sent to a printer. The postcard is then delivered to the postal service for further forwarding to the final recipient. 
 
-The application is perfect for every occasion you want to send a postcard. Grandma's birthday is coming up? Send a postcard of you and your cousins! Christmas is around the corner? Send everyone in your contact list a postcard of your cats! Away on vacation? Why not send a ready-made postcard that shows off the amazing beach to everyone in the office? Nobody needs to know it rained all week. 
-
-PostCardBuddy is the perfect tool when you want to let someone know you are thinking of them, no matter the occasion.
+%Everybody likes receiving postcards, but the process of sending them is tedious and takes too much effort. This is what PostCardBuddy hopes to change. PostCardBuddy is a mobile application that will simplify the process, whether you want to be creative and design your own postcards or make it easy for yourself and use a template postcard based on your location and send it to everyone in your contact list. 
+%
+%The application is perfect for every occasion you want to send a postcard. Grandma's birthday is coming up? Send a postcard of you and your cousins! Christmas is around the corner? Send everyone in your contact list a postcard of your cats! Away on vacation? Why not send a ready-made postcard that shows off the amazing beach to everyone in the office? Nobody needs to know it rained all week. 
+%
+%PostCardBuddy is the perfect tool when you want to let someone know you are thinking of them, no matter the occasion.
 
 %--------------------------------------------------------------------%
 %----------------- System Requirements ------------------------------%
@@ -104,17 +116,18 @@ PostCardBuddy is the perfect tool when you want to let someone know you are thin
 
 \section{Definitions and terms}
 \begin{description}
-\item[Device] Mobile device on which it is possible to download an use applications.
-\item[Standard library] Library of pre-existing images in application.
-\item[Phone gallery] User's existing image gallery on phone.
-\item[Mobile user] Person who owns a smart phone. 
-\item[Payment solution] A feature that makes it possible to charge the costumer in the application. 
+\item[Device] Mobile device on which it is possible to download and use applications.
+\item[Mobile user] Person who owns a device. 
 \item[Payment service] A company who provides a payment solution for applications. 
+\item[Payment solution] A feature that makes it possible to charge costumers in the application. 
+
 \item[Personalized postcards] Postcards were the design is chosen by the person who sends the postcard. 
-\item[Product]The application described in this Requirement Specification.
+\item[Phone gallery] User's existing image gallery on phone.
 \item[Postal service] A company that delivers mail to private citizens.
-\item[Recipient]The person which a postcard is addressed to.
 \item[Printer of postcards] The company who delivers the postcards from the printer to the postal service. In this project the key customer.
+\item[Product]The application described in this Requirement Specification.
+\item[Recipient]The person which a postcard is addressed to.
+\item[Standard gallery] Gallery of pre-existing images in application.
 \item[Supplier of images] The companies or persons who supply the application with images for the standard library.
 \item[System] The application described in this Requirement Specification.
 \end{description}
@@ -127,20 +140,24 @@ The product aims to establish the key customer in the postcard sending market an
 \begin{itemize}
 \item Simplify the process of sending postcards
 \item Enable user to send personalized postcards
-\item It shall be possible to generate revenue through the system
+\item Enable revenue generation
 \end{itemize}
 
-\subsection{Domain}
-Write short text about contents of this section.
+\subsection{Functional Requirements}
+This section describes the functions and features of the application.
 
-\subsubsection{Context Diagrams}
-The context diagram of the product can be found in figure~\ref{fig:context}. This diagram shows the interface that the application PostCardBuddy will interact with and the stakeholders who will interact with the application.
+\subsubsection{Domain}
+The domain level requirements provides information about how PostCardBuddy interacts with its surroundings. 
+\paragraph{Context Diagram}
+The context diagram of the product can be found in figure~\ref{fig:context}. This diagram shows the enivronment of the application and the stakeholders interacting with it.
 
-There are two stakeholders that will interact directly with the application; the mobile user and the supplier of images. The mobile user is the one that will use the application for creating its personalized postcard. For the front of the postcard the user shall be able to select an image from the applications standard library. These images will be delivered from supplier, which are shown as \textit{Supplier of images} in the context diagram. 
+There are two stakeholders that will interact directly with the application; the mobile user and the supplier of images. The mobile user will use the application for creating personalized postcards. For the front of the postcard the user shall be able to select an image from the applications standard gallery. These images will be delivered by a \textit{Supplier of images}.
 
-The application needs various of functionality. Some of these functionalities will be used from the users mobile phone. The camera available from the users mobile phone will be used to enable the user to take a picture. The GPS location of the user shall also be provided from the phone. The GPS location will be used to select which pictures will be presented first from the standard library. The contacts available in the users phone will also be used to select recipients. These three permissions shall be confirmed by the user. The user shall also be able to send a digital postcard, via email. 
+ Some of the features of the application will require the use of functionality allready present in the the device. The camera will be used to enable the user to take a picture. The GPS will provide the location of the user. The contacts will be used to select recipients. Finally the E-mail functionality in the device will be used when sending electronic postcards.
+ 
+The user will be charged through a standard payment solution integrated in the application. The charge includes both the cost of the postcard and the franking. 
 
-The user shall also be able to send a physical postcard. This will cost money, which will be taken care of by a payment service. When the payment is done there will be a franking of the postcard. Thereafter the postcard will be sent to a printer. The printer will be placed so that a supplier, shown as \textit{Printer of postcards} in figure~\ref{fig:context}, easily can pic up the card and deliver it to the postal service. The last stage in this chain is the stage where the postal service deliver the physical post card to the desired recipient. 
+When a user sends a postcard it will be sent to the  \textit{Printer of postcards} who delivers the postcard to the postal service. Finally the postal service delivers the physical post card to the final recipients. 
 
 \begin{figure}[h!]
 \centering
@@ -148,9 +165,10 @@ The user shall also be able to send a physical postcard. This will cost money, w
 \caption{Context diagram of product.}
 \label{fig:context}
 \end{figure}
+\FloatBarrier
 
-\subsubsection{Stakeholders}
-Some of the stakeholders for PostCardBuddy are presented in Table~\ref{table:stakeholder}. For each stakeholder there is a number to visualize how much prioritization each stakeholder have. The scale is from 1-5 where 1 represent a high priority and 5 a low priority.
+\paragraph{Stakeholders}
+Selected stakeholders for PostCardBuddy are presented in Table~\ref{table:stakeholder}. For each stakeholder there is a number to visualize the prioritization. The scale is from 1-5 where 1 represent a high priority and 5 a low priority.
 
 
 \begin{table}[h!]
@@ -161,16 +179,17 @@ Some of the stakeholders for PostCardBuddy are presented in Table~\ref{table:sta
 \hline
 Mobile user & 1\\
 \hline
-Printer of images & 2\\
+Printer of postcards & 2\\
 \hline
 Postal service & 2\\
+\hline
+Developers & 3\\
 \hline
 Payment service & 4\\
 \hline
 The existing application \textit{Riktiga Vykort} & 4\\
 \hline
-Developers & 3\\
-\hline
+
 \end{tabular}\\
 \caption{Stakeholder prioritization}
 \label{table:stakeholder}
@@ -178,19 +197,20 @@ Developers & 3\\
 
 \begin{description}
 \item[Mobile user] was given the highest priority since they will be the ultimate users of the product and without them there will be no market.
-\item[Printer of postcards] will act as the key customer, since they placed the order of the product, and thereby given a high priority. 
-\item[Postal service] was given a high priority because they are considered a possible buyer of the application. 
-\item[Payment service] was given a low priority. The payment service will be used only to provide the application with a pay-functionality, and therefore its low priority.
-\item[The existing application \textit{Riktiga Vykort}]  is a competitor to the application. 
-\item[Developers]  decide whether a functionality is reasonable or not.
+\item[Printer of postcards] will act as the key customer, since they placed the order of the product, and are thereby given a high priority. 
+\item[Postal service] was given a high priority because they are considered a possible buyer of the application in the future. 
+\item[Developers] are given a medium priority since they have knowledge about whether a functionality is reasonable or not from a technical perspective.
+\item[Payment service] was given a low priority as the payment service will be used only to provide the application with a standardized pay-functionality which is easily replaced.
+\item[The existing application \textit{Riktiga Vykort}]  is a competitor to the application and is considered mainly as a benchmark and is hence given a low priority. 
+
 \end{description}
 
-\subsubsection{Tasks}
+\paragraph{Tasks}
 \begin {description}
 \item[Work area:]  Vacation
 \newline
-Communicating with friends and family. Usually from a remote location with unreliable internet access. Typically sunny and overall poor working environment. Simplicity is key to capturing important moments. \newline
-Users: Average smart phone user, used to little manual work. 
+Communicating with friends and family. Usually from a remote location with unreliable internet access. Typically outdoors and overall poor working environment. Simplicity is key to capturing important moments. \newline
+Users: Average mobile phone user, used to little manual work. 
 
 \item [Req 1.2.1.1] The system shall support tasks 1.1 and 1.2.
 \item [Task 1.1] Send a postcard.
@@ -225,8 +245,8 @@ Users: Average smart phone user, used to little manual work.
 
 \item \textbf{Sub-tasks:}
 \begin{enumerate}
-\item List sent postcards. 
-\item Search sent postcards.
+\item List sent postcards and recipients. 
+\item Search sent postcards and recipients.
 \item Summary of cost.  
 
 \end{enumerate}
@@ -242,26 +262,113 @@ Users: Average smart phone user, used to little manual work.
 
 
 
-\subsubsection{Interfaces}
+\paragraph{Interfaces}
 \begin {description}
-\item [Req 1.2.2.1 Printer] The interface connecting PostCardBuddy and the printed postcards is an off-the-shelf printer.
-\item [Req 1.2.2.2 Print files] The system sends image files to a printer. 
+\item [Req 1.2.2.1 Printer] The interface connecting PostCardBuddy and the printed postcards is an off-the-shelf color printer able to handle standard image formats.
+
+\item[Req 1.2.2.2 Images] Images for the standard gallery will be provided by the supplier of images in RAW-format.
+
+\item[Req 1.2.2.3 Permissions] When users install the application they shall be prompted to grant permission to use the device functionallity specified in the context diagram.  
 \end{description}
 
-\subsection{Product}
-Short text describing this section.
+\subsubsection{Product}
+This section describes the functionality at the product level. 
 
+\subsubsection{Images} 
+\newcounter{images}
+\stepcounter{images}
+\begin {description}
+\item [Req \thesubsubsection {.\theimages} Image from phone gallery]It shall be possible to choose pictures from the phone gallery for the front of the postcard.
+\stepcounter{images}
+\item [Req \thesubsubsection {.\theimages} Picture from camera] It shall be possible to take a picture with the camera and use as image for the front of the postcard.
+\stepcounter{images}
+\item [Req \thesubsubsection {.\theimages} Image from standard library] It shall be possible to choose pictures from the standard library.
+\stepcounter{images}
+\item [Req \thesubsubsection {.\theimages} Image and GPS position] Images from the standard library shall be presented based on the user's GPS position.
+\stepcounter{images}
+\item [Req \thesubsubsection {.\theimages} Image editing] The system shall have a function for editing images.
+\stepcounter{images}
+\item [Req \thesubsubsection {.\theimages} Image saving] It shall be possible to save images.
+\end{description}
+
+\subsubsection{Greetings}
+\newcounter{greetings}
+\stepcounter{greetings}
 \begin{description}
+	\item [Req \thesubsubsection {.\thegreetings} Greetings] It shall be possible to write greetings in the app.
+	\stepcounter{greetings}
+	\item [Req \thesubsubsection {.\thegreetings} Pictures of handwritten greetings] It shall be possible to choose a picture of a hand-written greeting.
+	\stepcounter{greetings}
+	\item [Req \thesubsubsection {.\thegreetings} Auto-generated greetings] It shall be possible to choose a template greeting.
+	\stepcounter{greetings}
+	\item [Req \thesubsubsection {.\thegreetings} GPS based greetings] The system shall be able to generate greetings based on the GPS position.
+	\stepcounter{greetings} 
+	\item [Req \thesubsubsection {.\thegreetings} Handwritten greetings on screen] It shall be possible to write a handwritten greeting directly on the screen.
+	\stepcounter{greetings}
+	%Ovanstående krav onödingt?
+	\item [Req \thesubsubsection {.\thegreetings} Saving greetings] It shall be possible to save a greeting.
+\end{description}
+
+\subsubsection{Recipients}
+\newcounter{recipients}
+\stepcounter{recipients}
+\begin{description}
+	\item [Req \thesubsubsection {.\therecipients} Enter recipients] It shall be possible to enter recipients manually.
+	\stepcounter{recipients}
+	\item [Req \thesubsubsection {.\therecipients} Phone book recipients] It shall be possible to choose recipients through the contacts of the device.
+	\stepcounter{recipients}
+	\item [Req \thesubsubsection {.\therecipients} Multiple recipients] The system shall be able to handle multiple recipients for one postcard.
+	\stepcounter{recipients}
+	\item [Req \thesubsubsection {.\therecipients} Favourite recipients] It shall be possible to save recipients as favourites.
+	\stepcounter{recipients}
+	\item [Req \thesubsubsection {.\therecipients} Frequent recipients] The system shall show frequently used recipients as favourite recipients.
+\end{description}
+
+\subsubsection{Postcard}
+\newcounter{postcards}
+\stepcounter{postcards}
+\begin{description}
+	\item [Req \thesubsubsection {.\thepostcards} Saving postcards] It shall be possible to save postcards.
+	\stepcounter{postcards}
+	\item [Req \thesubsubsection {.\thepostcards} Reuse postcards] It shall be possible to reuse saved postcards.
+	\stepcounter{postcards}
+	
+	\item [Req \thesubsubsection {.\thepostcards} Preview postcards] It shall be possible to preview postcards before sending it.
+	\stepcounter{postcards}
+	
+	\item [Req \thesubsubsection {.\thepostcards} Digital postcard] It shall be possible to send digital postcards.
+	\stepcounter{postcards}
+	\item [Req \thesubsubsection {.\thepostcards} Physical postcards] It shall be possible to send physical postcards.
+	\stepcounter{postcards}
+	
+	\item [Req \thesubsubsection {.\thepostcards} Payment] It shall be possible to pay for sending physical postcards.
+	\stepcounter{postcards}
+	
+	\item [Req \thesubsubsection {.\thepostcards} Postcard size] It shall be possible to choose the size of the physical postcard.
+	\stepcounter{postcards}
+	\item [Req \thesubsubsection {.\thepostcards} Quality of physical postcard] It shall be possible to choose the print quality of physical postcards. 
+	\stepcounter{postcards}
+	\item [Req \thesubsubsection {.\thepostcards} History] It shall be possible to display the history of sent postcards.
+	
+	%Ska nedanstående krav vara med?
+	\item [Req 1.6.3.8 Social media] Feature for sharing postcards on social media.
+	
+
+		
+
+
+\end{description}
+
+\subsubsection{Notifications}
+\begin{description}
+
 \item [Req 1.3.1.1 Success notification] The user shall be notified when an order is sent from a device.
 \item [Req 1.3.1.2 Fail notification] The user shall be notified when an order fails to be sent from a device.
 
 \item [Req 1.3.1.3 No internet] If the user places an order on a device that is not connected to the internet, the order shall be stored and sent the next time the device receives internet connection. 
-
 \end{description}
-
-
-\subsection{Design}
-Short text describing this section.
+\subsubsection{Design}
+This section describes the design and layout of the application and postcards sent from it. 
 % Är dethär tillräckligt specifikt? Vill man ha en exempel bild och ett krav som säger att vykortet ska följa formtet?
 \begin {description}
 \item [Req 1.4.1.1 Front page] The front of the postcard shall be a field containing an image.
@@ -300,13 +407,13 @@ Short text describing this section.
 \end{figure}
 
 %ref bug?
-\item[Req \tsss.6 Start Screen] The application shall start with a screen where its possible to choose front and back image/text figure \ref{fig:p1}.
+\item[Req \tsss.6 Start Screen] The application shall start with a screen where its possible to choose front and back image/text. See figure \ref{fig:p1}.
 \item[Req \tsss.7 Get image] The application shall let the user choose the image source from a menu figure \ref{fig:p2}.
 \item[Req \tsss.8 Edit image]The application shall give the user a basic image editor to customize the image figure \ref{fig:p3}.
 \item[Req \tsss.9 Recipiant address] The application shall have an address input screen with an address-book/contacts (not in image) figure \ref{fig:p4}.
 \end{description}
 
-\subsection{Data Requirements}
+\subsubsection{Data Requirements}
 Short text describing this section.
 
 %TODO: Beskrivning till E/R, data dictionary och virtual window när man skapar vykort.
@@ -321,7 +428,7 @@ Short text describing this section.
 \label{fig:datamodel}
 \end{figure}
 
-\subsubsection{Data dictionary}
+\paragraph{Data dictionary}
 
 %\begin{description}
 %\item[Class:] \textbf{Name} \hfill \\
@@ -493,7 +600,7 @@ This class represents a printer. The printer is responsible for printing the phy
 \end{description}
 
 
-\subsubsection{Virtual windows}
+\paragraph{Virtual windows}
 \begin {description}
 \item[Req 1.5.1.2 PostCard] The input data to the \textit{PostCard} class described in the Data dictionary shall include the items specified in the virtual window in figure \ref{fig:virtualwindows_postcard}.
 
@@ -527,86 +634,6 @@ This class represents a printer. The printer is responsible for printing the phy
 \end{figure}
 \end{centering}
 
-\subsection{Functional Requirements}
-\subsubsection{Images} 
-\newcounter{images}
-\stepcounter{images}
-\begin {description}
-\item [Req \thesubsubsection {.\theimages} Image from phone gallery]It shall be possible to choose pictures from the phone gallery for the front of the postcard.
-\stepcounter{images}
-\item [Req \thesubsubsection {.\theimages} Picture from camera] It shall be possible to take a picture through the camera and use as image for the front of the postcard.
-\stepcounter{images}
-\item [Req \thesubsubsection {.\theimages} Image from standard library] It shall be possible to choose pictures from a standard library.
-\stepcounter{images}
-\item [Req \thesubsubsection {.\theimages} Image and GPS position] Images from the standard library shall be presented based on the user's GPS position.
-\stepcounter{images}
-\item [Req \thesubsubsection {.\theimages} Image editing] The system shall have a function for editing of images.
-\stepcounter{images}
-\item [Req \thesubsubsection {.\theimages} Image saving] It shall be possible to save images.
-\end{description}
-
-\subsubsection{Greetings}
-\newcounter{greetings}
-\stepcounter{greetings}
-\begin{description}
-\item [Req \thesubsubsection {.\thegreetings} Greetings] It shall be possible to write greetings in the app.
-\stepcounter{greetings}
-\item [Req \thesubsubsection {.\thegreetings} Pictures of handwritten greetings] It shall be possible to choose a picture of a hand-written greeting.
-\stepcounter{greetings}
-\item [Req \thesubsubsection {.\thegreetings} Auto-generated greetings] It shall be possible to choose a template greeting.
-\stepcounter{greetings}
-\item [Req \thesubsubsection {.\thegreetings} GPS based greetings] The system shall be able to generate greetings based on GPS position.
-\stepcounter{greetings} 
-\item [Req \thesubsubsection {.\thegreetings} Handwritten greetings on screen] It shall be possible to write a handwritten greetings directly on the screen.
-\stepcounter{greetings}
-%Ovanstående krav onödingt?
-\item [Req \thesubsubsection {.\thegreetings} Saving greetings] It shall be possible to save a greeting.
-\end{description}
-
-\subsubsection{Recipients}
-\newcounter{recipients}
-\stepcounter{recipients}
-\begin{description}
-\item [Req \thesubsubsection {.\therecipients} Enter recipients] It shall be possible to enter recipients manually.
-\stepcounter{recipients}
-\item [Req \thesubsubsection {.\therecipients} Phone book recipients] It shall be possible to choose recipients through the phone book.
-\stepcounter{recipients}
-\item [Req \thesubsubsection {.\therecipients} Multiple recipients] The system shall be able to handle multiple recipients for one postcard.
-\stepcounter{recipients}
-\item [Req \thesubsubsection {.\therecipients} Favourite recipients] It shall be possible to save recipients as favourites.
-\stepcounter{recipients}
-\item [Req \thesubsubsection {.\therecipients} Frequent recipients] The system shall show frequently used recipients as favourite recipients.
-\end{description}
-
-\subsubsection{Postcard}
-\newcounter{postcards}
-\stepcounter{postcards}
-\begin{description}
-\item [Req \thesubsubsection {.\thepostcards} Saving postcards] It shall be possible to save postcards.
-\stepcounter{postcards}
-\item [Req \thesubsubsection {.\thepostcards} Reuse postcards] It shall be possible to reuse saved postcards.
-\stepcounter{postcards}
-
-\item [Req \thesubsubsection {.\thepostcards} Preview postcards] It shall be possible to preview postcards before sending it.
-\stepcounter{postcards}
-
-\item [Req \thesubsubsection {.\thepostcards} Digital postcard] It shall be possible to send digital postcards.
-\stepcounter{postcards}
-\item [Req \thesubsubsection {.\thepostcards} Physical postcards] It shall be possible to send physical postcards.
-\stepcounter{postcards}
-
-\item [Req \thesubsubsection {.\thepostcards} Payment] It shall be possible to pay for sending physical postcards.
-\stepcounter{postcards}
-
-\item [Req \thesubsubsection {.\thepostcards} Postcard size] It shall be possible to choose the size of the physical postcard.
-\stepcounter{postcards}
-\item [Req \thesubsubsection {.\thepostcards} Quality of physical postcard] It shall be possible to choose the print quality of physical postcards. 
-\stepcounter{postcards}
-\item [Req \thesubsubsection {.\thepostcards} History] It shall be possible to display the history of sent postcards.
-
-%Ska nedanstående krav vara med?
-\item [Req 1.6.3.8 Social media] Feature for sharing postcards on social media.
-\end {description}
 
 \subsection{Quality Requirements}
 

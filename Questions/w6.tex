@@ -156,24 +156,32 @@ Regnell and Sjaak Brinkkemper p. 290-291
 
 
 \section*{AGRE, INTDEP}
-\subsection*{Problem : TITLE OF PROBLEM}
+\subsection*{Problem : Interdependencies}
 \begin{description}
-\item[Proposition] 
-\item[Reason] 
-\item[Correct answer]
-\item[Motivation]
-\item[Reference]
-\item[Learning objective]
+\item[Proposition] The time and effort required to do pairwise assessment of requirements (i.e. finding possible interdependencies between them) is constant no matter how many requirements one have to assess. 
+\item[Reason] Identifying singular requirements can reduce the time and effort needed to do pairwise assessment of a set of requirements. 
+\item[Correct answer] D (The proposition is false, but the reason is a true statement)
+\item[Motivation] The time and effort needed heavily increases with the number of requirements. The number of assessments are 
+\begin{equation}
+\sum_{1}^{n-1}i = \frac{n(n-1)}{2} 
+\end{equation}
+where n is number of requirements. The proposition is therefore false. The reason is a true statement though, since finding the singular requirements usually is a fast and easy task and then the number of assessments are reduced to
+\begin{equation}
+\sum_{1}^{n-1-s}i = \frac{(n-s)(n-1-s)}{2} 
+\end{equation}
+The reason is therefore a true statement.
+\item[Reference] INTDEP, section 3.4
+\item[Learning objective] 3, 4, 7
 \item[Main responsible] Linn\'ea Claesson
 \end{description}
 
-\subsection*{Problem : TITLE OF PROBLEM}
+\subsection*{Problem : Agile RE}
 \begin{description}
-\item[Proposition] 
-\item[Reason] 
-\item[Correct answer]
-\item[Motivation]
-\item[Reference]
+\item[Proposition] Face-to-face communication between and customer and the team is very common in an agile development project.
+\item[Reason] Benefits of face-to-face communication are: 1. Customer can steer the project in new directions. 2. Removes need for time-consuming documentation and approval processes.
+\item[Correct answer] A (Both the proposition and the reason are correct statements, AND the reason explains the proposition in a correct way.)
+\item[Motivation] According to the article, all 16 organizations rely heavily on face-to-face communication, the proposition is true. The reasons were reported by the participants, therefore the statement is true and explains the proposition in a correct way.
+\item[Reference] AGRE, p. 63 
 \item[Learning objective]
 \item[Main responsible] Linn\'ea Claesson
 \end{description}

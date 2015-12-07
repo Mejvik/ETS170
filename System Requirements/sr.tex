@@ -35,7 +35,7 @@
 
 
 \begin{flushright}
-December 1, 2015 v1.11\\[3cm]
+December 7, 2015 v2.01\\[3cm]
 \end{flushright}
 
 
@@ -212,7 +212,9 @@ The existing application \textit{Riktiga Vykort} & 4\\
 Communicating with friends and family. Usually from a remote location with unreliable internet access. Typically outdoors and overall poor working environment. Simplicity is key to capturing important moments. \newline
 Users: Average mobile phone user, used to little manual work. 
 
-\item [Req 1.2.1.1] The system shall support tasks 1.1 and 1.2.
+\newcounter{tasks}
+\stepcounter{tasks}
+	\item [Req \thesubsubsection {.\thetasks}] The system shall support tasks 1.1 and 1.2.
 \item [Task 1.1] Send a postcard.
 \begin {description}
 \item \textbf{Purpose:} Take a picture. Edit the picture. Add a message. Add recipients. Send postcard.
@@ -263,126 +265,149 @@ Users: Average mobile phone user, used to little manual work.
 
 
 \paragraph{Interfaces}
+Requirements related to the interfaces of the product.
+
 \begin {description}
-\item [Req 1.2.2.1 Printer] The interface connecting PostCardBuddy and the printed postcards is an off-the-shelf color printer able to handle standard image formats.
+\newcounter{interf}
+\stepcounter{interf}
+	\item [Req \thesubsubsection {.\theinterf} Printer] The interface connecting PostCardBuddy and the printed postcards is an off-the-shelf color printer able to handle standard image formats.
 
-\item[Req 1.2.2.2 Images] Images for the standard gallery will be provided by the supplier of images in RAW-format.
+\stepcounter{interf}
+	\item [Req \thesubsubsection {.\theinterf} Images] Images for the standard gallery will be provided by the supplier of images in RAW-format.
 
-\item[Req 1.2.2.3 Permissions] When users install the application they shall be prompted to grant permission to use the device functionallity specified in the context diagram.  
+\stepcounter{interf}
+	\item [Req \thesubsubsection {.\theinterf} Permissions] When users install the application they shall be prompted to grant permission to use the device functionallity specified in the context diagram.  
 \end{description}
 
 \subsubsection{Product}
 This section describes the functionality at the product level. 
+\newcounter{product}
+\stepcounter{product}
 
 \paragraph{Images} 
-\newcounter{images}
-\stepcounter{images}
+Requirements related to the handling of images.
+
 \begin {description}
-\item [Req \thesubsubsection {.\theimages} Image from phone gallery]It shall be possible to choose pictures from the phone gallery for the front of the postcard.
-\stepcounter{images}
-\item [Req \thesubsubsection {.\theimages} Picture from camera] It shall be possible to take a picture with the camera and use as image for the front of the postcard.
-\stepcounter{images}
-\item [Req \thesubsubsection {.\theimages} Image from standard library] It shall be possible to choose pictures from the standard library.
-\stepcounter{images}
-\item [Req \thesubsubsection {.\theimages} Image and GPS position] Images from the standard library shall be presented based on the user's GPS position.
-\stepcounter{images}
-\item [Req \thesubsubsection {.\theimages} Image editing] The system shall have a function for editing images.
-\stepcounter{images}
-\item [Req \thesubsubsection {.\theimages} Image saving] It shall be possible to save images.
+\item [Req \thesubsubsection {.\theproduct} Image from phone gallery]It shall be possible to choose pictures from the phone gallery for the front of the postcard.
+\stepcounter{product}
+\item [Req \thesubsubsection {.\theproduct} Picture from camera] It shall be possible to take a picture with the camera and use as image for the front of the postcard.
+\stepcounter{product}
+\item [Req \thesubsubsection {.\theproduct} Image from standard library] It shall be possible to choose pictures from the standard library.
+\stepcounter{product}
+\item [Req \thesubsubsection {.\theproduct} Image and GPS position] Images from the standard library shall be presented based on the user's GPS position.
+\stepcounter{product}
+\item [Req \thesubsubsection {.\theproduct} Image editing] The system shall have a function for editing images.
+\stepcounter{product}
+\item [Req \thesubsubsection {.\theproduct} Image saving] It shall be possible to save images.
 \end{description}
 
 \paragraph{Greetings}
-\newcounter{greetings}
-\stepcounter{greetings}
+Requirements related to greetings.
+
+\stepcounter{product}
 \begin{description}
-	\item [Req \thesubsubsection {.\thegreetings} Greetings] It shall be possible to write greetings in the app.
-	\stepcounter{greetings}
-	\item [Req \thesubsubsection {.\thegreetings} Pictures of handwritten greetings] It shall be possible to choose a picture of a hand-written greeting.
-	\stepcounter{greetings}
-	\item [Req \thesubsubsection {.\thegreetings} Auto-generated greetings] It shall be possible to choose a template greeting.
-	\stepcounter{greetings}
-	\item [Req \thesubsubsection {.\thegreetings} GPS based greetings] The system shall be able to generate greetings based on the GPS position.
-	\stepcounter{greetings} 
-	\item [Req \thesubsubsection {.\thegreetings} Handwritten greetings on screen] It shall be possible to write a handwritten greeting directly on the screen.
-	\stepcounter{greetings}
+	\item [Req \thesubsubsection {.\theproduct} Greetings] It shall be possible to write greetings in the app.
+	\stepcounter{product}
+	\item [Req \thesubsubsection {.\theproduct} Pictures of handwritten greetings] It shall be possible to choose a picture of a hand-written greeting.
+	\stepcounter{product}
+	\item [Req \thesubsubsection {.\theproduct} Auto-generated greetings] It shall be possible to choose a template greeting.
+	\stepcounter{product}
+	\item [Req \thesubsubsection {.\theproduct} GPS based greetings] The system shall be able to generate greetings based on the GPS position.
+	\stepcounter{product} 
+	\item [Req \thesubsubsection {.\theproduct} Handwritten greetings on screen] It shall be possible to write a handwritten greeting directly on the screen.
+	\stepcounter{product}
 	%Ovanstående krav onödingt?
-	\item [Req \thesubsubsection {.\thegreetings} Saving greetings] It shall be possible to save a greeting.
+	\item [Req \thesubsubsection {.\theproduct} Saving greetings] It shall be possible to save a greeting.
 \end{description}
 
 \paragraph{Recipients}
-\newcounter{recipients}
-\stepcounter{recipients}
+Requirements related to handling of recipients.
+
+\stepcounter{product}
 \begin{description}
-	\item [Req \thesubsubsection {.\therecipients} Enter recipients] It shall be possible to enter recipients manually.
-	\stepcounter{recipients}
-	\item [Req \thesubsubsection {.\therecipients} Phone book recipients] It shall be possible to choose recipients through the contacts of the device.
-	\stepcounter{recipients}
-	\item [Req \thesubsubsection {.\therecipients} Multiple recipients] The system shall be able to handle multiple recipients for one postcard.
-	\stepcounter{recipients}
-	\item [Req \thesubsubsection {.\therecipients} Favourite recipients] It shall be possible to save recipients as favourites.
-	\stepcounter{recipients}
-	\item [Req \thesubsubsection {.\therecipients} Frequent recipients] The system shall show frequently used recipients as favourite recipients.
+	\item [Req \thesubsubsection {.\theproduct} Enter recipients] It shall be possible to enter recipients manually.
+	\stepcounter{product}
+	\item [Req \thesubsubsection {.\theproduct} Phone book recipients] It shall be possible to choose recipients through the contacts of the device.
+	\stepcounter{product}
+	\item [Req \thesubsubsection {.\theproduct} Multiple recipients] The system shall be able to handle multiple recipients for one postcard.
+	\stepcounter{product}
+	\item [Req \thesubsubsection {.\theproduct} Favourite recipients] It shall be possible to save recipients as favourites.
+	\stepcounter{product}
+	\item [Req \thesubsubsection {.\theproduct} Frequent recipients] The system shall show frequently used recipients as favourite recipients.
 \end{description}
 
 \paragraph{Postcard}
-\newcounter{postcards}
-\stepcounter{postcards}
+Requirements related to functionality and handling of the finished postcard.
+
+\stepcounter{product}
 \begin{description}
-	\item [Req \thesubsubsection {.\thepostcards} Saving postcards] It shall be possible to save postcards.
-	\stepcounter{postcards}
-	\item [Req \thesubsubsection {.\thepostcards} Reuse postcards] It shall be possible to reuse saved postcards.
-	\stepcounter{postcards}
+	\item [Req \thesubsubsection {.\theproduct} Saving postcards] It shall be possible to save postcards.
+	\stepcounter{product}
+	\item [Req \thesubsubsection {.\theproduct} Reuse postcards] It shall be possible to reuse saved postcards.
+	\stepcounter{product}
 	
-	\item [Req \thesubsubsection {.\thepostcards} Preview postcards] It shall be possible to preview postcards before sending it.
-	\stepcounter{postcards}
+	\item [Req \thesubsubsection {.\theproduct} Preview postcards] It shall be possible to preview postcards before sending it.
+	\stepcounter{product}
 	
-	\item [Req \thesubsubsection {.\thepostcards} Digital postcard] It shall be possible to send digital postcards.
-	\stepcounter{postcards}
-	\item [Req \thesubsubsection {.\thepostcards} Physical postcards] It shall be possible to send physical postcards.
-	\stepcounter{postcards}
+	\item [Req \thesubsubsection {.\theproduct} Digital postcard] It shall be possible to send digital postcards.
+	\stepcounter{product}
+	\item [Req \thesubsubsection {.\theproduct} Physical postcards] It shall be possible to send physical postcards.
+	\stepcounter{product}
 	
-	\item [Req \thesubsubsection {.\thepostcards} Payment] It shall be possible to pay for sending physical postcards.
-	\stepcounter{postcards}
+	\item [Req \thesubsubsection {.\theproduct} Payment] It shall be possible to pay for sending physical postcards.
+	\stepcounter{product}
 	
-	\item [Req \thesubsubsection {.\thepostcards} Postcard size] It shall be possible to choose the size of the physical postcard.
-	\stepcounter{postcards}
-	\item [Req \thesubsubsection {.\thepostcards} Quality of physical postcard] It shall be possible to choose the print quality of physical postcards. 
-	\stepcounter{postcards}
-	\item [Req \thesubsubsection {.\thepostcards} History] It shall be possible to display the history of sent postcards.
+	\item [Req \thesubsubsection {.\theproduct} Postcard size] It shall be possible to choose the size of the physical postcard.
+	\stepcounter{product}
+	\item [Req \thesubsubsection {.\theproduct} Quality of physical postcard] It shall be possible to choose the print quality of physical postcards. 
+	\stepcounter{product}
+	\item [Req \thesubsubsection {.\theproduct} History] It shall be possible to display the history of sent postcards.
 	
 	%Ska nedanstående krav vara med?
-	\item [Req 1.6.3.8 Social media] Feature for sharing postcards on social media.
-	
-
-		
-
-
+	\stepcounter{product}
+	\item [Req \thesubsubsection {.\theproduct} Social media] Feature for sharing postcards on social media.
 \end{description}
 
 \paragraph{Notifications}
+Requirements on how to manage notifications.
+
 \begin{description}
+\stepcounter{product}
+	\item [Req \thesubsubsection {.\theproduct} Success notification] The user shall be notified when an order is sent from a device.
+\stepcounter{product}
+	\item [Req \thesubsubsection {.\theproduct} Fail notification] The user shall be notified when an order fails to be sent from a device.
 
-\item [Req 1.3.1.1 Success notification] The user shall be notified when an order is sent from a device.
-\item [Req 1.3.1.2 Fail notification] The user shall be notified when an order fails to be sent from a device.
-
-\item [Req 1.3.1.3 No internet] If the user places an order on a device that is not connected to the internet, the order shall be stored and sent the next time the device receives internet connection. 
+\stepcounter{product}
+	\item [Req \thesubsubsection {.\theproduct} No internet] If the user places an order on a device that is not connected to the internet, the order shall be stored and sent the next time the device receives internet connection. 
 \end{description}
+
 \subsubsection{Design}
 This section describes the design and layout of the application and postcards sent from it. 
+
+\newcounter{design}
 % Är dethär tillräckligt specifikt? Vill man ha en exempel bild och ett krav som säger att vykortet ska följa formtet?
 \begin {description}
-\item [Req 1.4.1.1 Front page] The front of the postcard shall be a field containing an image.
-\item [Req 1.4.1.2 Text field] The back of the postcard shall contain a text field.
-\item [Req 1.4.1.3 Address field] The back of the postcard shall contain an address field.
-\item [Req 1.4.1.4 Postage field] The back of the postcard shall contain a postage field. 
-\item [Req 1.4.1.5 Postage print] The postage shall be printed in the top right corner on the back of the postcard. 
+\stepcounter{design}
+	\item [Req \thesubsubsection {.\thedesign} Front page] The front of the postcard shall be a field containing an image.
+\stepcounter{design}
+	\item [Req \thesubsubsection {.\thedesign} Text field] The back of the postcard shall contain a text field.
+\stepcounter{design}
+	\item [Req \thesubsubsection {.\thedesign} Address field] The back of the postcard shall contain an address field.
+\stepcounter{design}
+	\item [Req \thesubsubsection {.\thedesign} Postage field] The back of the postcard shall contain a postage field. 
+\stepcounter{design}
+	\item [Req \thesubsubsection {.\thedesign} Postage print] The postage shall be printed in the top right corner on the back of the postcard. 
 
 
 %ref bug?
-\item[Req \tsss.6 Start Screen] The application shall start with a screen where its possible to choose front and back image/text. See figure \ref{fig:p1}.
-\item[Req \tsss.7 Get image] The application shall let the user choose the image source from a menu. See figure \ref{fig:p2}.
-\item[Req \tsss.8 Edit image]The application shall give the user a basic image editor to customize the image. See figure \ref{fig:p3}.
-\item[Req \tsss.9 Recipiant address] The application shall have an address input screen with an address-book/contacts (not in image). See figure \ref{fig:p4}.
+\stepcounter{design}
+	\item [Req \thesubsubsection {.\thedesign} Start Screen] The application shall start with a screen where its possible to choose front and back image/text. See figure \ref{fig:p1}.
+\stepcounter{design}
+	\item [Req \thesubsubsection {.\thedesign} Get image] The application shall let the user choose the image source from a menu. See figure \ref{fig:p2}.
+\stepcounter{design}
+	\item [Req \thesubsubsection {.\thedesign} Edit image]The application shall give the user a basic image editor to customize the image. See figure \ref{fig:p3}.
+\stepcounter{design}
+	\item [Req \thesubsubsection {.\thedesign} Recipiant address] The application shall have an address input screen with an address-book/contacts (not in image). See figure \ref{fig:p4}.
 \end{description}
 
 \begin{figure}[p]
@@ -422,9 +447,12 @@ This section describes the design and layout of the application and postcards se
 \subsubsection{Data Requirements}
 This section describes the data requirements of the application.
 
+\newcounter{data}
+
 %TODO: Beskrivning till E/R, data dictionary och virtual window när man skapar vykort.
 \begin {description}
-\item[Req 1.5.1.1 Data model] The system shall handle the data presented in the data model in figure \ref{fig:datamodel}.
+\stepcounter{data}
+	\item [Req \thesubsubsection {.\thedata} Data model] The system shall handle the data presented in the data model in figure \ref{fig:datamodel}.
 \end{description}
 
 \begin{figure}[h!]
@@ -607,12 +635,17 @@ This class represents a printer. The printer is responsible for printing the phy
 
 
 \paragraph{Virtual windows}
+Virtual windows displaying data of product can be seen in figures~\ref{fig:virtualwindows_postcard}-\ref{fig:virtualwindows_recipient}.
+
 \begin {description}
-\item[Req 1.5.1.2 PostCard] The input data to the \textit{PostCard} class described in the Data dictionary shall include the items specified in the virtual window in figure \ref{fig:virtualwindows_postcard}.
+\stepcounter{data}
+	\item [Req \thesubsubsection {.\thedata} PostCard] The input data to the \textit{PostCard} class described in the Data dictionary shall include the items specified in the virtual window in figure \ref{fig:virtualwindows_postcard}.
 
-\item[Req 1.5.1.3 Sender] The input data to the \textit{Sender} class described in the Data dictionary shall include the items specified in the virtual window in figure \ref{fig:virtualwindows_sender}.
+\stepcounter{data}
+	\item [Req \thesubsubsection {.\thedata} Sender] The input data to the \textit{Sender} class described in the Data dictionary shall include the items specified in the virtual window in figure \ref{fig:virtualwindows_sender}.
 
-\item[Req 1.5.1.4 Recipient] The input data to the \textit{Recipient} class described in the Data dictionary shall include the items specified in the virtual window in figure \ref{fig:virtualwindows_recipient}.
+\stepcounter{data}
+	\item [Req \thesubsubsection {.\thedata} Recipient] The input data to the \textit{Recipient} class described in the Data dictionary shall include the items specified in the virtual window in figure \ref{fig:virtualwindows_recipient}.
 
 \end{description}
 \hfill
@@ -690,25 +723,47 @@ A quper diagram takes into consideration quality and performace. This specific q
 
 
 \subsubsection{Performance}
+Requirements relating to performance or product.
+
+\newcounter{perf}
 \begin{description}
-	\item[Req \tsss.1 Memory usage] The application shall adjust its memory usage depending on the device.
-	\item[Req \tsss.2 Speed] The user interface shall respond within 200ms after a finished user interaction if there should be an response. This is only applied on devices faster than Nexus 5 / iPhone 5 running original firmware without any other user installed applications on the phone.
-	\item[Req \tsss.3 Picture quality] The camera shall be able to take a picture in the highest hardware supported resolution. 
-	\item[Req \tsss.4 Autofocus] The camera shall have a autofocus that is comparable to the Android / iOS stock camera. 
+	\stepcounter{perf}
+	\item [Req \thesubsubsection {.\theperf} Memory usage] The application shall adjust its memory usage depending on the device.
+		\stepcounter{perf}
+	\item [Req \thesubsubsection {.\theperf} Speed] The user interface shall respond within 200ms after a finished user interaction if there should be an response. This is only applied on devices faster than Nexus 5 / iPhone 5 running original firmware without any other user installed applications on the phone.
+		\stepcounter{perf}
+	\item [Req \thesubsubsection {.\theperf} Picture quality] The camera shall be able to take a picture in the highest hardware supported resolution. 
+		\stepcounter{perf}
+	\item [Req \thesubsubsection {.\theperf} Autofocus] The camera shall have a autofocus that is comparable to the Android / iOS stock camera. 
 \end{description}
+
 \subsubsection{Availability}
+\newcounter{avail}
+
 \subsubsection{Security}
+Security requirements of product.
+\newcounter{sec}
 \begin{description}
-	\item[Req \tsss.1 Store cards] The photos shall be stored encrypted
+		\stepcounter{sec}
+	\item [Req \thesubsubsection {.\thesec} Store cards] The photos shall be stored encrypted
 \end{description}
+
 \subsubsection{Maintainability/Portability}
+Maintainability and portability of product.
+\newcounter{mapo}
 \begin{description}
-	\item[Req \tsss.1 Language] The application shall be developed in non native language e.g. Java for Android. 
-	\item[Req \tsss.2 Device support] The application shall work on devices with newer operating systems than Android 4.1 / iOS 7.0.1
+		\stepcounter{mapo}
+	\item [Req \thesubsubsection {.\themapo} Language] The application shall be developed in non native language e.g. Java for Android. 
+		\stepcounter{mapo}
+	\item [Req \thesubsubsection {.\themapo} Device support] The application shall work on devices with newer operating systems than Android 4.1 / iOS 7.0.1
 \end{description}
+
 \subsubsection{Usability}
+Usability of product.
+\newcounter{usab}
 \begin{description}
-	\item [Req \tsss.1 User friendly] 9 out of 10 users shall be able to use the system after a five minute instruction.
+		\stepcounter{usab}
+	\item [Req \thesubsubsection {.\theusab} User friendly] 9 out of 10 users shall be able to use the system after a five minute instruction.
 \end{description}
 
 

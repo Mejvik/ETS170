@@ -15,6 +15,7 @@
 \usepackage{enumitem}
 \usepackage{titlesec}
 \usepackage{placeins}
+\usepackage{subcaption}
 \newcommand{\tsss}{\thesubsubsection}
 
 \title{PostCardBuddy}
@@ -35,7 +36,7 @@
 
 
 \begin{flushright}
-December 8, 2015 v2.02\\[3cm]
+December 8, 2015 v2.03\\[3cm]
 \end{flushright}
 
 
@@ -316,8 +317,8 @@ Requirements related to greetings.
 	\item [Req \thesubsubsection {.\theproduct} GPS based greetings] The system shall be able to generate greetings based on the GPS position.
 	\stepcounter{product} 
 	\item [Req \thesubsubsection {.\theproduct} Handwritten greetings on screen] It shall be possible to write a handwritten greeting directly on the screen.
+		%Ovanstående krav onödingt?
 	\stepcounter{product}
-	%Ovanstående krav onödingt?
 	\item [Req \thesubsubsection {.\theproduct} Saving greetings] It shall be possible to save a greeting.
 \end{description}
 
@@ -385,6 +386,8 @@ Requirements on how to manage notifications.
 \subsubsection{Design}
 This section describes the design and layout of the application and postcards sent from it. 
 
+The images in figure~\ref{fig:prot} are from a prototype and should be used as a guideline rather than as a design requirement.
+
 \newcounter{design}
 % Är dethär tillräckligt specifikt? Vill man ha en exempel bild och ett krav som säger att vykortet ska följa formtet?
 \begin {description}
@@ -411,39 +414,41 @@ This section describes the design and layout of the application and postcards se
 	\item [Req \thesubsubsection {.\thedesign} Recipient address] The application shall have an address input screen with an address-book/contacts (not in image), see figure \ref{fig:p4}.
 \end{description}
 
+
+
 \begin{figure}[p]
 	\centering
-	\begin{minipage}{0.5\textwidth}
+	\begin{subfigure}{0.5\textwidth}
 		\centering
 		\includegraphics[width=0.5\textwidth]{Prototype_img/p1.png}
 		\caption{Start}
 		\label{fig:p1}
-	\end{minipage}~
-	\begin{minipage}{0.5\textwidth}
+	\end{subfigure}~
+	\begin{subfigure}{0.5\textwidth}
 		\centering
 		\includegraphics[width=0.5\textwidth]{Prototype_img/p2.png}
 		\caption{Choose image source}
 		\label{fig:p2}
-	\end{minipage}\\[0.5cm]
-	\begin{minipage}{0.5\textwidth}
+	\end{subfigure}\\[0.5cm]
+	\begin{subfigure}{0.5\textwidth}
 		\centering
 		\includegraphics[width=0.5\textwidth]{Prototype_img/p3.png}
 		\caption{Image editor}
 		\label{fig:p3}
-	\end{minipage}~
-	\begin{minipage}{0.5\textwidth}
+	\end{subfigure}~
+	\begin{subfigure}{0.5\textwidth}
 		\centering
 		\includegraphics[width=0.5\textwidth]{Prototype_img/p4.png}
 		\caption{Recipient information}
 		\label{fig:p4}
-	\end{minipage}
-
-
+	\end{subfigure}
+	\caption{Example prototype of product.}
+	\label{fig:prot}
 \end{figure}
 \FloatBarrier
 
 
-	The images in figures \ref{fig:p1}-\ref{fig:p4} are from a  prototype and should be used as a guideline rather than as a design requirement.
+	
 
 \subsubsection{Data Requirements}
 This section describes the data requirements of the application.
@@ -636,7 +641,7 @@ This class represents a printer. The printer is responsible for printing the phy
 
 
 \paragraph{Virtual windows}
-Virtual windows displaying data of product can be seen in figures~\ref{fig:virtualwindows_postcard}-\ref{fig:virtualwindows_recipient}.
+Virtual windows displaying data of product can be seen in figure~\ref{fig:vw}.
 
 \begin {description}
 \stepcounter{data}
@@ -650,29 +655,32 @@ Virtual windows displaying data of product can be seen in figures~\ref{fig:virtu
 
 \end{description}
 \hfill
-%I'll leave this here for now in case a Latex ninja knows what to do. I want to put them in a row, not column.
-\begin{centering}
+
+
 \begin{figure}[!ht]
-\begin{minipage}{0.3\textwidth}
+\centering
+\begin{subfigure}{0.3\textwidth}
 \includegraphics[width=\linewidth]{Data_figures/virtualwindows_postcard.pdf}
-\caption{Virtual window PostCard}
+\caption{PostCard}
 \label{fig:virtualwindows_postcard}
-\end{minipage}\hfill
+\end{subfigure}\hfill
 ~
-\begin{minipage}{0.3\textwidth}
+\begin{subfigure}{0.3\textwidth}
 \includegraphics[width=\linewidth]{Data_figures/virtualwindows_sender.pdf}
-\caption{Virtual window Sender}
+\caption{Sender}
 \label{fig:virtualwindows_sender}
-\end{minipage}\hfill
+\end{subfigure}\hfill
 ~
-\begin{minipage}{0.3\textwidth}
+\begin{subfigure}{0.3\textwidth}
 \includegraphics[width=\linewidth]{Data_figures/virtualwindows_recipient.pdf}
-\caption{Virtual window Recipient}
+\caption{Recipient}
 \label{fig:virtualwindows_recipient}
-\end{minipage}
+\end{subfigure}
+\caption{Virtual windows displaying data of product.}
+\label{fig:vw}
 
 \end{figure}
-\end{centering}
+
 
 
 \subsection{Quality Requirements}

@@ -143,9 +143,9 @@ The process of sending postcards is time consuming and somewhat tedious. The pro
 The product aims to establish the key customer in the postcard sending market and shall achieve this through the following goals:
 
 \begin{enumerate}
-\item Simplify the process of sending postcards
-\item Enable user to send personalized postcards
-\item Enable revenue generation for the printer of postcards
+\item Simplify the process of sending postcards \label{goal:simpl}
+\item Enable user to send personalized postcards \label{goal:pers}
+\item Enable revenue generation for the printer of postcards \label{goal:rev}
 \end{enumerate}
 
 \subsection{Functional Requirements}
@@ -207,7 +207,7 @@ The existing application \textit{Riktiga Vykort} & 4\\
 \item[Postal service] was given a high priority because they are considered a possible buyer of the application in the future. 
 \item[Developers] are given a medium priority since they have knowledge about whether a functionality is reasonable or not from a technical perspective.
 \item[Payment service] was given a low priority as the payment service will be used only to provide the application with a standardized pay-functionality and is replaceable.
-\item[The existing application \textit{Riktiga Vykort}]  is a competitor to the application and is considered mainly as a benchmark and is hence given a low priority. 
+\item[The existing application \textit{Riktiga Vykort}]  is a competitor to the application and has only been used for comparison and is hence given a low priority. 
 
 \end{description}
 
@@ -335,10 +335,16 @@ Requirements related to the interfaces of the product.
 	\item [Req \thesubsubsection {.\theinterf} Printer] The interface connecting PostCardBuddy and the printed postcards is an off-the-shelf color printer able to handle standard image formats.
 
 \stepcounter{interf}
-	\item [Req \thesubsubsection {.\theinterf} Images] Images for the standard gallery will be provided by the supplier of images in RAW-format.
+	\item [Req \thesubsubsection {.\theinterf} Images] Images for the standard gallery will be provided by the supplier of images in JPEG, bnp or png format.
+
+	\stepcounter{interf}
+	\item [Req \thesubsubsection {.\theinterf} Data of images] The supplier of images shall tag the image with its GPS coordinates and the system shall be able to handle this data.
 
 \stepcounter{interf}
 	\item [Req \thesubsubsection {.\theinterf} Permissions] When users install the application they shall be prompted to grant permission to use the device functionality specified in the context diagram.  
+	\begin{description}
+\item[Example:] Camera, GPS etc.
+	\end{description} 
 \end{description}
 
 \subsubsection{Product}
@@ -347,41 +353,32 @@ This section describes the functionality at the product level.
 \stepcounter{product}
 
 \paragraph{Images} 
-Requirements related to the handling of images.
+Requirements related to the handling of images and all of them contribute to fulfil goal~\ref{goal:simpl}. Additionally, requirements~\thesubsubsection .1, \thesubsubsection .2 and \thesubsubsection .5 contribute to meet goal~\ref{goal:pers}.	
 
 \begin {description}
-\item [Req \thesubsubsection {.\theproduct} Image from phone gallery]It shall be possible to choose pictures from the phone gallery for the front of the postcard.
+\item [Req \thesubsubsection {.\theproduct} Image from phone gallery] It shall be possible to choose pictures from the phone gallery for the front of the postcard.
 \stepcounter{product}
-\item [Req \thesubsubsection {.\theproduct} Picture from camera] It shall be possible to take a picture with the camera and use as image for the front of the postcard.
+\item [Req \thesubsubsection {.\theproduct} Image from camera] It shall be possible to take a picture with the camera within the application and use as image for the front of the postcard. 
 \stepcounter{product}
 \item [Req \thesubsubsection {.\theproduct} Image from standard gallery] It shall be possible to choose pictures from the standard gallery.
 \stepcounter{product}
-\item [Req \thesubsubsection {.\theproduct} Image and GPS position] Images from the standard gallery shall be presented based on the user's GPS position.
+\item [Req \thesubsubsection {.\theproduct} Image and GPS position] Images from the standard gallery shall be sorted based on the user's GPS position.
 \stepcounter{product}
-\item [Req \thesubsubsection {.\theproduct} Image editing] The product shall have a function for editing images.
+\item [Req \thesubsubsection {.\theproduct} Image editing] The product shall have the following functions for editing images; brightness, contrast, cropping, remove red eyes, filters, pen and text.
 \stepcounter{product}
-\item [Req \thesubsubsection {.\theproduct} Image saving] It shall be possible to save images.
+\item [Req \thesubsubsection {.\theproduct} Image saving] It shall be possible to save images to the phone gallery.
 \end{description}
 
 \paragraph{Greetings}
-<<<<<<< HEAD
 Requirements related to greetings, all of them contribute to fulfil goal~\ref{goal:simpl}. Additionally, requirement~\thesubsubsection .7 contributes to meet goal~\ref{goal:pers}.
-=======
-Requirements related to greetings.
->>>>>>> bcfded5e51668ab89d6b73a2929206e3f559d9a8
 
 \stepcounter{product}
 \begin{description}
 	\item [Req \thesubsubsection {.\theproduct} Greetings] It shall be possible to write greetings within the application.
 	\stepcounter{product}
-	\item [Req \thesubsubsection {.\theproduct} Pictures of handwritten greetings] It shall be possible to choose a picture of a hand-written greeting.
-	\stepcounter{product}
 	\item [Req \thesubsubsection {.\theproduct} Auto-generated greetings] It shall be possible to choose a template greeting.
 	\stepcounter{product}
 	\item [Req \thesubsubsection {.\theproduct} GPS based greetings] The product shall be able to generate greetings based on the GPS position.
-	\stepcounter{product} 
-	\item [Req \thesubsubsection {.\theproduct} Handwritten greetings on screen] It shall be possible to write a handwritten greeting directly on the screen.
-		%Ovanstående krav onödingt?
 	\stepcounter{product}
 	\item [Req \thesubsubsection {.\theproduct} Saving greetings] It shall be possible to save a greeting.
 \end{description}

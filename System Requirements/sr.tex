@@ -800,33 +800,20 @@ Requirements relating to performance of product.
 \newcounter{perf}
 \begin{description}
 	\stepcounter{perf}
-	\item [Req \thesubsubsection {.\theperf} Memory usage] The application shall adjust its memory usage depending on the device.
-		\stepcounter{perf}
-	\item [Req \thesubsubsection {.\theperf} Speed] The user interface shall respond within 200~ms after a finished user interaction if there should be an response. This is only applied on devices faster than Nexus~5/iPhone~5 running original firmware without any other user installed applications on the phone.
-		\stepcounter{perf}
+	\item [Req \thesubsubsection {.\theperf} Speed] The user interface shall respond within 200~ms after a finished user interaction if there should be an response. This is only applied on devices faster than Nexus~5/iPhone~5 running original firmware without any other user installed applications on the phone. The test shall be done so that the above values can be guaranteed within a 95\% confidence interval.
+	\stepcounter{perf}
 	\item [Req \thesubsubsection {.\theperf} Picture quality] The camera shall be able to take a picture in the highest hardware supported resolution. 
-		\stepcounter{perf}
-	\item [Req \thesubsubsection {.\theperf} Autofocus] The camera shall have an autofocus that is comparable to the Android/iOS stock camera. 
-\end{description}
-
-\subsubsection{Availability}
-\newcounter{avail}
-
-\subsubsection{Security}
-Security requirements of product.
-\newcounter{sec}
-\begin{description}
-		\stepcounter{sec}
-	\item [Req \thesubsubsection {.\thesec} Store cards] The photos shall be stored encrypted.
+	\stepcounter{perf}
+	\item [Req \thesubsubsection {.\theperf} Autofocus] The camera shall have an autofocus that is comparable to the Android/iOS stock camera. This means that the time to focus can't take longer than 0.5 sec more than the stock camera and the focus plane distance must be within 30\% of the stock camera. The motive should be light and have good contrast to support for this requirement. The test shall be done so that the above values can be guaranteed within a 95\% confidence interval.
 \end{description}
 
 \subsubsection{Maintainability/Portability}
 Maintainability and portability of product.
 \newcounter{mapo}
 \begin{description}
-		\stepcounter{mapo}
+	\stepcounter{mapo}
 	\item [Req \thesubsubsection {.\themapo} Language] The application shall be developed in non-native language e.g. Java for Android. 
-		\stepcounter{mapo}
+	\stepcounter{mapo}
 	\item [Req \thesubsubsection {.\themapo} Device support] The application shall work on devices with operating systems Android~4.1/iOS~7.0.1 or newer.
 \end{description}
 
@@ -834,7 +821,7 @@ Maintainability and portability of product.
 Usability of product.
 \newcounter{usab}
 \begin{description}
-		\stepcounter{usab}
+	\stepcounter{usab}
 	\item [Req \thesubsubsection {.\theusab} User friendly] 9 out of 10 users shall be able to use the application after a five minute instruction.
 \end{description}
 

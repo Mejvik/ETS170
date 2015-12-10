@@ -211,26 +211,35 @@ The existing application \textit{Riktiga Vykort} & 4\\
 
 \end{description}
 
+
 \paragraph{Tasks}
+
+
 \begin {description}
-\item[Work area:]  Vacation
-\newline
-Communicating with friends and family. Usually from a remote location with unreliable internet access. Typically outdoors and overall poor working environment. Simplicity is key to capturing important moments. \newline
-Users: Average smart phone user, used to little manual work. 
 
 \newcounter{tasks}
 \stepcounter{tasks}
-	\item [Req \thesubsubsection {.\thetasks}] The product shall support tasks 1.1 and 1.2.
-\item [Task 1.1] Send a postcard.
+\item [Req \thesubsubsection {.\thetasks}] The product shall support the following user tasks.
+
+\item[Work area: 1. Vacation] \mbox{}\\
+Communicating with friends and family. Usually from a remote location with unreliable internet access. Typically outdoors and overall poor working environment. Simplicity is key to capturing important moments. \newline
+Users: Average smart phone user, used to little manual work. 
+
+\item[Work area: 2. Holidays] \mbox{}\\
+Communicating with friends and family. Usually in connection to holidays, e.g. Christmas. Personalization and simplicity is important.
+ \newline
+Users: Average smart phone user, used to little manual work.
+
+\item [Task 1.1] Send a physical postcard.
 \begin {description}
-\item \textbf{Purpose:} Take a picture. Edit the picture. Add a message. Add recipients. Send postcard.
 \item \textbf{Precondition:} PostcardBuddy is running.
 
 \item \textbf{Sub-tasks:}
 \begin{enumerate}
 \item Use the camera in the device to take a picture.
-\item Allow basic editing of pictures.
-\item Save pictures.
+\item Allow editing of images.
+\item Save images.
+\item Add greeting.
 \item Add recipients from address book. 
 \item Save finished postcard.
 \item Preview postcard.
@@ -239,23 +248,70 @@ Users: Average smart phone user, used to little manual work.
 
 \item \textbf{Variants:}
 \begin{itemize}[label={}]
-\item[1a] The user selects a picture from the personal gallery.
-\item[1b] The user selects a picture from PostCardBuddy's standard gallery. 
-\item[2a] Include editing of gallery pictures.
+\item[1a] The user selects an image from the personal gallery.
+\item[1b] The user selects an image from PostcardBuddy's standard gallery. 
+\item[2a] Includes editing of gallery images.
+\item[4a] Choose a template greeting.
+\item[5a] Manually add address.
+\end{itemize}
+\end{description}
+
+\item [Task 1.2] Send an E-card.
+\begin {description}
+\item \textbf{Precondition:} PostcardBuddy is running.
+
+\item \textbf{Sub-tasks:}
+\begin{enumerate}
+\item Use the camera in the device to take a picture.
+\item Allow editing of images.
+\item Save images.
+\item Add greeting.
+\item Save finished postcard.
+\item Preview postcard.
+\item Send postcard via E-mail.
+\end{enumerate}
+
+\item \textbf{Variants:}
+\begin{itemize}[label={}]
+\item[1a] The user selects an image from the personal gallery.
+\item[1b] The user selects an image from PostcardBuddy's standard gallery. 
+\item[2a] Includes editing of gallery images.
+\item[4a] Choose a template greeting.
+\item[7a] Publish postcard on social media.
+\end{itemize}
+\end{description}
+
+\item [Task 1.3] Send a physical postcard from a saved postcard.
+\begin {description}
+\item \textbf{Precondition:} PostcardBuddy is running.
+
+\item \textbf{Sub-tasks:}
+\begin{enumerate}
+\item Load a saved postcard. 
+\item Add missing parts to postcard. 
+\item Allow editing of postcard.
+\item Add recipients from address book. 
+\item Preview postcard.
+\item Send postcard to printer.
+\end{enumerate}
+
+\item \textbf{Variants:}
+\begin{itemize}[label={}]
+
 \item[4a] Manually add address.
 \end{itemize}
 \end{description}
-\item [Task 1.2] History
+
+
+\item [Task 1.4] History
 
 \begin {description}
-\item \textbf{Purpose:} View sent cards. View recipients. View cost.
 \item \textbf{Precondition:} PostcardBuddy is running. 
 
 \item \textbf{Sub-tasks:}
 \begin{enumerate}
-\item List sent postcards and recipients. 
+\item View sent postcards and recipients. 
 \item Search sent postcards and recipients.
-\item Summary of cost.  
 
 \end{enumerate}
 \item \textbf{Variants:}

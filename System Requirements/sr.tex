@@ -740,25 +740,12 @@ Requirements relating to performance of product.
 
 \newcounter{perf}
 \begin{description}
-	\stepcounter{perf}
-	\item [Req \thesubsubsection {.\theperf} Memory usage] The application shall adjust its memory usage depending on the device.
 		\stepcounter{perf}
-	\item [Req \thesubsubsection {.\theperf} Speed] The user interface shall respond within 200~ms after a finished user interaction if there should be an response. This is only applied on devices faster than Nexus~5/iPhone~5 running original firmware without any other user installed applications on the phone.
+	\item [Req \thesubsubsection {.\theperf} Speed] The user interface shall respond within 200~ms after a finished user interaction if there should be an response. This is only applied on devices faster than Nexus~5/iPhone~5 running original firmware without any other user installed applications on the phone. The test shall be done so that the above values can be guaranteed within a 95\% confidence interval.
 		\stepcounter{perf}
 	\item [Req \thesubsubsection {.\theperf} Picture quality] The camera shall be able to take a picture in the highest hardware supported resolution. 
 		\stepcounter{perf}
-	\item [Req \thesubsubsection {.\theperf} Autofocus] The camera shall have an autofocus that is comparable to the Android/iOS stock camera. 
-\end{description}
-
-\subsubsection{Availability}
-\newcounter{avail}
-
-\subsubsection{Security}
-Security requirements of product.
-\newcounter{sec}
-\begin{description}
-		\stepcounter{sec}
-	\item [Req \thesubsubsection {.\thesec} Store cards] The photos shall be stored encrypted.
+	\item [Req \thesubsubsection {.\theperf} Autofocus] The camera shall have an autofocus that is comparable to the Android/iOS stock camera. This means that the time to focus can't take longer than 0.5 sec more than the stock camera and the focus plane distance must be within 30\% of the stock camera. The motive should be light and have good contrast to support for this requirement. The test shall be done so that the above values can be guaranteed within a 95\% confidence interval.
 \end{description}
 
 \subsubsection{Maintainability/Portability}

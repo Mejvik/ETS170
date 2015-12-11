@@ -349,22 +349,25 @@ Requirements related to the interfaces of the product.
 
 \subsubsection{Product}
 This section describes the functionality at the product level. 
+
 \newcounter{product}
-\stepcounter{product}
+% The following line creates something that makes it possible to cross-reference our requirements. By calling \rprod{req:name} you set a label you can reference with \ref{req:name}. It also icrements the counter so everytime it is used, a \stepcounter{...} must be removed.
+\newcommand{\rprod}[1]{\refstepcounter{product}\label{#1}}
 
 \paragraph{Images} 
-Requirements related to the handling of images and all of them contribute to fulfil goal~\ref{goal:simpl}. Additionally, requirements~\thesubsubsection .1, \thesubsubsection .2 and \thesubsubsection .5 contribute to meet goal~\ref{goal:pers}.	
+Requirements related to the handling of images and all of them contribute to fulfil goal~\ref{goal:simpl}. Additionally, requirements~\thesubsubsection .\ref{req:im-ph}, \thesubsubsection .\ref{req:im-ca} and \thesubsubsection .\ref{req:im-ed} contribute to meet goal~\ref{goal:pers}.	
+
 
 \begin {description}
-\item [Req \thesubsubsection {.\theproduct} Image from phone gallery] It shall be possible to choose pictures from the phone gallery for the front of the postcard.
-\stepcounter{product}
-\item [Req \thesubsubsection {.\theproduct} Image from camera] It shall be possible to take a picture with the camera within the application and use as image for the front of the postcard. 
+\item [Req \thesubsubsection \rprod{req:im-ph}{.\theproduct}  Image from phone gallery] It shall be possible to choose pictures from the phone gallery for the front of the postcard. 
+
+\item [Req \thesubsubsection \rprod{req:im-ca}{.\theproduct} Image from camera] It shall be possible to take a picture with the camera within the application and use as image for the front of the postcard. 
 \stepcounter{product}
 \item [Req \thesubsubsection {.\theproduct} Image from standard gallery] It shall be possible to choose pictures from the standard gallery.
 \stepcounter{product}
 \item [Req \thesubsubsection {.\theproduct} Image and GPS position] Images from the standard gallery shall be sorted based on the user's GPS position.
-\stepcounter{product}
-\item [Req \thesubsubsection {.\theproduct} Image editing] The product shall have the following functions for editing images; brightness, contrast, cropping, remove red eyes, filters, pen and text.
+
+\item [Req \thesubsubsection \rprod{req:im-ed}{.\theproduct} Image editing] The product shall have the following functions for editing images; brightness, contrast, cropping, remove red eyes, filters, pen and text.
 \stepcounter{product}
 \item [Req \thesubsubsection {.\theproduct} Image saving] It shall be possible to save images to the phone gallery.
 \end{description}

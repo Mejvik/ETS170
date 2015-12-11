@@ -389,7 +389,7 @@ Requirements related to greetings, all of them contribute to fulfil goal~\ref{go
 \end{description}
 
 \paragraph{Recipients}
-Requirements related to handling of recipients.
+Requirements related to handling of recipients, contribute to meeting goal~\ref{goal:simpl}.
 
 \stepcounter{product}
 \begin{description}
@@ -411,7 +411,7 @@ Requirements related to functionality and handling of the postcard.
 \begin{description}
 	\item [Req \thesubsubsection {.\theproduct} Saving postcards] It shall be possible to save postcards.
 	\stepcounter{product}
-	\item [Req \thesubsubsection {.\theproduct} Reuse postcards] It shall be possible to reuse saved postcards.
+	\item [Req \thesubsubsection {.\theproduct} Load postcards] It shall be possible to load saved postcards.
 	\stepcounter{product}
 	
 	\item [Req \thesubsubsection {.\theproduct} Preview postcards] It shall be possible to preview postcards before sending it.
@@ -425,9 +425,7 @@ Requirements related to functionality and handling of the postcard.
 	\item [Req \thesubsubsection {.\theproduct} Payment] It shall be possible to pay for sending physical postcards.
 	\stepcounter{product}
 	
-	\item [Req \thesubsubsection {.\theproduct} Postcard size] It shall be possible to choose the size of the physical postcard.
-	\stepcounter{product}
-	\item [Req \thesubsubsection {.\theproduct} Quality of physical postcard] It shall be possible to choose the print quality of physical postcards. 
+	\item [Req \thesubsubsection {.\theproduct} Postcard size] It shall be possible to choose between three different sizes of the postcard; small (A6), medium (A5) and large (A4).
 	\stepcounter{product}
 	\item [Req \thesubsubsection {.\theproduct} History] It shall be possible to display the history of sent postcards.
 	
@@ -460,22 +458,19 @@ The images in figure~\ref{fig:prot} are from a prototype and should be used as a
 \stepcounter{design}
 	\item [Req \thesubsubsection {.\thedesign} Front page] The front of the postcard shall be a field containing an image.
 \stepcounter{design}
-	\item [Req \thesubsubsection {.\thedesign} Text field] The back of the postcard shall contain a text field.
+	\item [Req \thesubsubsection {.\thedesign} Greeting] The back of the postcard shall contain a text field for the greeting.
 \stepcounter{design}
 	\item [Req \thesubsubsection {.\thedesign} Address field] The back of the postcard shall contain an address field.
 \stepcounter{design}
 	\item [Req \thesubsubsection {.\thedesign} Postage field] The back of the postcard shall contain a postage field. 
 \stepcounter{design}
 	\item [Req \thesubsubsection {.\thedesign} Postage print] The postage shall be printed in the top right corner on the back of the postcard. 
-
-
-%ref bug?
 \stepcounter{design}
 	\item [Req \thesubsubsection {.\thedesign} Start Screen] The application shall start with a screen where it is possible to choose front and back image/text, see figure \ref{fig:p1}.
 \stepcounter{design}
 	\item [Req \thesubsubsection {.\thedesign} Get image] The application shall let the user choose the image source from a menu, see figure \ref{fig:p2}.
 \stepcounter{design}
-	\item [Req \thesubsubsection {.\thedesign} Edit image]The application shall give the user a basic image editor to customize the image, see figure \ref{fig:p3}.
+	\item [Req \thesubsubsection {.\thedesign} Edit image] The application shall give the user a basic image editor to customize the image, see figure \ref{fig:p3}.
 \stepcounter{design}
 	\item [Req \thesubsubsection {.\thedesign} Recipient address] The application shall have an address input screen with an address-book/contacts (not in image), see figure \ref{fig:p4}.
 \end{description}

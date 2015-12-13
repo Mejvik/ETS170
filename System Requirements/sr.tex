@@ -349,7 +349,7 @@ Requirements related to the interfaces of the product, contribute to meeting goa
 	\end{description} 
 \end{description}
 
-\subsubsection{Product}
+\subsubsection{Product} \label{ssec:product}
 This section describes the functionality at the product level. 
 
 \newcounter{product}
@@ -364,14 +364,14 @@ Requirements related to the handling of images and all of them contribute to ful
 \item [Req \thesubsubsection \rprod{req:im-ph}{.\theproduct}  Image from phone gallery] It shall be possible to choose pictures from the phone gallery for the front of the postcard. 
 
 \item [Req \thesubsubsection \rprod{req:im-ca}{.\theproduct} Image from camera] It shall be possible to take a picture with the camera within the application and use as image for the front of the postcard. 
-\stepcounter{product}
-\item [Req \thesubsubsection {.\theproduct} Image from standard gallery] It shall be possible to choose pictures from the standard gallery.
-\stepcounter{product}
-\item [Req \thesubsubsection {.\theproduct} Image and GPS position] Images from the standard gallery shall be sorted based on the user's GPS position.
+
+\item [Req \thesubsubsection \rprod{req:im-stga}{.\theproduct} Image from standard gallery] It shall be possible to choose pictures from the standard gallery.
+
+\item [Req \thesubsubsection \rprod{req:im-gps}{.\theproduct} Image and GPS position] Images from the standard gallery shall be sorted based on the user's GPS position.
 
 \item [Req \thesubsubsection \rprod{req:im-ed}{.\theproduct} Image editing] The product shall have the following functions for editing images; brightness, contrast, cropping, remove red eyes, filters, pen and text.
-\stepcounter{product}
-\item [Req \thesubsubsection {.\theproduct} Image saving] It shall be possible to save images to the phone gallery.
+
+\item [Req \thesubsubsection \rprod{req:im-sav}{.\theproduct} Image saving] It shall be possible to save images to the phone gallery.
 \end{description}
 
 \paragraph{Greetings}
@@ -380,79 +380,79 @@ Requirements related to greetings, all of them contribute to fulfil goal~\ref{go
 
 \begin{description}
 	\item [Req \thesubsubsection \rprod{req:gr-wr}{.\theproduct} Greetings] It shall be possible to write greetings within the application.
-	\stepcounter{product}
-	\item [Req \thesubsubsection {.\theproduct} Auto-generated greetings] It shall be possible to choose a template greeting.
-	\stepcounter{product}
-	\item [Req \thesubsubsection {.\theproduct} GPS based greetings] The product shall be able to generate greetings based on the GPS position.
-	\stepcounter{product}
-	\item [Req \thesubsubsection {.\theproduct} Saving greetings] It shall be possible to save a greeting.
-	\stepcounter{product}
-	\item [Req \thesubsubsection {.\theproduct} Load greetings] It shall be possible to load a saved greeting.
+
+	\item [Req \thesubsubsection \rprod{req:gr-aut}{.\theproduct} Auto-generated greetings] It shall be possible to choose a template greeting.
+
+	\item [Req \thesubsubsection \rprod{req:gr-gps}{.\theproduct} GPS based greetings] The product shall be able to generate greetings based on the GPS position.
+
+	\item [Req \thesubsubsection \rprod{req:gr-sa}{.\theproduct} Saving greetings] It shall be possible to save a greeting.
+
+	\item [Req \thesubsubsection \rprod{req:gr-lo}{.\theproduct} Load greetings] It shall be possible to load a saved greeting.
 \end{description}
 
 \paragraph{Recipients}
 Requirements related to handling of recipients, contribute to meeting goal~\ref{goal:simpl}.
 
-\stepcounter{product}
+
 \begin{description}
-	\item [Req \thesubsubsection {.\theproduct} Enter recipients] It shall be possible to enter recipients manually.
-	\stepcounter{product}
-	\item [Req \thesubsubsection {.\theproduct} Phone book recipients] It shall be possible to choose recipients through the contacts of the device.
-	\stepcounter{product}
-	\item [Req \thesubsubsection {.\theproduct} Multiple recipients] The product shall be able to handle multiple recipients for one postcard.
-	\stepcounter{product}
-	\item [Req \thesubsubsection {.\theproduct} Favourite recipients] It shall be possible to save recipients as favourites.
-	\stepcounter{product}
-	\item [Req \thesubsubsection {.\theproduct} Frequent recipients] The product shall show frequently used recipients as favourite recipients.
+	\item [Req \thesubsubsection \rprod{req:re-en}{.\theproduct} Enter recipients] It shall be possible to enter recipients manually.
+
+	\item [Req \thesubsubsection \rprod{req:re-ph}{.\theproduct} Phone book recipients] It shall be possible to choose recipients through the contacts of the device.
+
+	\item [Req \thesubsubsection \rprod{req:re-mu}{.\theproduct} Multiple recipients] The product shall be able to handle multiple recipients for one postcard.
+
+	\item [Req \thesubsubsection \rprod{req:re-fa}{.\theproduct} Favourite recipients] It shall be possible to save recipients as favourites.
+
+	\item [Req \thesubsubsection \rprod{req:re-fr}{.\theproduct} Frequent recipients] The product shall show frequently used recipients as favourite recipients.
 \end{description}
 
 \paragraph{Postcard}
 Requirements related to functionality and handling of the postcard, all support goal~\ref{goal:simpl}.
 
-\stepcounter{product}
+
 \begin{description}
-	\item [Req \thesubsubsection {.\theproduct} Saving postcards] It shall be possible to save postcards.
-	\stepcounter{product}
-	\item [Req \thesubsubsection {.\theproduct} Load postcards] It shall be possible to load saved postcards.
-	\stepcounter{product}
+	\item [Req \thesubsubsection \rprod{req:po-sa}{.\theproduct} Saving postcards] It shall be possible to save postcards.
+
+	\item [Req \thesubsubsection \rprod{req:po-lo}{.\theproduct} Load postcards] It shall be possible to load saved postcards.
 	
-	\item [Req \thesubsubsection {.\theproduct} Preview postcards] It shall be possible to preview postcards before sending it.
-	\stepcounter{product}
 	
-	\item [Req \thesubsubsection {.\theproduct} Digital postcard] It shall be possible to send digital postcards.
-	\stepcounter{product}
-	\item [Req \thesubsubsection {.\theproduct} Physical postcards] It shall be possible to send physical postcards.
-	\stepcounter{product}
+	\item [Req \thesubsubsection \rprod{req:po-pr}{.\theproduct} Preview postcards] It shall be possible to preview postcards before sending it.
 	
-	\item [Req \thesubsubsection {.\theproduct} Postcard size] It shall be possible to choose between three different sizes of the postcard; small (A6), medium (A5) and large (A4).
-	\stepcounter{product}
-	\item [Req \thesubsubsection {.\theproduct} History] It shall be possible to display the history of sent postcards.
-	\stepcounter{product}
-	\item [Req \thesubsubsection {.\theproduct} Social media] Feature for sharing postcards on Facebook, Twitter and Instagram.
+	
+	\item [Req \thesubsubsection \rprod{req:po-di}{.\theproduct} E-card] It shall be possible to send an E-card.
+	
+	\item [Req \thesubsubsection \rprod{req:po-ph}{.\theproduct} Physical postcards] It shall be possible to send physical postcards.
+	
+	
+	\item [Req \thesubsubsection \rprod{req:po-po}{.\theproduct} Postcard size] It shall be possible to choose between three different sizes of the postcard; small (A6), medium (A5) and large (A4).
+	
+	\item [Req \thesubsubsection \rprod{req:po-hi}{.\theproduct} History] It shall be possible to display the history of sent postcards.
+	
+	\item [Req \thesubsubsection \rprod{req:po-so}{.\theproduct} Social media] Feature for sharing postcards on Facebook, Twitter and Instagram.
 \end{description}
 
 \paragraph{Payment}
 Requirements related to payment, support goal~\ref{goal:rev}.
 \begin{description}
-\item [Req \thesubsubsection {.\theproduct} Payment] It shall be possible to pay for sending physical postcards.
-	\stepcounter{product}
-\item [Req \thesubsubsection {.\theproduct} Price] It shall be possible to view the price before sending the postcard.
-	\stepcounter{product}
-\item [Req \thesubsubsection {.\theproduct} Currency] It shall be possible to choose the currency for the price to be displayed in.
-	\stepcounter{product}
+\item [Req \thesubsubsection \rprod{req:pa-pa}{.\theproduct} Payment] It shall be possible to pay for sending physical postcards.
+	
+\item [Req \thesubsubsection \rprod{req:pa-pr}{.\theproduct} Price] It shall be possible to view the price before sending the postcard.
+	
+\item [Req \thesubsubsection \rprod{req:pa-cu}{.\theproduct} Currency] It shall be possible to choose the currency for the price to be displayed in.
+	
 \end{description}
 
 \paragraph{Notifications}
 Requirements on how to manage notifications, support goal~\ref{goal:simpl}.
 
 \begin{description}
-\stepcounter{product}
-	\item [Req \thesubsubsection {.\theproduct} Success notification] The user shall be notified when an order is sent from a device.
-\stepcounter{product}
-	\item [Req \thesubsubsection {.\theproduct} Fail notification] The user shall be notified when an order fails to be sent from a device.
 
-\stepcounter{product}
-	\item [Req \thesubsubsection {.\theproduct} No internet] If the user places an order on a device that is not connected to the internet, the order shall be stored and the next time the device receives internet connection a notification shall ask the user if he/she wants to try send it again. 
+	\item [Req \thesubsubsection \rprod{req:no-su}{.\theproduct} Success notification] The user shall be notified when an order is sent from a device.
+
+	\item [Req \thesubsubsection \rprod{req:no-fa}{.\theproduct} Fail notification] The user shall be notified when an order fails to be sent from a device.
+
+
+	\item [Req \thesubsubsection \rprod{req:no-no}{.\theproduct} No internet] If the user places an order on a device that is not connected to the internet, the order shall be stored and the next time the device receives internet connection a notification shall ask the user if he/she wants to try send it again. 
 \end{description}
 
 \subsubsection{Design}
@@ -810,7 +810,6 @@ All performance requirements shall be fulfilled on a Nexus~5/iPhone~5 running or
 	\item [Req \thesubsubsection {.\theperf} Application size] The installed size of the application excluding user data shall not exceed 30~MB.	
 	\stepcounter{perf}
 	
-<<<<<<< HEAD
 	\item [Req \thesubsubsection {.\theperf} User interface speed] The user interface shall respond within 200~ms after a finished user interaction, if there should be an response. The test shall be done so that the above values can be guaranteed within a 95~\% confidence interval.
 	\stepcounter{perf}
 	\item [Req \thesubsubsection {.\theperf} Memory] The application shall use less than 300~MB RAM when editing a 8~MP image. This is tested by using all the tools after each other, which is one iteration. It passes the test if it can do 50 iterations without finishing the edit and uses less than 300~MB~RAM in the process.
@@ -870,37 +869,56 @@ Usability of product, supports goal~\ref{goal:simpl}.
 \label{table:release}
 \begin{tabular}{| l | l | l | } \hline
 \textbf{Release} & \textbf{Functionality} & \textbf{cost [h]} \\ \hline
-1 & Greeting & 6\\ \hline
-1 & Physical postcard & 120\\ \hline
-1 & Image from phone gallery & 15\\ \hline
-1 & Payment & 150\\ \hline
-1 & Picture from camera & 24\\ \hline
-1 & Enter recipients & 15\\ \hline
-2 & Image and GPS position & 15\\ \hline
-2 & Preview postcards & 30\\ \hline
-2 & Multiple recipients & 15\\ \hline
-2 & Image from standard library & 90\\ \hline
-2 & Phone book recipients & 15\\ \hline
-2 & Auto-generated greetings & 15\\ \hline
-2 & Handwritten greetings on screen & 15\\ \hline
-2 & Pictures of handwritten greetings & 30\\ \hline
-3 &  Favorite recipients & 9\\ \hline
-3 & Frequent recipients & 9\\ \hline
-3 & Quality of physical postcard & 9\\ \hline
-3 & Postcard size & 24\\ \hline
-3 & History & 15\\ \hline
-3 & Image diting & 150\\ \hline
-3 & Saving postcards & 15\\ \hline
-3 & Reuse postcards & 30\\ \hline
-3 & Image saving & 9\\ \hline
-3 & GPS based greetings &15\\ \hline
-3 & Saving greetings & 9\\ \hline
-3 & Digital postcard &15\\ \hline
-3 & Social media &15\\ \hline
+1 & \ref{ssec:product}.\ref{req:gr-wr} Greetings & 6\\ \hline
+1 & \ref{ssec:product}.\ref{req:po-ph} Physical postcards & 120\\ \hline
+1 & \ref{ssec:product}.\ref{req:im-ph} Image from phone gallery & 15\\ \hline
+1 & \ref{ssec:product}.\ref{req:pa-pa} Payment & 150\\ \hline
+1 & \ref{ssec:product}.\ref{req:pa-pr} Price & 9 \\ \hline
+1 & \ref{ssec:product}.\ref{req:pa-cu} Currency & 9 \\ \hline
+1 & \ref{ssec:product}.\ref{req:im-ca} Image from camera & 24\\ \hline
+1 & \ref{ssec:product}.\ref{req:re-en} Enter recipients & 15\\ \hline
+2 & \ref{ssec:product}.\ref{req:im-gps} Image and GPS position & 15\\ \hline
+2 & \ref{ssec:product}.\ref{req:po-pr} Preview postcards & 30\\ \hline
+2 & \ref{ssec:product}.\ref{req:re-mu} Multiple recipients & 15\\ \hline
+2 & \ref{ssec:product}.\ref{req:im-stga} Image from standard gallery & 90\\ \hline
+2 & \ref{ssec:product}.\ref{req:re-ph} Phone book recipients & 15\\ \hline
+2 & \ref{ssec:product}.\ref{req:gr-aut} Auto-generated greetings & 15\\ \hline
+2 & \ref{ssec:product}.\ref{req:no-su} Success notification & 15 \\ \hline
+2 & \ref{ssec:product}.\ref{req:no-fa} Fail notification & 15\\ \hline
+2 & \ref{ssec:product}.\ref{req:no-no} No internet & 15\\ \hline
+3 & \ref{ssec:product}.\ref{req:re-fa} Favourite recipients & 9\\ \hline
+3 & \ref{ssec:product}.\ref{req:re-fr} Frequent recipients & 9\\ \hline
+3 & \ref{ssec:product}.\ref{req:po-po} Postcard size & 24\\ \hline
+3 & \ref{ssec:product}.\ref{req:po-hi} History & 15\\ \hline
+3 & \ref{ssec:product}.\ref{req:im-ed} Image editing & 150\\ \hline
+3 & \ref{ssec:product}.\ref{req:po-sa} Saving postcards & 15\\ \hline
+3 & \ref{ssec:product}.\ref{req:po-lo} Load postcards & 15\\ \hline
+3 & \ref{ssec:product}.\ref{req:im-sav} Image saving & 9\\ \hline
+3 & \ref{ssec:product}.\ref{req:gr-gps} GPS based greetings &15\\ \hline
+3 & \ref{ssec:product}.\ref{req:gr-sa} Saving greetings & 9\\ \hline
+3 & \ref{ssec:product}.\ref{req:gr-lo} Load greetings & 15\\ \hline
+3 & \ref{ssec:product}.\ref{req:po-di} E-card &15\\ \hline
+3 & \ref{ssec:product}.\ref{req:po-so} Social media &15\\ \hline
 \end{tabular}\\
-\caption{Release plan}
+\caption{Release plan for functional requirements at product level}
 \end{table}
 
+\iffalse 
+Deleted from release plan:
+3 & Quality of physical postcard & 9\\ \hline
+2 & Handwritten greetings on screen & 15\\ \hline
+2 & Pictures of handwritten greetings & 30\\ \hline
+3 & Reuse postcards & 30\\ \hline
+
+Added to release plan:
+3 & \ref{req:gr-lo} Load greetings & 15\\ \hline
+3 & \ref{req:po-lo} Load postcards & 15\\ \hline
+1 & \ref{ssec:product}.\ref{req:pa-pr} Price & 9 \\ \hline
+1 & \ref{ssec:product}.\ref{req:pa-cu} Currency & 9 \\ \hline
+2 & \ref{ssec:product}.\ref{req:no-su} Success notification & 15 \\ \hline
+2 & \ref{ssec:product}.\ref{req:no-fa} Fail notification & 15\\ \hline
+2 & \ref{ssec:product}.\ref{req:no-no} No internet & 15\\ \hline
+\fi
 
 \begin{table}[h!]
 \centering
@@ -908,9 +926,9 @@ Usability of product, supports goal~\ref{goal:simpl}.
 \begin{tabular}{| l | l |} \hline
 \textbf{Release} & \textbf{total sum [h]} \\ \hline
 
-1 &  330 \\ \hline
+1 &  348 \\ \hline
 2 & 225 \\ \hline
-3 & 324 \\ \hline
+3 & 315 \\ \hline
 \end{tabular}\\
 \caption{Summary of the cost for each release}
 \end{table}

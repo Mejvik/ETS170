@@ -11,6 +11,8 @@
 \usepackage{amssymb}
 \usepackage{graphicx}
 \usepackage{geometry}
+\usepackage[toc,page]{appendix}
+\usepackage{placeins}
 
 \title{PostcardBuddy}
 \author{Team C}
@@ -318,22 +320,51 @@ Contributed in/with: Questionnaire, functional requirements, quality grid, quper
 	published in IEEE Software, 2008
 
 \end{thebibliography}
-\newpage
-\section{Appendix}
 
+\newpage
+\begin{appendices}
+
+\section{Prioritization using \$100 Method}
 \begin{figure}[h!]
 \centering
 \includegraphics[width=0.8\textwidth]{100Method.pdf}
-\caption{Appendix A}
-\label{app:A}
 \end{figure}
 
 \begin{figure}[h!]
 \centering
-\includegraphics[width=0.8\textwidth]{PostCardBuddyQuest.pdf}
-\caption{Appendix B}
-\label{app:B}
+\includegraphics[page=2,width=0.8\textwidth]{100Method.pdf}
 \end{figure}
+
+\FloatBarrier
+
+\newpage
+
+\section{Replies to Questionnaire}
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.9\textwidth]{PostCardBuddyQuest.pdf}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[page=2,width=0.9\textwidth]{PostCardBuddyQuest.pdf}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[page=3,width=0.9\textwidth]{PostCardBuddyQuest.pdf}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[page=4,width=0.9\textwidth]{PostCardBuddyQuest.pdf}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[page=5,width=0.9\textwidth]{PostCardBuddyQuest.pdf}
+\end{figure}
+\end{appendices}
 
 \end{document}
 

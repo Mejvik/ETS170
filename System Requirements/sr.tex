@@ -414,7 +414,7 @@ Requirements related to handling of recipients, contribute to meeting goal~\ref{
 \end{description}
 
 \paragraph{Postcard}
-Requirements related to functionality and handling of the postcard, all support goal~\ref{goal:simpl}.
+Requirements related to functionality and handling of postcards, all support goal~\ref{goal:simpl}.
 
 
 \begin{description}
@@ -440,18 +440,18 @@ Requirements related to functionality and handling of the postcard, all support 
 
 \paragraph{History}
 \begin{description}
-\item [Req \thesubsubsection \rprod{req:po-hi}{.\theproduct} View history] It shall be possible to display which postcards have been sent.
+\item [Req \thesubsubsection \rprod{req:po-hi1}{.\theproduct} View history] It shall be possible to display sent postcards.
 
-\item [Req \thesubsubsection \rprod{req:po-hi}{.\theproduct} View recipients] It shall be possible to display the recipients to which a postcard has been sent.
+\item [Req \thesubsubsection \rprod{req:po-hi2}{.\theproduct} View recipients] It shall be possible to display the recipients to which a postcard has been sent.
 
-\item [Req \thesubsubsection \rprod{req:po-hi}{.\theproduct} View recipients] It shall be possible to display when a postcard was sent to a recipient. 
+\item [Req \thesubsubsection \rprod{req:po-hi3}{.\theproduct} View date] It shall be possible to display when a postcard was sent. 
 
 
 
 \end{description}
 
 \paragraph{Payment}
-Requirements related to payment, support goal~\ref{goal:rev}.
+Requirements related to payment to support goal~\ref{goal:rev}.
 \begin{description}
 \item [Req \thesubsubsection \rprod{req:pa-pa}{.\theproduct} Payment] It shall be possible to pay for sending physical postcards.
 	
@@ -592,7 +592,7 @@ The device is the actual physical mobile device on which the application is runn
 
 \item[Attributes:] \hfill
 \begin{enumerate}
-\item \textbf{Camera:} Image \hfill \\A compressed image fetched from the devices physical camera.
+\item \textbf{Camera:} Image \hfill \\A compressed image fetched from the device's physical camera.
 \item \textbf{Phone gallery:} List[Image] \hfill \\A list of images stored in the phone gallery.
 \item \textbf{GPS:} String[Latitude,longitude] \hfill \\The information about current coordinates from the GPS in the device. The string is given on the format shown and the latitude and longitudes are signed floats with seven decimal places.
 \item \textbf{Contacts:} List[HashMap] \hfill \\The users local contact list. A contact is represented as a HashMap (Dictionary) of information.
@@ -615,9 +615,9 @@ This class represents the person sending the postcard. It can be the same person
 \item[Attributes:] \hfill
 \begin{enumerate}
 \item \textbf{Name:} String \hfill \\The name of the sender. 
-\item \textbf{Address:} (Virtual): String \hfill \\The senders user name at a social media site or an email address.
+\item \textbf{Address:} (Virtual): String \hfill \\The sender's user name at a social media site or an email address.
 \item \textbf{Favourite Recipients:} List[Recipient] \hfill \\A list of favourite recipients.
-\item \textbf{Frequent Recipients:} List[Recipient] \hfill \\A list of recipients that the sender has previously sent post cards to.
+\item \textbf{Frequent Recipients:} List[Recipient] \hfill \\A list of recipients that the sender has previously sent postcards to.
 \item \textbf{Saved Postcards:} List[Postcard] \hfill \\A list of the Senders saved postcards.
 \end{enumerate}
 \end{description}
@@ -659,7 +659,7 @@ This class represents the postcard sent from the \textit{Sender} to \textit{Reci
 \begin{enumerate}
 \item \textbf{Front image:} Image [optional] \hfill \\A compressed image that will be used as the front image of the \textit{PostCard}. 
 \item \textbf{Greeting:} String [optional] \hfill \\The greeting on the \textit{PostCard}.
-\item \textbf{Print Size:} Enum [Small, Medium, Large] \hfill \\The size of a printed postcard. See Req \ref{ssec:product}.\ref{req:po-po} for definition.
+\item \textbf{Print Size:} Enum [Small, Medium, Large] \hfill \\The size of a printed postcard. See Req~\ref{ssec:product}.\ref{req:po-po} for definition.
 
 \end{enumerate}
 \end{description} 
@@ -688,7 +688,7 @@ This class collects the data from the \textit{Postal Serice} and the \textit{Pri
 
 \begin{description}
 \item[Class:] \textbf{Postal service:} \hfill \\
-This class represents a postal service. The postal service is the company that will transport the post card. 
+This class represents a postal service. The postal service is the company that will transport the postcard. 
 
 \item[Examples:] \hfill
 \begin{enumerate}
@@ -798,13 +798,13 @@ Virtual windows displaying data of product can be seen in figure~\ref{fig:vw}. T
 
 
 \subsubsection{Quality grid}
-This quality grid seen in table~\ref{tab:qg} highlights quality factors for certain identified elements. Elements not in the grid can be seen as having status "As usual". Numbers in the quality grid are references to the numbers below the grid. The "x" does not have a reference.
+The quality grid seen in table~\ref{tab:qg} highlights quality factors for certain identified elements. Elements not in the grid can be seen as having status \textit{As usual}. Numbers in the quality grid are references to the numbers below the grid. 
 
 \begin{table}[h!]
 	\centering
 	\caption{Quality grid}
 	\label{tab:qg}
-	\begin{tabular}{|l|l|l|l|l|l|}
+	\begin{tabular}{|l|c|c|c|c|c|}
 		\hline
 		\textbf{\begin{tabular}[c]{@{}l@{}}Quality factors -\\ PostcardBuddy\end{tabular}} & \textbf{Critical} & \textbf{Important} & \textbf{As usual} & \textbf{Unimportant} & \textbf{Ignore} \\ \hline
 		\textbf{Operation}                                                                 &                   &                    &                   &                      &                 \\ \hline
@@ -821,16 +821,16 @@ This quality grid seen in table~\ref{tab:qg} highlights quality factors for cert
 
 \begin{enumerate}
 \item PostcardBuddy uses an integrated payment solution for sending physical postcards. Integrity/Security shall be as usual for an application that contains an integrated payment solution.
-\item Many users may use PostcardBuddy when they are on vacation. Therefore it is important the application will work in a wide geographical area while still being reliable. Users sending digital, or physical, postcards not coming through will not be pleased.
-\item The standard user might just send a few postcards a year. Because of this it is critical that the application is easy to use. Users should not need to go through unnecessary menus and steps. It should be quick and easy to create a postcard and press "send".
+\item Many users may use PostcardBuddy when they are on vacation. Therefore it is important that the application will work in a wide geographical area while still being reliable. Users sending postcards that do not reach their destination will not be pleased.
+\item The standard user might just send a few postcards a year. Because of this it is critical that the application is easy to use. Users should not need to go through unnecessary menus and steps. It should be quick and easy to create a postcard and press \textit{send}.
 \item Internet connection when on vacation is often a problem. It is therefore critical that PostcardBuddy has a low internet demand. Some users might only use PostcardBuddy on their vacation.
-\item Users may install PostcardBuddy while on their vacation. Internet connection might be weak and disconnects from internet could be common. Also users might need to leave internet zones for trips on their vacation.
+\item Users may install PostcardBuddy while on their vacation. Internet connection might be weak and disconnects from internet could be common.% Also users might need to leave internet zones for trips on their vacation.
 \item PostcardBuddy saves files to the smartphone and uses features as the phone's camera and gallery.
 \end{enumerate}
 
 \subsubsection{QUPER}
-A Quper diagram takes into consideration quality and performance. In this Quper diagram we measured time from requesting access to a specific image in the standard gallery, to the image being loaded into creating a postcard. For the competitor, "Riktiga Vykort", this was done twenty times with different pictures. 
-Competitor, "Riktiga Vykort", was measured with a OnePlus One smartphone. The targeted area for PostcardBuddy should be done with the same kind of smartphone and tested in as a similar way as possible. For PostcardBuddy it would not be a disaster if it would do better then the Best Case. It is simply there to communicate that it does not need to do better as users would probably not care. It could also be seen as it is not worth, in context of costs and trade-offs, to do better.
+A Quper diagram takes into consideration quality and performance. In this Quper diagram we measured time from requesting access to a specific image in the standard gallery, to the image being loaded into creating a postcard. For the competitor, \textit{Riktiga Vykort}, this was done twenty times with different pictures. 
+The measurements were conducted on a OnePlus~One smartphone. The targeted area for PostcardBuddy should be done with the same kind of smartphone and tested in as a similar way as possible. For PostcardBuddy it would not be a disaster if it would do better than the Best Case. It is simply there to communicate that it does not need to do better as users would probably not care. It could also be seen as it is not worth it, in context of costs and trade-offs, to do better.
 See figure~\ref{fig:quper}.
 
 
@@ -851,7 +851,7 @@ All performance requirements shall be fulfilled on a Nexus~5/iPhone~5 running or
 	\item [Req \thesubsubsection {.\theperf} Application size] The installed size of the application excluding user data shall not exceed 30~MB.	
 	\stepcounter{perf}
 
-	\item [Req \thesubsubsection {.\theperf} User interface speed] In 95~\% of the cases, the user interface shall respond within 200~ms after a finished user interaction, if there should be an response. 
+	\item [Req \thesubsubsection {.\theperf} User interface speed] In 95~\% of the cases, the user interface shall respond within 200~ms after a finished user interaction.
 
 	\stepcounter{perf}
 	\item [Req \thesubsubsection {.\theperf} Memory] The application shall use less than 300~MB RAM when editing an 8~MP image with all tools used consecutively 50 times.
@@ -908,9 +908,11 @@ Usability of product, supports goal~\ref{goal:simpl}.
 % 4H) create a release plan for a subset of prioritized features, while taking into account precedence constraints.
 % 5F) combine priorities from several stakeholders and use priorities and scheduling constraints to iteratively create a relevant release plan.
 \section{Release Plan}
+The release plan of the product can be seen in table~\ref{table:release}. Table~\ref{table:SumRelease} shows the cost in hours for each of the three releases.
 
 \begin{table}[h!]
 \centering
+\caption{Release plan for functional requirements at product level.}
 \label{table:release}
 \begin{tabular}{| l | l | l | } \hline
 \textbf{Release} & \textbf{Functionality} & \textbf{cost [h]} \\ \hline
@@ -945,7 +947,6 @@ Usability of product, supports goal~\ref{goal:simpl}.
 3 & \ref{ssec:product}.\ref{req:po-di} E-card &15\\ \hline
 3 & \ref{ssec:product}.\ref{req:po-so} Social media &15\\ \hline
 \end{tabular}\\
-\caption{Release plan for functional requirements at product level}
 \end{table}
 
 \iffalse 
@@ -967,6 +968,7 @@ Added to release plan:
 
 \begin{table}[h!]
 \centering
+\caption{Summary of the cost for each release.}
 \label{table:SumRelease}
 \begin{tabular}{| l | l |} \hline
 \textbf{Release} & \textbf{total sum [h]} \\ \hline
@@ -975,7 +977,6 @@ Added to release plan:
 2 & 225 \\ \hline
 3 & 315 \\ \hline
 \end{tabular}\\
-\caption{Summary of the cost for each release}
 \end{table}
 
 

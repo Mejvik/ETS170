@@ -120,6 +120,7 @@ The process of sending postcards is time consuming and somewhat tedious. The pro
 \item [Application] The part of the product that is downloaded to the device.
 \item[Device] Mobile device (e.g. smart phone) on which it is possible to download and use applications.
 \item [E-card] An image and a greeting sent digitally presented to look like a physical postcard.
+\item[Greeting] The message the sender writes to the recipient on the back of the postcard.
 \item[Mobile user] Person who owns a device. 
 \item[Payment service] A company who provides a payment solution for applications. 
 \item[Payment solution] A feature that makes it possible to charge costumers in the application. 
@@ -217,9 +218,9 @@ The existing application \textit{Riktiga Vykort} & 4\\
 
 \begin {description}
 
-\newcounter{tasks}
-\stepcounter{tasks}
-\item [Req \thesubsubsection {.\thetasks}] The product shall support the following user tasks. This requirement supports all three goal requirements.
+\newcounter{interf}
+\stepcounter{interf}
+\item [Req \thesubsubsection {.\theinterf}] The product shall support the following user tasks. This requirement supports all three goal requirements.
 
 \item[Work area: 1. Vacation] \mbox{}\\
 Communicating with friends and family. Usually from a remote location with unreliable internet access. Typically outdoors and overall poor working environment. Simplicity is key to capturing important moments. \newline
@@ -332,7 +333,6 @@ Users: Average smart phone user, used to little manual work.
 Requirements related to the interfaces of the product, contribute to meeting goal~\ref{goal:simpl}.
 
 \begin {description}
-\newcounter{interf}
 \stepcounter{interf}
 	\item [Req \thesubsubsection {.\theinterf} Printer] The interface connecting PostCardBuddy and the printed postcards is an off-the-shelf color printer able to handle standard image formats.
 
@@ -452,7 +452,7 @@ Requirements on how to manage notifications, support goal~\ref{goal:simpl}.
 	\item [Req \thesubsubsection {.\theproduct} Fail notification] The user shall be notified when an order fails to be sent from a device.
 
 \stepcounter{product}
-	\item [Req \thesubsubsection {.\theproduct} No internet] If the user places an order on a device that is not connected to the internet, the order shall be stored and sent the next time the device receives internet connection. 
+	\item [Req \thesubsubsection {.\theproduct} No internet] If the user places an order on a device that is not connected to the internet, the order shall be stored and the next time the device receives internet connection a notification shall ask the user if he/she wants to try send it again. 
 \end{description}
 
 \subsubsection{Design}
@@ -618,16 +618,16 @@ This class represents the postcard sent from the \textit{Sender} to \textit{Reci
 
 \item[Examples:] \hfill
 \begin{enumerate}
-\item A postcard with two images, a message and a stamp.
-\item A postcard with no images, no message and a stamp.
-\item A virtual post card with images, a message and no stamp.
+\item A postcard with two images, a greeting and a stamp.
+\item A postcard with no images, no greeting and a stamp.
+\item A virtual post card with images, a greeting and no stamp.
 \end{enumerate}
 
 \item[Attributes:] \hfill
 \begin{enumerate}
 \item \textbf{Front image:} Image [optional] \hfill \\A compressed image that will be used as the front image of the \textit{PostCard}. 
 \item \textbf{Back image:} Image [optional] \hfill \\A compressed image that will be used as the back image of the \textit{PostCard}.
-\item \textbf{Message:} String [optional] \hfill \\The message on the \textit{PostCard}.
+\item \textbf{Greeting:} String [optional] \hfill \\The greeting on the \textit{PostCard}.
 \item \textbf{Stamp image:} Image \hfill \\The image supplied by \textit{Postal service} to properly send the postcard.
 \end{enumerate}
 \end{description}
@@ -807,15 +807,15 @@ All performance requirements shall be fulfilled on a Nexus~5/iPhone~5 running or
 \newcounter{perf}
 \begin{description}
 	\stepcounter{perf}
-	\item [Req \thesubsubsection {.\theperf} Application size] The installed size of the application excluding user data shall not exceed 30MB.	
+	\item [Req \thesubsubsection {.\theperf} Application size] The installed size of the application excluding user data shall not exceed 30~MB.	
 	\stepcounter{perf}
-	\item [Req \thesubsubsection {.\theperf} Speed] The user interface shall respond within 200~ms after a finished user interaction if there should be an response. The test shall be done so that the above values can be guaranteed within a 95\% confidence interval.
+	\item [Req \thesubsubsection {.\theperf} User interface speed] The user interface shall respond within 200~ms after a finished user interaction if there should be an response. The test shall be done so that the above values can be guaranteed within a 95~\% confidence interval.
 	\stepcounter{perf}
-	\item [Req \thesubsubsection {.\theperf} Memory] The application shall use less than 200MB RAM when editing a 8MP image. This is tested by using the all tools after each other which is one iteration. It passes the test if it can do 50 iterations without finishing the edit and uses less than 200MB RAM in the process.
+	\item [Req \thesubsubsection {.\theperf} Memory] The application shall use less than 300~MB RAM when editing a 8~MP image. This is tested by using the all tools after each other which is one iteration. It passes the test if it can do 50 iterations without finishing the edit and uses less than 300~MB~RAM in the process.
 	\stepcounter{perf}
-	\item [Req \thesubsubsection {.\theperf} Picture quality] The camera shall be able to take a picture in the highest hardware supported resolution. This requirement also applies to the latest iPhone/Nexus at the time of release for the application e.g. iPhone 6S (plus) and Nexus 6P/5X at 10/12/15.
+	\item [Req \thesubsubsection {.\theperf} Picture quality] The camera shall be able to take a picture in the highest hardware supported resolution. This requirement also applies to the latest iPhone/Nexus at the time of release for the application e.g. iPhone~6S (plus) and Nexus 6P/5X at 10/12/15.
 	\stepcounter{perf}
-	\item [Req \thesubsubsection {.\theperf} Autofocus] The camera shall have an autofocus that is comparable to the Android/iOS stock camera. This means that the time to focus can't take longer than 0.5 sec more than the stock camera and the focus plane distance must be within 20\% of the stock camera if the stock distance is less than 10m. The motive should be well lit and have good contrast so that the stock camera can find the same focus five times. The test shall be done so that the above values can be guaranteed within a 95\% confidence interval.
+	\item [Req \thesubsubsection {.\theperf} Autofocus] The camera shall have an autofocus that is comparable to the Android/iOS stock camera. This means that the time to focus can't take longer than 0.5~s more than the stock camera and the focus plane distance must be within 20\% of the stock camera if the stock distance is less than 10~m. The motive should be well lit and have good contrast so that the stock camera can find the same focus five times. The test shall be done so that the above values can be guaranteed within a 95~\% confidence interval.
 \end{description}
 
 \subsubsection{Maintainability/Portability}

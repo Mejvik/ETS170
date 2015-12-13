@@ -347,6 +347,11 @@ Requirements related to the interfaces of the product, contribute to meeting goa
 	\begin{description}
 \item[Example:] Camera, GPS etc.
 	\end{description} 
+	\stepcounter{interf}
+	\item [Req \thesubsubsection {.\theinterf} Postage] The product shall be able to process an .xml file containing the postage information, provided by printer of postcards.
+	\begin{description}
+	\item[Example:] Postage information includes cost of postage and image of postage that shall be printed on the postcard.
+	\end{description}	 
 \end{description}
 
 \subsubsection{Product}
@@ -402,6 +407,9 @@ Requirements related to handling of recipients, contribute to meeting goal~\ref{
 	\item [Req \thesubsubsection {.\theproduct} Multiple recipients] The product shall be able to handle multiple recipients for one postcard.
 	\stepcounter{product}
 	\item [Req \thesubsubsection {.\theproduct} Favourite recipients] It shall be possible to save recipients as favourites.
+	\begin{description}
+	\item[Clarification:] Favourite recipients shall be easier to access, e.g. by being placed at the top of the contact list.
+	\end{description}
 	\stepcounter{product}
 	\item [Req \thesubsubsection {.\theproduct} Frequent recipients] The product shall show frequently used recipients as favourite recipients.
 \end{description}
@@ -450,15 +458,14 @@ Requirements on how to manage notifications, support goal~\ref{goal:simpl}.
 	\item [Req \thesubsubsection {.\theproduct} Success notification] The user shall be notified when an order is sent from a device.
 \stepcounter{product}
 	\item [Req \thesubsubsection {.\theproduct} Fail notification] The user shall be notified when an order fails to be sent from a device.
-
 \stepcounter{product}
-	\item [Req \thesubsubsection {.\theproduct} No internet] If the user places an order on a device that is not connected to the internet, the order shall be stored and the next time the device receives internet connection a notification shall ask the user if he/she wants to try send it again. 
+	\item [Req \thesubsubsection {.\theproduct} No internet] If the user places an order on a device that is not connected to the internet, the order shall be stored and the next time the device receives internet connection a notification shall ask the user if he/she wants to try to send it again. 
 \end{description}
 
 \subsubsection{Design}
 This section describes the design and layout of the application and postcards sent from it. The requirements support goal~\ref{goal:simpl}. 
 
-The images in figure~\ref{fig:prot} are from a prototype and should be used as a guideline rather than as a design requirement.
+The images in figure~\ref{fig:prot} are from a prototype and should be used as a guideline rather than as a design requirement. Additionally, the prototype does not cover the entire application.
 
 \newcounter{design}
 % Är dethär tillräckligt specifikt? Vill man ha en exempel bild och ett krav som säger att vykortet ska följa formtet?
@@ -478,9 +485,9 @@ The images in figure~\ref{fig:prot} are from a prototype and should be used as a
 \stepcounter{design}
 	\item [Req \thesubsubsection {.\thedesign} Get image] The application shall let the user choose the image source from a menu, see figure \ref{fig:p2}.
 \stepcounter{design}
-	\item [Req \thesubsubsection {.\thedesign} Edit image] The application shall give the user a basic image editor to customize the image, see figure \ref{fig:p3}.
+	\item [Req \thesubsubsection {.\thedesign} Edit image] The application shall give the user an image editor to customize the image, see figure \ref{fig:p3}.
 \stepcounter{design}
-	\item [Req \thesubsubsection {.\thedesign} Recipient address] The application shall have an address input screen with an address-book/contacts (not in image), see figure \ref{fig:p4}.
+	\item [Req \thesubsubsection {.\thedesign} Recipient address] The application shall have an address input screen with an option of choosing contacts from a list (not in image), see figure \ref{fig:p4}.
 \end{description}
 
 
@@ -809,15 +816,16 @@ All performance requirements shall be fulfilled on a Nexus~5/iPhone~5 running or
 	\stepcounter{perf}
 	\item [Req \thesubsubsection {.\theperf} Application size] The installed size of the application excluding user data shall not exceed 30~MB.	
 	\stepcounter{perf}
-	
-<<<<<<< HEAD
-	\item [Req \thesubsubsection {.\theperf} User interface speed] The user interface shall respond within 200~ms after a finished user interaction, if there should be an response. The test shall be done so that the above values can be guaranteed within a 95~\% confidence interval.
+	\item [Req \thesubsubsection {.\theperf} User interface speed] In 95~\% of the cases, the user interface shall respond within 200~ms after a finished user interaction, if there should be an response. 
 	\stepcounter{perf}
-	\item [Req \thesubsubsection {.\theperf} Memory] The application shall use less than 300~MB RAM when editing a 8~MP image. This is tested by using all the tools after each other, which is one iteration. It passes the test if it can do 50 iterations without finishing the edit and uses less than 300~MB~RAM in the process.
+	\item [Req \thesubsubsection {.\theperf} Memory] The application shall use less than 300~MB RAM when editing an 8~MP image with all tools used consecutively 50 times.
 	\stepcounter{perf}
-	\item [Req \thesubsubsection {.\theperf} Picture quality] The camera shall be able to take a picture in the highest hardware supported resolution. This requirement also applies to the latest iPhone/Nexus, at the time of release for the application e.g. iPhone~6S (plus) and Nexus 6P/5X at 10/12/15.
+	\item [Req \thesubsubsection {.\theperf} Picture quality] The camera shall be able to take a picture in the highest hardware supported resolution. 
+	\begin{description}
+	 \item[Clarification:] This requirement applies to the latest iPhone/Nexus, at the time of release for the application e.g. iPhone~6S (plus) and Nexus 6P/5X at 10/12/15.
+	 \end{description}
 	\stepcounter{perf}
-	\item [Req \thesubsubsection {.\theperf} Autofocus] The camera shall have an autofocus that is comparable to the Android/iOS stock camera. This means that the time to focus cannot take any longer than 0.5~s more than the stock camera and the focus plane distance must be within 20~\% of the stock camera if the distance is less than 10~m. The motive should be well lit and have good contrast so that the stock camera can find the same focus five times. The test shall be done so that the above values can be guaranteed within a 95~\% confidence interval.
+	\item [Req \thesubsubsection {.\theperf} Autofocus] The camera shall have an autofocus that is comparable to the Android/iOS stock camera. Within 95~\% of the cases, the time to focus shall not take more than 0.5~s longer than the stock camera and the focus plane distance must be within 20~\% of the stock camera if the distance is less than 10~m. The motive should be well lit and have good contrast so that the stock camera can find the same focus five times. 
 \end{description}
 
 \subsubsection{Maintainability/Portability}

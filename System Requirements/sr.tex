@@ -18,7 +18,7 @@
 \usepackage{subcaption}
 \newcommand{\tsss}{\thesubsubsection}
 
-\title{PostCardBuddy}
+\title{PostcardBuddy}
 \author{Team C}
 
 \setcounter{secnumdepth}{4}
@@ -44,7 +44,7 @@ December 10, 2015 v2.04\\[3cm]
 \textsc{\LARGE Team C}\\[0.5cm]
 
 \HRule \\[0.4cm]
-{ \huge \bfseries PostCardBuddy}\\[0.3cm]
+{ \huge \bfseries PostcardBuddy}\\[0.3cm]
 {\Large \bfseries System Requirements}\\[0.4cm] % Title of your document
 \HRule \\[1.5cm]
 
@@ -86,7 +86,7 @@ Carl Rynegardh
 %---------------------- Introduction -------------------------------%
 %-------------------------------------------------------------------%
 \section{Introduction}
-This document is written within the context of the course Requirements Engineering at Lund Institute of Technology, which the authors are currently enrolled in. The authors have been provided with a project mission from another group, specifying a product they want to see developed. This group has also acted as the key customer. The intention of this document is to specify the requirements of this product, namely PostCardBuddy.
+This document is written within the context of the course Requirements Engineering at Lund Institute of Technology, which the authors are currently enrolled in. The authors have been provided with a project mission from another group, specifying a product they want to see developed. This group has also acted as the key customer. The intention of this document is to specify the requirements of this product, namely PostcardBuddy.
 
 
 %-------------------------------------------------------------------%
@@ -96,11 +96,11 @@ This document is written within the context of the course Requirements Engineeri
 \section{Background}
 The process of sending postcards is time consuming and somewhat tedious. The product described in this document aims to solve this problem by providing an easy and efficient way to send personalized postcards directly from a smart phone. Simply choose an image for the front of the postcard, add a greeting on the back and send it to your friends and family. The image for the front can be a photo to capture a moment, an image from the phone's gallery or a template image. The template images can be found in the applications standard gallery. When the user presses the send button in the application the postcard is sent to a printer. The postcard is then delivered to the postal service for further forwarding to the final recipient. 
 
-%Everybody likes receiving postcards, but the process of sending them is tedious and takes too much effort. This is what PostCardBuddy hopes to change. PostCardBuddy is a mobile application that will simplify the process, whether you want to be creative and design your own postcards or make it easy for yourself and use a template postcard based on your location and send it to everyone in your contact list. 
+%Everybody likes receiving postcards, but the process of sending them is tedious and takes too much effort. This is what PostcardBuddy hopes to change. PostcardBuddy is a mobile application that will simplify the process, whether you want to be creative and design your own postcards or make it easy for yourself and use a template postcard based on your location and send it to everyone in your contact list. 
 %
 %The application is perfect for every occasion you want to send a postcard. Grandma's birthday is coming up? Send a postcard of you and your cousins! Christmas is around the corner? Send everyone in your contact list a postcard of your cats! Away on vacation? Why not send a ready-made postcard that shows off the amazing beach to everyone in the office? Nobody needs to know it rained all week. 
 %
-%PostCardBuddy is the perfect tool when you want to let someone know you are thinking of them, no matter the occasion.
+%PostcardBuddy is the perfect tool when you want to let someone know you are thinking of them, no matter the occasion.
 
 %--------------------------------------------------------------------%
 %----------------- System Requirements ------------------------------%
@@ -153,7 +153,7 @@ The product aims to establish the key customer in the postcard sending market an
 This section describes the functions and features of the application.
 
 \subsubsection{Domain}
-The domain level requirements provides information about how PostCardBuddy interacts with its surroundings. 
+The domain level requirements provides information about how PostcardBuddy interacts with its surroundings. 
 
 \paragraph{Context Diagram}
 The context diagram of the product can be found in figure~\ref{fig:context}. This diagram shows the environment of the product and the stakeholders interacting with it. The demarcation between the inner and outer domain is based on whether the interaction with PostcardBuddy is direct. For example the printer is in the inner domain because the developer will have to take this interface into account when constructing the product. 
@@ -175,7 +175,7 @@ When sending physical postcards the user will be charged through a standard paym
 \FloatBarrier
 
 \paragraph{Stakeholders}
-Selected stakeholders for PostCardBuddy are presented in Table~\ref{table:stakeholder}. For each stakeholder there is a number to visualize the prioritization. The scale is from 1-5 where 1 represent a high priority and 5 a low priority.
+Selected stakeholders for PostcardBuddy are presented in Table~\ref{table:stakeholder}. For each stakeholder there is a number to visualize the prioritization. The scale is from 1-5 where 1 represent a high priority and 5 a low priority.
 
 
 \begin{table}[h!]
@@ -334,7 +334,7 @@ Requirements related to the interfaces of the product, contribute to meeting goa
 
 \begin {description}
 \stepcounter{interf}
-	\item [Req \thesubsubsection {.\theinterf} Printer] The interface connecting PostCardBuddy and the printed postcards is an off-the-shelf color printer able to handle standard image formats.
+	\item [Req \thesubsubsection {.\theinterf} Printer] The interface connecting PostcardBuddy and the printed postcards is an off-the-shelf color printer able to handle standard image formats.
 
 \stepcounter{interf}
 	\item [Req \thesubsubsection {.\theinterf} Images] Images for the standard gallery will be provided by the supplier of images in JPEG, bnp or png format.
@@ -347,6 +347,11 @@ Requirements related to the interfaces of the product, contribute to meeting goa
 	\begin{description}
 \item[Example:] Camera, GPS etc.
 	\end{description} 
+	\stepcounter{interf}
+	\item [Req \thesubsubsection {.\theinterf} Postage] The product shall be able to process an .xml file containing the postage information, provided by printer of postcards.
+	\begin{description}
+	\item[Example:] Postage information includes cost of postage and image of postage that shall be printed on the postcard.
+	\end{description}	 
 \end{description}
 
 \subsubsection{Product} \label{ssec:product}
@@ -395,14 +400,16 @@ Requirements related to handling of recipients, contribute to meeting goal~\ref{
 
 
 \begin{description}
-	\item [Req \thesubsubsection \rprod{req:re-en}{.\theproduct} Enter recipients] It shall be possible to enter recipients manually.
+		\item [Req \thesubsubsection \rprod{req:re-en}{.\theproduct} Enter recipients] It shall be possible to enter recipients manually.
 
 	\item [Req \thesubsubsection \rprod{req:re-ph}{.\theproduct} Phone book recipients] It shall be possible to choose recipients through the contacts of the device.
 
 	\item [Req \thesubsubsection \rprod{req:re-mu}{.\theproduct} Multiple recipients] The product shall be able to handle multiple recipients for one postcard.
 
 	\item [Req \thesubsubsection \rprod{req:re-fa}{.\theproduct} Favourite recipients] It shall be possible to save recipients as favourites.
-
+\begin{description}
+	\item[Clarification:] Favourite recipients shall be easier to access, e.g. by being placed at the top of the contact list.
+	\end{description}
 	\item [Req \thesubsubsection \rprod{req:re-fr}{.\theproduct} Frequent recipients] The product shall show frequently used recipients as favourite recipients.
 \end{description}
 
@@ -447,18 +454,20 @@ Requirements on how to manage notifications, support goal~\ref{goal:simpl}.
 
 \begin{description}
 
+
 	\item [Req \thesubsubsection \rprod{req:no-su}{.\theproduct} Success notification] The user shall be notified when an order is sent from a device.
 
 	\item [Req \thesubsubsection \rprod{req:no-fa}{.\theproduct} Fail notification] The user shall be notified when an order fails to be sent from a device.
 
 
 	\item [Req \thesubsubsection \rprod{req:no-no}{.\theproduct} No internet] If the user places an order on a device that is not connected to the internet, the order shall be stored and the next time the device receives internet connection a notification shall ask the user if he/she wants to try send it again. 
+
 \end{description}
 
 \subsubsection{Design}
 This section describes the design and layout of the application and postcards sent from it. The requirements support goal~\ref{goal:simpl}. 
 
-The images in figure~\ref{fig:prot} are from a prototype and should be used as a guideline rather than as a design requirement.
+The images in figure~\ref{fig:prot} are from a prototype and should be used as a guideline rather than as a design requirement. Additionally, the prototype does not cover the entire application.
 
 \newcounter{design}
 % Är dethär tillräckligt specifikt? Vill man ha en exempel bild och ett krav som säger att vykortet ska följa formtet?
@@ -478,9 +487,9 @@ The images in figure~\ref{fig:prot} are from a prototype and should be used as a
 \stepcounter{design}
 	\item [Req \thesubsubsection {.\thedesign} Get image] The application shall let the user choose the image source from a menu, see figure \ref{fig:p2}.
 \stepcounter{design}
-	\item [Req \thesubsubsection {.\thedesign} Edit image] The application shall give the user a basic image editor to customize the image, see figure \ref{fig:p3}.
+	\item [Req \thesubsubsection {.\thedesign} Edit image] The application shall give the user an image editor to customize the image, see figure \ref{fig:p3}.
 \stepcounter{design}
-	\item [Req \thesubsubsection {.\thedesign} Recipient address] The application shall have an address input screen with an address-book/contacts (not in image), see figure \ref{fig:p4}.
+	\item [Req \thesubsubsection {.\thedesign} Recipient address] The application shall have an address input screen with an option of choosing contacts from a list (not in image), see figure \ref{fig:p4}.
 \end{description}
 
 
@@ -785,7 +794,7 @@ This quality grid seen in table~\ref{tab:qg} highlights quality factors for cert
 	\label{tab:qg}
 	\begin{tabular}{|l|l|l|l|l|l|}
 		\hline
-		\textbf{\begin{tabular}[c]{@{}l@{}}Quality factors -\\ PostCardBuddy\end{tabular}} & \textbf{Critical} & \textbf{Important} & \textbf{As usual} & \textbf{Unimportant} & \textbf{Ignore} \\ \hline
+		\textbf{\begin{tabular}[c]{@{}l@{}}Quality factors -\\ PostcardBuddy\end{tabular}} & \textbf{Critical} & \textbf{Important} & \textbf{As usual} & \textbf{Unimportant} & \textbf{Ignore} \\ \hline
 		\textbf{Operation}                                                                 &                   &                    &                   &                      &                 \\ \hline
 		Integrity/Security                                                                 &                   &                    & 1                 &                      &                 \\ \hline
 		Reliability/availability                                                           &                   & 2                  &                   &                      &                 \\ \hline
@@ -799,17 +808,17 @@ This quality grid seen in table~\ref{tab:qg} highlights quality factors for cert
 \end{table}
 
 \begin{enumerate}
-\item PostCardBuddy uses an integrated payment solution for sending physical postcards. Integrity/Security shall be as usual for an application that contains an integrated payment solution.
-\item Many users may use PostCardBuddy when they are on vacation. Therefore it is important the application will work in a wide geographical area while still being reliable. Users sending digital, or physical, postcards not coming through will not be pleased.
+\item PostcardBuddy uses an integrated payment solution for sending physical postcards. Integrity/Security shall be as usual for an application that contains an integrated payment solution.
+\item Many users may use PostcardBuddy when they are on vacation. Therefore it is important the application will work in a wide geographical area while still being reliable. Users sending digital, or physical, postcards not coming through will not be pleased.
 \item The standard user might just send a few postcards a year. Because of this it is critical that the application is easy to use. Users should not need to go through unnecessary menus and steps. It should be quick and easy to create a postcard and press "send".
-\item Internet connection when on vacation is often a problem. It is therefore critical that PostCardBuddy has a low internet demand. Some users might only use PostCardBuddy on their vacation.
-\item Users may install PostCardBuddy while on their vacation. Internet connection might be weak and disconnects from internet could be common. Also users might need to leave internet zones for trips on their vacation.
-\item PostCardBuddy saves files to the smartphone and uses features as the phone's camera and gallery.
+\item Internet connection when on vacation is often a problem. It is therefore critical that PostcardBuddy has a low internet demand. Some users might only use PostcardBuddy on their vacation.
+\item Users may install PostcardBuddy while on their vacation. Internet connection might be weak and disconnects from internet could be common. Also users might need to leave internet zones for trips on their vacation.
+\item PostcardBuddy saves files to the smartphone and uses features as the phone's camera and gallery.
 \end{enumerate}
 
 \subsubsection{QUPER}
 A Quper diagram takes into consideration quality and performance. In this Quper diagram we measured time from requesting access to a specific image in the standard gallery, to the image being loaded into creating a postcard. For the competitor, "Riktiga Vykort", this was done twenty times with different pictures. 
-Competitor, "Riktiga Vykort", was measured with a OnePlus One smartphone. The targeted area for PostCardBuddy should be done with the same kind of smartphone and tested in as a similar way as possible. For PostCardBuddy it would not be a disaster if it would do better then the Best Case. It is simply there to communicate that it does not need to do better as users would probably not care. It could also be seen as it is not worth, in context of costs and trade-offs, to do better.
+Competitor, "Riktiga Vykort", was measured with a OnePlus One smartphone. The targeted area for PostcardBuddy should be done with the same kind of smartphone and tested in as a similar way as possible. For PostcardBuddy it would not be a disaster if it would do better then the Best Case. It is simply there to communicate that it does not need to do better as users would probably not care. It could also be seen as it is not worth, in context of costs and trade-offs, to do better.
 See figure~\ref{fig:quper}.
 
 
@@ -829,14 +838,18 @@ All performance requirements shall be fulfilled on a Nexus~5/iPhone~5 running or
 	\stepcounter{perf}
 	\item [Req \thesubsubsection {.\theperf} Application size] The installed size of the application excluding user data shall not exceed 30~MB.	
 	\stepcounter{perf}
-	
-	\item [Req \thesubsubsection {.\theperf} User interface speed] The user interface shall respond within 200~ms after a finished user interaction, if there should be an response. The test shall be done so that the above values can be guaranteed within a 95~\% confidence interval.
+
+	\item [Req \thesubsubsection {.\theperf} User interface speed] In 95~\% of the cases, the user interface shall respond within 200~ms after a finished user interaction, if there should be an response. 
+
 	\stepcounter{perf}
-	\item [Req \thesubsubsection {.\theperf} Memory] The application shall use less than 300~MB RAM when editing a 8~MP image. This is tested by using all the tools after each other, which is one iteration. It passes the test if it can do 50 iterations without finishing the edit and uses less than 300~MB~RAM in the process.
+	\item [Req \thesubsubsection {.\theperf} Memory] The application shall use less than 300~MB RAM when editing an 8~MP image with all tools used consecutively 50 times.
 	\stepcounter{perf}
-	\item [Req \thesubsubsection {.\theperf} Picture quality] The camera shall be able to take a picture in the highest hardware supported resolution. This requirement also applies to the latest iPhone/Nexus, at the time of release for the application e.g. iPhone~6S (plus) and Nexus 6P/5X at 10/12/15.
+	\item [Req \thesubsubsection {.\theperf} Picture quality] The camera shall be able to take a picture in the highest hardware supported resolution. 
+	\begin{description}
+	 \item[Clarification:] This requirement applies to the latest iPhone/Nexus, at the time of release for the application e.g. iPhone~6S (plus) and Nexus 6P/5X at 10/12/15.
+	 \end{description}
 	\stepcounter{perf}
-	\item [Req \thesubsubsection {.\theperf} Autofocus] The camera shall have an autofocus that is comparable to the Android/iOS stock camera. This means that the time to focus cannot take any longer than 0.5~s more than the stock camera and the focus plane distance must be within 20~\% of the stock camera if the distance is less than 10~m. The motive should be well lit and have good contrast so that the stock camera can find the same focus five times. The test shall be done so that the above values can be guaranteed within a 95~\% confidence interval.
+	\item [Req \thesubsubsection {.\theperf} Autofocus] The camera shall have an autofocus that is comparable to the Android/iOS stock camera. Within 95~\% of the cases, the time to focus shall not take more than 0.5~s longer than the stock camera and the focus plane distance must be within 20~\% of the stock camera if the distance is less than 10~m. The motive should be well lit and have good contrast so that the stock camera can find the same focus five times. 
 \end{description}
 
 \subsubsection{Maintainability/Portability}

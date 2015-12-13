@@ -572,7 +572,9 @@ The device is the actual physical mobile device on which the application is runn
 \item[Attributes:] \hfill
 \begin{enumerate}
 \item \textbf{Camera:} Image \hfill \\A compressed image fetched from the devices physical camera.
+\item \textbf{Phone gallery:} List[Image] \hfill \\A list of images stored in the phone gallery.
 \item \textbf{GPS:} String[Latitude,longitude] \hfill \\The information about current coordinates from the GPS in the device. The string is given on the format shown and the latitude and longitudes are signed floats with seven decimal places.
+\item \textbf{Contacts:} List[HashMap] \hfill \\The users local contact list. A contact is represented as a HashMap (Dictionary) of information.
 \end{enumerate}
 \end{description}
 
@@ -592,7 +594,10 @@ This class represents the person sending the postcard. It can be the same person
 \item[Attributes:] \hfill
 \begin{enumerate}
 \item \textbf{Name:} String \hfill \\The name of the sender. 
-\item \textbf{address} (Virtual|Physical): String \hfill \\This attribute is always a string. If it is a virtual address it is a user name, otherwise it is a physical street address. 
+\item \textbf{Address:} (Virtual): String \hfill \\The senders user name at a social media site or an email address.
+\item \textbf{Favourite Recipients:} List[Recipient] \hfill \\A list of favourite recipients.
+\item \textbf{Frequent Recipients:} List[Recipient] \hfill \\A list of recipients that the sender has previously sent post cards to.
+\item \textbf{Saved Postcards:} List[Postcard] \hfill \\A list of the Senders saved postcards.
 \end{enumerate}
 \end{description}
 
@@ -600,21 +605,27 @@ This class represents the person sending the postcard. It can be the same person
 
 \begin{description}
 \item[Class:] \textbf{Recipient} \hfill \\
-This class represents the person receiving the postcard. This class is identical to \textit{Sender} in terms of attribute structure. The sender and recipient could be the same person.
+This class represents the person receiving the postcard. The sender and recipient could be the same person.
 
 \item[Examples:] \hfill
 \begin{enumerate}
 \item The person receiving the postcard.
 \item The same person as the one sending a postcard.
 \end{enumerate}
+
+\item[Attributes:] \hfill
+\begin{enumerate}
+\item \textbf{Name:} String \hfill \\The name of the recipient. 
+\item \textbf{Address:} (Virtual|Physical): String \hfill \\This attribute is always a string. If it is a virtual address it is a user name or an email address, otherwise it is a physical street address.
+\end{enumerate}
+ 
 \end{description}
 
 \hrulefill
 
-%Is stamp image required?
 \begin{description}
 \item[Class:] \textbf{PostCard} \hfill \\
-This class represents the postcard sent from the \textit{Sender} to \textit{Recipient}. It encapsulates all the information necessary to send a postcard in either virtual or physical form. An instance of this object, owning a \textit{Sender} and a \textit{Recipient} needs to exist to be able to send a postcard. 
+This class represents the postcard sent from the \textit{Sender} to \textit{Recipient}. It encapsulates all the information necessary to send a postcard in either virtual [E-card] or physical form. An instance of this object, owning a \textit{Sender} and a \textit{Recipient} needs to exist to be able to send a postcard. The images can come from the standard gallery or the phone gallery. 
 
 \item[Examples:] \hfill
 \begin{enumerate}
@@ -628,45 +639,28 @@ This class represents the postcard sent from the \textit{Sender} to \textit{Reci
 \item \textbf{Front image:} Image [optional] \hfill \\A compressed image that will be used as the front image of the \textit{PostCard}. 
 \item \textbf{Back image:} Image [optional] \hfill \\A compressed image that will be used as the back image of the \textit{PostCard}.
 \item \textbf{Greeting:} String [optional] \hfill \\The greeting on the \textit{PostCard}.
-\item \textbf{Stamp image:} Image \hfill \\The image supplied by \textit{Postal service} to properly send the postcard.
+\item \textbf{Print Size:} Enum [Small, Medium, Large] \hfill \\The size of a printed postcard. See Req \ref{ssec:product}.\ref{req:po-po} for definition.
+
 \end{enumerate}
-\end{description}
+\end{description} 
 
 \hrulefill
 
 %Maybe we need IDs or names to identify the supplier?
 \begin{description}
-\item[Class:] \textbf{Suppliers} \hfill \\
-This class collects the data from an \textit{Supplier of images}, a \textit{Postal service} and a \textit{Printer of postcards}. 
+\item[Class:] \textbf{Service} \hfill \\
+This class collects the data from the \textit{Postal Serice} and the \textit{Printer of Postcards}. 
 
 \item[Examples:] \hfill
 \begin{enumerate}
-\item A collection of suppliers relevant to printing and sending a specific \textit{PostCard}.
-\item Only a printing and shipping cost.
+\item A collection of services relevant to printing and sending a specific \textit{PostCard}.
+\item Only a printing cost.
+\item Only a postal cost.
 \end{enumerate}
 
 \item[Attributes:] \hfill
 \begin{enumerate}
-\item \textbf{Total cost:} Float \hfill \\The combined cost of \textit{Supplier of images/Photo cost}, a \textit{Postal service/Shipping cost} and a \textit{Printer of postcards/Printing cost}. The value is rounded up to two decimal places.
-\end{enumerate}
-\end{description}
-
-\hrulefill
-
-\begin{description}
-\item[Class:] \textbf{Supplier of images:} \hfill \\
-This class represents a supplier of images. If a user chooses a stock photo as (for example) a \textit{PostCard/Front image} there is a cost with using the photo that needs to be added to the total cost.
-
-\item[Examples:] \hfill
-\begin{enumerate}
-\item A supplier of images with a photo and a cost.
-\item A supplier of images with a free photo.
-\end{enumerate}
-
-\item[Attributes:] \hfill
-\begin{enumerate}
-\item \textbf{Photo cost:} Float \hfill \\The cost of a stock photo. The value is rounded up to two decimal places.
-\item \textbf{Stock photo:} Image \hfill \\The actual image that will be bought.
+\item \textbf{Total cost:} Float \hfill \\The combined cost of a \textit{Postal service/Shipping cost} and a \textit{Printer of Postcards/Printing cost}. The value is rounded up to two decimal places.
 \end{enumerate}
 \end{description}
 
@@ -685,7 +679,7 @@ This class represents a postal service. The postal service is the company that w
 \item[Attributes:] \hfill
 \begin{enumerate}
 \item \textbf{Shipping cost:} Float \hfill \\The cost of shipping. The value is rounded up to two decimal places.
-\item \textbf{Stock photo:} Image \hfill \\This is the image used on the postcard to indicate that shipping was payed for.
+\item \textbf{Stamp image:} Image \hfill \\The image supplied by \textit{Postal service} to properly send the postcard.
 \end{enumerate}
 \end{description}
 
@@ -707,6 +701,33 @@ This class represents a printer. The printer is responsible for printing the phy
 \item \textbf{Printing cost:} Float \hfill \\The cost of printing. The value is rounded up to two decimal places.
 \end{enumerate}
 \end{description}
+
+\hrulefill
+
+\begin{description}
+\item[Class:] \textbf{Database:} \hfill \\
+A database used to store images supplied by \textit{Supplier of images} in the standard gallery. 
+
+\item[Attributes:] \hfill \\
+\begin{enumerate}
+\item \textbf{Stock photos:} List[Image] \hfill \\A list of images (including metadata) supplied from \textit{Supplier of Images}.
+\end{enumerate}
+\end{description}
+
+\hrulefill
+
+\begin{description}
+\item[Class:] \textbf{Supplier of Images:} \hfill \\
+This class represents a supplier of stock photos.
+
+\item[Attributes:] \hfill
+\begin{enumerate}
+\item \textbf{Image data:} Image \hfill \\The actual image that will be bought.
+\item \textbf{Image metadata:} HashMap \hfill \\The metadata of the image, this includes the size and GPS tags.
+\end{enumerate}
+\end{description}
+
+\hrulefill
 
 
 \paragraph{Virtual windows}

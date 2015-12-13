@@ -94,7 +94,7 @@ This document is written within the context of the course Requirements Engineeri
 %-------------------------------------------------------------------%
 % Extend background from PMv2
 \section{Background}
-The process of sending postcards is time consuming and somewhat tedious. The product described in this document aims to solve this problem by providing an easy and efficient way to send personalized postcards directly from a smart phone. Simply choose an image for the front of the postcard, add a greeting on the back and send it to your friends and family. The image for the front can be a photo to capture a moment, an image from the phone's gallery or a template image. The template images can be found in the applications standard gallery. When the user presses the send button in the application the postcard is sent to a printer. The postcard is then delivered to the postal service for further forwarding to the final recipient. 
+The process of sending postcards is time consuming and somewhat tedious. The product described in this document aims to solve this problem by providing an easy and efficient way to send personalized postcards directly from a smart phone. Simply choose an image for the front of the postcard, add a greeting to the back and send it to your friends and family. The image for the front can be a photo to capture a moment, an image from the phone's gallery or a template image. The template images can be found in the application's standard gallery. When the user presses the send button in the application the postcard is sent to a printer. The postcard is then delivered to the postal service for further forwarding to the final recipient. 
 
 %Everybody likes receiving postcards, but the process of sending them is tedious and takes too much effort. This is what PostcardBuddy hopes to change. PostcardBuddy is a mobile application that will simplify the process, whether you want to be creative and design your own postcards or make it easy for yourself and use a template postcard based on your location and send it to everyone in your contact list. 
 %
@@ -130,12 +130,12 @@ The process of sending postcards is time consuming and somewhat tedious. The pro
 \item[Postal service] A company that delivers mail to private citizens.
 \item [Postcard] The representation of physical postcards or E-cards within the application. 
 \item[Printer of postcards] The company who delivers the postcards from the printer to the postal service. In this project the key customer.
-\item[Product]The application described in this Requirement Specification.
+\item[Product]The application described in this requirement specification.
 \item[Recipient]The person whom a postcard is addressed to.
-\item[Standard gallery] Gallery of pre-existing images in the application.
+\item[Standard gallery] Gallery of pre-existing images within the application.
 \item[Supplier of images] The companies or people who supply the application with images for the standard gallery.
-\item [Template Greeting] Pre-made suggestion for a greeting provided by the application. 
-\item [Template Image] Images in the standard gallery. 
+\item [Template greeting] Pre-made suggestion for a greeting provided by the application. 
+\item [Template image] Images in the standard gallery. 
 \end{description}
 
 \section{System Requirements}
@@ -158,7 +158,7 @@ The domain level requirements provides information about how PostcardBuddy inter
 \paragraph{Context Diagram}
 The context diagram of the product can be found in figure~\ref{fig:context}. This diagram shows the environment of the product and the stakeholders interacting with it. The demarcation between the inner and outer domain is based on whether the interaction with PostcardBuddy is direct. For example the printer is in the inner domain because the developer will have to take this interface into account when constructing the product. 
 
-There is one stakeholders that will interact directly with the application, namely the mobile user. The mobile user will use the application for creating personalized postcards. For the front of the postcard the user shall be able to select an image from the application's standard gallery. These images will be provided through an image database. The specification of the image database is out of the scope of this document. Images are provided to the database by a \textit{Supplier of images}.
+There is one stakeholder that will interact directly with the application, namely the mobile user. The mobile user will use the application for creating personalized postcards. For the front of the postcard the user shall be able to select an image from the application's standard gallery. These images will be provided through an image database. The specification of the image database is out of the scope of this document. Images are provided to the database by a \textit{Supplier of images}.
 
 Some of the features of the product will require the use of functionality already present in the the device. The camera will be used to enable the user to take a picture. The GPS will provide the location of the user. The contacts will be used to select recipients. Finally the E-mail functionality in the device will be used when sending E-cards.
  
@@ -175,7 +175,7 @@ When sending physical postcards the user will be charged through a standard paym
 \FloatBarrier
 
 \paragraph{Stakeholders}
-Selected stakeholders for PostcardBuddy are presented in Table~\ref{table:stakeholder}. For each stakeholder there is a number to visualize the prioritization. The scale is from 1-5 where 1 represent a high priority and 5 a low priority.
+Selected stakeholders for PostcardBuddy are presented in table~\ref{table:stakeholder}. For each stakeholder there is a number to visualize the prioritization. The scale is from 1-5 where 1 represent a high priority and 5 a low priority.
 
 
 \begin{table}[h!]
@@ -270,7 +270,7 @@ Users: Average smart phone user, used to little manual work.
 \item Add greeting.
 \item Save finished postcard.
 \item Preview postcard.
-\item Send postcard via E-mail.
+\item Send postcard via e-mail.
 \end{enumerate}
 
 \item \textbf{Variants:}

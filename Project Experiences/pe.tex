@@ -128,19 +128,26 @@ The elicitation process has also been heavily geared towards going beyond the in
 
 \item[Data dictionary/Virtual windows]
 
+\item[Task descriptions]
+
+\item[Prototypes]
+
 \item[Quality grid]
-A quality grid was created by brainstorming what quality aspects was important for PostCardBuddy. This was done by starting out from Lauesens quality grid on page 227 \ref{bibitem:soren}. Lauesen's quality grid was stripped down to the parts, we thought, was worth mentioning. Doing the strip down, a few questions guided us:
-\begin{description}
+A quality grid was created by brainstorming what quality aspects was important for PostCardBuddy. This was done by starting out from Lauesens quality grid on page 227 \cite{soren}. Lauesen's quality grid was stripped down to the parts, the group thought, was worth mentioning. Doing the strip down, a few questions guided us:
+\begin{itemize}
 \item What quality aspects are more important for PostCardBuddy in comparison to other applications/software.
 \item Is their something we would like to describe more to the developers.
 \item How do we rank each of the quality factors.
 \item How do we set the quality factors and their ranking into context. Meaning, how do explain why this is important to the developers.
-\end{description}
+\end{itemize}
 
-Many "As usual" quality factors where left out because we thought that there was no use to explain them.
+Many "As usual" quality factors where left out because the group thought that there was no use to explain them.
 
 \item[QUPER]
-A Quper diagram was created to specify a Quality requirement, or perhaps target is a better word. Quper is documented in ref LÄGG IN. Document studies of the competitor "Riktiga Vykort" showed that requesting images from their image library into creating a postcard was a painful process. If PostCardBuddy could be better in this aspect it would be highly valuable. Quper as in ref !!!! contains advanced features requiring a lot of knowledge in the domain. Not having this knowledge, a lot parts where left out so just the basics were left. To get a feel for what would be a reasonable target, in case of user experience, testing was done with "Riktiga Vykort". As we did not have enough knowledge for the technical aspect this was, more or less, left out.
+A Quper diagram was created to specify a Quality requirement, or perhaps target is a better word. Quper is documented in ref \cite{soren}. Document studies of the competitor "Riktiga Vykort" showed that requesting images from the competitor's, "Riktiga Vykort", image library into creating a postcard was a painful process. If PostCardBuddy could be better in this aspect it would be highly valuable. Quper as in ref \cite{soren} contains advanced features requiring a lot of technical knowledge in the domain. Not having this knowledge, a lot parts where left out so just the basics were left. To get a feel for what would be a reasonable target, in case of user experience, testing was done with "Riktiga Vykort". As the group did not have enough knowledge for the technical aspect this was, more or less, left out.
+
+\item[Summary] When specifying the requirements numerous different techniques have been used. Furthermore, the requirements have been specified based on type and abstraction level used to describe the requirement. A very important aspect of this specification has been to construct a precise understanding of the context of the product. There has been many discussions and revisions of the systems boundaries before arriving at the final context diagram. In general the overall experience from specification is that it is impossible to specify everything with a great level of detail. The solution to this problem has been to combine different degrees of completeness and different abstraction levels. It has also been helpful to use several different specification techniques, tailored to the situation at hand, combined with examples. In addition, the group has paid special attention to tracing the requirements to the goals while simultaneously maintaining different hierarchies and requirement relations. When it comes to establishing a desired level for the target quality the QUPER analysis has been a great help, since it provides a good framework and scale to benchmark against competitors. 
+ Perhaps the most challenging aspect of the process has been to prioritize and decide on which aspects need special attention. Since one of the over arching goals of the product is simplicity special attention has been given to achieving this. In practice this means that it has been important to specify exactly which data needs to be added and special attention has been given to this aspect. 
 
 \end{description}
 
@@ -151,11 +158,11 @@ A Quper diagram was created to specify a Quality requirement, or perhaps target 
 \begin{description}
 \item[Prototypes] The prototype gives the customer a unique opportunity to validate how the product matches their expectations. The prototypes will be continuously adapted to the customer's needs and wants and new features will be added (or others removed) so that it becomes a good reflection on where the project is going. 
 
-\item[Validation checklists and validation report (as developers)]
+\item[Validation checklists and validation report (as developers)] A validation checklist was constructed and given to the customer. They used the checklist to write a validation, to evaluate the System Requirement. This report was then used to go over the requirements and improve on them.
 
 \item[Validation checklists and validation report (as customers)] Validation checklists provided by the developer group were used to validate the product initially ordered as customers. A validation report was then written based on the checklists.
 
-\item[Informal review]
+\item[Informal review] An informal review within the group was conducted to make sure the System Requirements was complete, no ambiguity etc. Everyone read the report prior to the review. At the time of the review, needs for changes were discussed and a protocol was created listing everything that needed to be changed. 
 \end{description}
 
 
@@ -194,7 +201,7 @@ Furthermore, two separate companies in the postal service business have been con
 
 From discussions with the costumer team, new ideas for features emerged when the costumer tried the prototypes. The prototype helped the costumer to verify that the application conformed to their requirements and also gave them an opportunity to see if something was missing or wrong.
 
-\item[Document study] The already existing application is easy to use and slim. It does not contain a lot of functions but there are enough. Most of the basic functions are already implemented. However, there are definitely some functionalities that could be of use that are not implemented. Also, the library of images is not very big and GPS based images depending on your localization only works in Sweden and Denmark. All of the above was helpful.
+\item[Document study] The existing application, and competitor, "Riktiga Vykort" was easy to use and rather slim. It did not contain a lot of functions but it felt as there were enough. Most of the basic functions we have specified are already implemented in "Riktiga Vykort". However, there are definitely some functionalities that could be of use that are not implemented. Also, "Riktiga Vykort"'s image gallery was not very big, and GPS based images depending on your localization only works in Sweden and Denmark. The group also noticed that it took a lot of time to request access to an image in "Riktiga Vykort"'s image gallery in to creating a postcard. The group started thinking that if PostCardBuddy would be able to do this better, it would be valuable giving competitive advantage. Therefore this was used in Quper.
 
 \item[Data model] Creating the data model for the data requirements was in itself an exercise in elicitation. While gradually developing the ER-diagram new entities and relationships that were not easy to spot in the beginning started to emerge. This was largely due to dependencies between between different types of required data.
 
@@ -225,11 +232,12 @@ The changes of the context diagram between release 1 and release 2 were mostly a
 
 \item[Quality grid]
 Doing a quality grid was a very good idea. While creating the quality grid many ideas came to life. Especially ideas for different requirements.
-The quality grid should probably have been created early in the project phase. Maybe even in the first week together with stakeholders. While creating the quality grid you get forced to think of different aspects of the application. You get some kind of overview over what is important, and with that ideas come to life. Therefore, a quality grid could be a way of elicitating, mostly quality factors, but maybe even functional requirements. The line between quality requirements and functional requirements can be very thin. A negative aspect with the Quality grid is that it does not have any requirements. It mostly highlights what is important for the application and describes to the developer why this is important. If it really is a negative aspect could be discussed, as it is a very useful way of communicating quality factors to the developers. As the Quality grid was created rather late in the project, we did not base any quality requirements on it. If the quality grid would have been created early, quality requirements could also been based on the grid. This would have complimented the Quality grid.
+The quality grid should probably have been created earlier in the project phase. Maybe even for release one. Creating the quality grid together with stakeholders, perhaps using questionnaires or interviews, could have been beneficial. Creating the quality grid forces the creator to think of different aspects for the application. The creator gets an overview over what is important, and with that ideas can come to life. Therefore, a quality grid could be a way of elicitating, mostly quality requirements, but maybe even functional requirements. The line between quality requirements and functional requirements can be very thin. A negative aspect with the Quality grid could be that it does not specify any requirements. It mostly highlights what is important for the application and describes to the developer why this is important. If it really is a negative aspect could be discussed, as it is a very useful way of communicating quality factors to the developers. As the Quality grid was created rather late in the project, we did not base any quality requirements on it. If the quality grid would have been created earlier, quality requirements could also been based on the grid. This would have complimented the quality grid.
+
 
 
 \item[QUPER]
-It is interesting to compare the quality grid with Quper. The quality grid gives a better overview over quality factors as a whole while Quper serves as a way to specify a target or requirement. Normally, Quper demands a lot of knowledge which we did not have. Therefore, it was not very useful in our case. It did highlight the problem with the competitor "Riktiga Vykort"'s application and specified how long time it should take for PostCardBuddy, but this could have been done in different ways. If we would have more knowledge in the domain Quper would probably have been more useful.
+It is interesting to compare the quality grid with Quper. The quality grid gives a better overview over quality factors as a whole while Quper serves as a way to specify a target or requirement. Normally, Quper demands a lot of knowledge which the group did not have. Therefore, it was not very useful in our case. It did highlight the problem with the competitor "Riktiga Vykort"'s application and specified how long time it should take for PostCardBuddy, but this could have been done in different ways. If we would have more knowledge in the domain, Quper would probably have been more useful.
 
 
 \end{description}
@@ -243,12 +251,12 @@ It is interesting to compare the quality grid with Quper. The quality grid gives
 \begin{description}
 \item[Prototypes]
 
-\item[Validation checklists and validation report (as developers)]
+\item[Validation checklists and validation report (as developers)] It was very useful to receive input from the key customer. They noticed things previously missed and had very clear and concrete comments that were easily fixed. 
 
 
 \item[Validation check lists and validation report (as customers)] The use of checklists was very helpful as it is easy to check the quality of existing requirements. However, it is also limiting in the sense that it makes it difficult to see if there are any missing requirements. It is easy to "get stuck inside the box" that the checklist actually is. Checklists are very quantitative and need explaining comments in addition to get qualitative information from them.
 
-\item[Informal review]
+\item[Informal review] This was very important in the process. Since everyone has been working on separate parts it was easy for contradictions to appear. Additionally, it gave a good overview of the state of the report such as gaps that needed to be filled etc.
 
 
 \end{description}
@@ -271,7 +279,6 @@ It is interesting to compare the quality grid with Quper. The quality grid gives
 
 \subsection{Linn\'ea Claesson}
 
-
 \subsection{Billy Johansson}
 
 \subsection{Johan Ju}
@@ -280,7 +287,7 @@ The main responsibility I had was the quality requirements and prototypes. I als
 \subsection{Jacob Mejvik}
 
 \subsection{Carl Rynegardh}
-Contributed in/with: Questionnaire, functional requirements, quality grid, quper and probably more. Bad memory. Happy saturday everyone!!
+Contributed in/with: Questionnaire, functional requirements, quality grid, quper, validating another groups requirements, informal reviewing.
 
 \begin{thebibliography}{99}
 \bibitem{soren} 

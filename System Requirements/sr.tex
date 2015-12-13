@@ -625,19 +625,18 @@ This class represents the person receiving the postcard. The sender and recipien
 
 \begin{description}
 \item[Class:] \textbf{PostCard} \hfill \\
-This class represents the postcard sent from the \textit{Sender} to \textit{Recipient}. It encapsulates all the information necessary to send a postcard in either virtual [E-card] or physical form. An instance of this object, owning a \textit{Sender} and a \textit{Recipient} needs to exist to be able to send a postcard. The images can come from the standard gallery or the phone gallery. 
+This class represents the postcard sent from the \textit{Sender} to \textit{Recipient}. It encapsulates all the information necessary to send a postcard in either virtual (E-card) or physical form. An instance of this object, owning a \textit{Sender} and a \textit{Recipient} needs to exist to be able to send a postcard. The image can come from the standard gallery or the phone gallery. 
 
 \item[Examples:] \hfill
 \begin{enumerate}
-\item A postcard with two images, a greeting and a stamp.
-\item A postcard with no images, no greeting and a stamp.
-\item A virtual post card with images, a greeting and no stamp.
+\item A physical postcard with an image, a greeting and a stamp.
+\item A physical postcard with no images, no greeting and a stamp.
+\item An e-card with an image, a greeting and no stamp.
 \end{enumerate}
 
 \item[Attributes:] \hfill
 \begin{enumerate}
 \item \textbf{Front image:} Image [optional] \hfill \\A compressed image that will be used as the front image of the \textit{PostCard}. 
-\item \textbf{Back image:} Image [optional] \hfill \\A compressed image that will be used as the back image of the \textit{PostCard}.
 \item \textbf{Greeting:} String [optional] \hfill \\The greeting on the \textit{PostCard}.
 \item \textbf{Print Size:} Enum [Small, Medium, Large] \hfill \\The size of a printed postcard. See Req \ref{ssec:product}.\ref{req:po-po} for definition.
 

@@ -219,7 +219,7 @@ The existing application \textit{Riktiga Vykort} & 4\\
 
 \newcounter{tasks}
 \stepcounter{tasks}
-\item [Req \thesubsubsection {.\thetasks}] The product shall support the following user tasks.
+\item [Req \thesubsubsection {.\thetasks}] The product shall support the following user tasks. This requirement supports all three goal requirements.
 
 \item[Work area: 1. Vacation] \mbox{}\\
 Communicating with friends and family. Usually from a remote location with unreliable internet access. Typically outdoors and overall poor working environment. Simplicity is key to capturing important moments. \newline
@@ -243,6 +243,7 @@ Users: Average smart phone user, used to little manual work.
 \item Add recipients from address book. 
 \item Save finished postcard.
 \item Preview postcard.
+\item Pay for postcard.
 \item Send postcard to printer.
 \end{enumerate}
 
@@ -292,6 +293,7 @@ Users: Average smart phone user, used to little manual work.
 \item Allow editing of postcard.
 \item Add recipients from address book. 
 \item Preview postcard.
+\item Pay for postcard.
 \item Send postcard to printer.
 \end{enumerate}
 
@@ -327,7 +329,7 @@ Users: Average smart phone user, used to little manual work.
 
 
 \paragraph{Interfaces}
-Requirements related to the interfaces of the product.
+Requirements related to the interfaces of the product, contribute to meeting goal~\ref{goal:simpl}.
 
 \begin {description}
 \newcounter{interf}
@@ -405,7 +407,7 @@ Requirements related to handling of recipients, contribute to meeting goal~\ref{
 \end{description}
 
 \paragraph{Postcard}
-Requirements related to functionality and handling of the postcard.
+Requirements related to functionality and handling of the postcard, all support goal~\ref{goal:simpl}.
 
 \stepcounter{product}
 \begin{description}
@@ -422,20 +424,26 @@ Requirements related to functionality and handling of the postcard.
 	\item [Req \thesubsubsection {.\theproduct} Physical postcards] It shall be possible to send physical postcards.
 	\stepcounter{product}
 	
-	\item [Req \thesubsubsection {.\theproduct} Payment] It shall be possible to pay for sending physical postcards.
-	\stepcounter{product}
-	
 	\item [Req \thesubsubsection {.\theproduct} Postcard size] It shall be possible to choose between three different sizes of the postcard; small (A6), medium (A5) and large (A4).
 	\stepcounter{product}
 	\item [Req \thesubsubsection {.\theproduct} History] It shall be possible to display the history of sent postcards.
-	
-	%Ska nedanstående krav vara med?
 	\stepcounter{product}
-	\item [Req \thesubsubsection {.\theproduct} Social media] Feature for sharing postcards on social media.
+	\item [Req \thesubsubsection {.\theproduct} Social media] Feature for sharing postcards on Facebook, Twitter and Instagram.
+\end{description}
+
+\paragraph{Payment}
+Requirements related to payment, support goal~\ref{goal:rev}.
+\begin{description}
+\item [Req \thesubsubsection {.\theproduct} Payment] It shall be possible to pay for sending physical postcards.
+	\stepcounter{product}
+\item [Req \thesubsubsection {.\theproduct} Price] It shall be possible to view the price before sending the postcard.
+	\stepcounter{product}
+\item [Req \thesubsubsection {.\theproduct} Currency] It shall be possible to choose the currency for the price to be displayed in.
+	\stepcounter{product}
 \end{description}
 
 \paragraph{Notifications}
-Requirements on how to manage notifications.
+Requirements on how to manage notifications, support goal~\ref{goal:simpl}.
 
 \begin{description}
 \stepcounter{product}
@@ -448,7 +456,7 @@ Requirements on how to manage notifications.
 \end{description}
 
 \subsubsection{Design}
-This section describes the design and layout of the application and postcards sent from it. 
+This section describes the design and layout of the application and postcards sent from it. The requirements support goal~\ref{goal:simpl}. 
 
 The images in figure~\ref{fig:prot} are from a prototype and should be used as a guideline rather than as a design requirement.
 
@@ -481,7 +489,7 @@ The images in figure~\ref{fig:prot} are from a prototype and should be used as a
 	\centering
 	\begin{subfigure}{0.5\textwidth}
 		\centering
-		\includegraphics[width=0.5\textwidth]{Prototype_img/p1.png}
+		\includegraphics[width=0.5\textwidth]{Prototype_img/p5.png}
 		\caption{Start}
 		\label{fig:p1}
 	\end{subfigure}~
@@ -702,7 +710,7 @@ This class represents a printer. The printer is responsible for printing the phy
 
 
 \paragraph{Virtual windows}
-Virtual windows displaying data of product can be seen in figure~\ref{fig:vw}.
+Virtual windows displaying data of product can be seen in figure~\ref{fig:vw}. The following requirements support goal~\ref{goal:simpl}.
 
 \begin {description}
 \stepcounter{data}
@@ -794,7 +802,7 @@ Competitor, "Riktiga Vykort", was measured with a OnePlus One smartphone. The ta
 
 
 \subsubsection{Performance}
-All performance requirements shall be fulfilled on a Nexus~5/iPhone~5 running original firmware without any other user installed applications on the phone. Background tasks should be kept at a minimal by closing applications before testing.
+All performance requirements shall be fulfilled on a Nexus~5/iPhone~5 running original firmware without any other user installed applications on the phone. Background tasks should be kept at a minimal by closing applications before testing. The requirements support goal~\ref{goal:simpl}.
 
 \newcounter{perf}
 \begin{description}
@@ -811,7 +819,8 @@ All performance requirements shall be fulfilled on a Nexus~5/iPhone~5 running or
 \end{description}
 
 \subsubsection{Maintainability/Portability}
-Maintainability and portability of product.
+The following requirements are related to maintainability and portability of product and support goal~\ref{goal:simpl}.
+
 \newcounter{mapo}
 \begin{description}
 	\stepcounter{mapo}
@@ -821,7 +830,7 @@ Maintainability and portability of product.
 \end{description}
 
 \subsubsection{Usability}
-Usability of product.
+Usability of product, supports goal~\ref{goal:simpl}.
 \newcounter{usab}
 \begin{description}
 	\stepcounter{usab}

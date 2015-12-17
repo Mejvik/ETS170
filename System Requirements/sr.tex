@@ -121,7 +121,7 @@ The process of sending postcards is time consuming and somewhat tedious. The pro
 \item[Device] Mobile device (e.g. smart phone) on which it is possible to download and use applications.
 \item [E-card] An image and a greeting sent digitally presented to look like a physical postcard.
 \item[Greeting] The message the sender writes to the recipient on the back of the postcard.
-\item[Mobile user] Person who owns a device. 
+\item[Mobile user] Person who uses a device. 
 \item[Payment service] A company who provides a payment solution for applications. 
 \item[Payment solution] A feature that makes it possible to charge costumers in the application. 
 \item[Personalized postcards] Postcards were the design is chosen by the person who sends the postcard. 
@@ -158,9 +158,9 @@ The domain level requirements provides information about how PostcardBuddy inter
 \paragraph{Context Diagram}
 The context diagram of the product can be found in figure~\ref{fig:context}. This diagram shows the environment of the product and the stakeholders interacting with it. The demarcation between the inner and outer domain is based on whether the interaction with PostcardBuddy is direct. For example the printer is in the inner domain because the developer will have to take this interface into account when constructing the product. 
 
-There is one stakeholder that will interact directly with the application, namely the mobile user. The mobile user will use the application for creating personalized postcards. For the front of the postcard the user shall be able to select an image from the application's standard gallery. These images will be provided through an image database. The specification of the image database is out of the scope of this document. Images are provided to the database by a \textit{Supplier of images}.
+There is one stakeholder that will interact directly with the application, namely the mobile user. The mobile user will use the application for creating personalized postcards. For the front of the postcard the user shall be able to select an image from the application's standard gallery. These images will be provided through an image database. The specification of the image database is out of the scope of this document however the developers has to take its interface into account. Images are provided to the database by a \textit{Supplier of images}.
 
-Some of the features of the product will require the use of functionality already present in the the device. The camera will be used to enable the user to take a picture. The GPS will provide the location of the user. The contacts will be used to select recipients. Finally the E-mail functionality in the device will be used when sending E-cards.
+Some of the features of the product will require the use of functionality already present in the device. The camera will be used to enable the user to take a picture. The GPS will provide the location of the user. The contacts will be used to select recipients. Finally the E-mail functionality in the device will be used when sending E-cards.
  
 When a user sends a physical postcard it will be sent to a printer. The  \textit{Printer of postcards} has access to the printer and delivers the postcard to the postal service.  Finally the postal service delivers the physical post card to the final recipients. \textit{Printer of postcards} is responsible for a franking agreement with the postal service.
 
@@ -169,7 +169,7 @@ When sending physical postcards the user will be charged through a standard paym
 \begin{figure}[h!]
 \centering
 \includegraphics[width=0.7\textwidth]{ContextDiagram5.pdf}
-\caption{Context diagram of product.}
+\caption{Context diagram of the product.}
 \label{fig:context}
 \end{figure}
 \FloatBarrier
@@ -439,6 +439,7 @@ Requirements related to functionality and handling of postcards, all support goa
 \end{description}
 
 \paragraph{History}
+Requirements about displaying history, supports goal~\ref{goal:simpl}.
 \begin{description}
 \item [Req \thesubsubsection \rprod{req:po-hi1}{.\theproduct} View history] It shall be possible to display sent postcards.
 
@@ -450,7 +451,7 @@ Requirements related to functionality and handling of postcards, all support goa
 \end{description}
 
 \paragraph{Payment}
-Requirements related to payment to support goal~\ref{goal:rev}.
+Requirements related to payment, supports goal~\ref{goal:rev}.
 \begin{description}
 \item [Req \thesubsubsection \rprod{req:pa-pa}{.\theproduct} Payment] It shall be possible to pay for sending physical postcards.
 	
@@ -461,7 +462,7 @@ Requirements related to payment to support goal~\ref{goal:rev}.
 \end{description}
 
 \paragraph{Notifications}
-Requirements on how to manage notifications, support goal~\ref{goal:simpl}.
+Requirements on how to manage notifications, supports goal~\ref{goal:simpl}.
 
 \begin{description}
 
@@ -836,7 +837,7 @@ See figure~\ref{fig:quper}.
 \begin{figure}[h!]
 \centering
 \includegraphics[width=0.7\textwidth]{QUPER_v1.jpg}
-\caption{ (1) Longest time measured. (2) Shortest time measured.(3) The mean of the test. }
+\caption{ (1) Worst case, longest time measured. (2) Best case, shortest time measured.(3) Mean, the average time of the test. }
 \label{fig:quper}
 \end{figure}
 
@@ -907,6 +908,7 @@ Usability of product, supports goal~\ref{goal:simpl}.
 % 4H) create a release plan for a subset of prioritized features, while taking into account precedence constraints.
 % 5F) combine priorities from several stakeholders and use priorities and scheduling constraints to iteratively create a relevant release plan.
 \section{Release Plan}
+A release plan has been developed taking into account the different stakeholders and their priorities. When designing the release plan the resources available for each release has also been taken into consideration. Furthermore, the cost of different functionalities has been approximated.  
 The release plan of the product can be seen in table~\ref{table:release}. Table~\ref{table:SumRelease} shows the cost in hours for each of the three releases.
 
 \begin{table}[h!]
